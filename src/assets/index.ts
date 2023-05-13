@@ -1,0 +1,1 @@
+export { ReactComponent as MainHomeSoolIc } from "./icon/homesool.svg";

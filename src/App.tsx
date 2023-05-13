@@ -1,7 +1,20 @@
-import React from 'react'
+import { ThemeProvider } from "styled-components";
+import React from "react";
+import { theme } from "./style/theme";
+import { GlobalStyle } from "./style/globalStyle";
+import Router from "./Router";
 
-export default function App() {
+function App() {
   return (
-    <div>App</div>
-  )
+    <>
+      <React.StrictMode>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Router />
+        </ThemeProvider>
+      </React.StrictMode>
+    </>
+  );
 }
+
+export default App;
