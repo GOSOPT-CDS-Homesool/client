@@ -95,7 +95,5 @@ export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Roboto', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-    font-weight: normal;
-    font-style: normal;
 }
 `;
