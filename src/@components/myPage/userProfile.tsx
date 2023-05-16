@@ -33,6 +33,7 @@ const UserProfileContainer = styled.section`
 
   width: 34.3rem;
   height: 4.8rem;
+  margin-top: 2rem;
 `;
 
 const UserProfileWrapper = styled.section`
@@ -46,6 +47,9 @@ const Name = styled.h1`
 
 const RankWrapper = styled.div`
   display: flex;
+
+  margin-left: 1.2rem;
+
   ${({ theme }) => theme.fonts.body02}
 `;
 
