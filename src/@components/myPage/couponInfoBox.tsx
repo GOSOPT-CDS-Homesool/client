@@ -1,7 +1,16 @@
 import React from "react";
-import { COUPON_LIST } from "../../core/myPage";
 import CouponInfo from "./couponInfo";
+import { USER_DATA } from "../../core/userData";
+import { styled } from "styled-components";
 
 export default function CouponInfoBox() {
-  return <>{COUPON_LIST.map({ id:number, title:string })=><CouponInfo key={id} title={title}/>}</>;
+  return (
+    <CouponInfoBoxWrapper>
+      <CouponInfo title="적립금" value={USER_DATA.point} />
+      <CouponInfo title="쿠폰" value={USER_DATA.coupon} />
+      <CouponInfo title="관심상품" value={USER_DATA.interest} />
+    </CouponInfoBoxWrapper>
+  );
 }
+
+const CouponInfoBoxWrapper = styled.section``;
