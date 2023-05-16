@@ -1,4 +1,3 @@
-import React from "react";
 import { MyPageUpdateProfileIc, MyPageUserProfileImgIc } from "../../assets";
 import { styled } from "styled-components";
 

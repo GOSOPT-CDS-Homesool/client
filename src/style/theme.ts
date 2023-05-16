@@ -47,18 +47,18 @@ function FONT({ weight, size, lineHeight }: Font): string {
     font-family:  'Roboto', sans-serif;
     font-weight : ${weight};
     font-size : ${size}rem;
-    line-height : ${lineHeight}rem;
+    line-height : ${lineHeight}%;
     `;
 }
 
 const fonts = {
-  head01: FONT({ weight: 700, size: 1.5, lineHeight: 87.5 }),
-  body01: FONT({ weight: 500, size: 1.05, lineHeight: 87.5 }),
-  body02: FONT({ weight: 500, size: 0.9, lineHeight: 100 }),
-  body03: FONT({ weight: 400, size: 0.825, lineHeight: 100 }),
-  body04: FONT({ weight: 400, size: 0.825, lineHeight: 100 }),
-  caption01: FONT({ weight: 500, size: 0.75, lineHeight: 62.5 }),
-  caption02: FONT({ weight: 500, size: 0.75, lineHeight: 100 }),
+  head01: FONT({ weight: 700, size: 1.5, lineHeight: 140 }),
+  body01: FONT({ weight: 500, size: 1.05, lineHeight: 140 }),
+  body02: FONT({ weight: 500, size: 0.9, lineHeight: 160 }),
+  body03: FONT({ weight: 400, size: 0.825, lineHeight: 160 }),
+  body04: FONT({ weight: 400, size: 0.825, lineHeight: 160 }),
+  caption01: FONT({ weight: 500, size: 0.75, lineHeight: 100 }),
+  caption02: FONT({ weight: 500, size: 0.75, lineHeight: 160 }),
 };
 
 export type FontsTypes = typeof fonts;
