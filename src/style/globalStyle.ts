@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     vertical-align: baseline;
     font: inherit;
-    font-size: 100%;
+    font-size: 62.5%;
   }
   article, aside, details, figcaption, figure,
   footer, header, hgroup, main, menu, nav, section {
@@ -35,6 +35,11 @@ export const GlobalStyle = createGlobalStyle`
   body {
     touch-action: manipulation;
     line-height: 1;
+
+    width: 37.5rem;
+    padding: 0 1.6rem;
+
+    border: 0.1rem solid skyblue;
   }
   menu, ol, ul {
     list-style: none;
@@ -67,6 +72,9 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
     user-select: none;    
 
+    display: flex;
+    justify-content: center;
+
   }
   ul, li {
     padding-left: 0rem;
@@ -92,8 +100,5 @@ export const GlobalStyle = createGlobalStyle`
       outline: none;
     }
   }
-  @font-face {
-    font-family: 'Roboto', sans-serif;
-    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap') format("truetype");
-}
+
 `;
