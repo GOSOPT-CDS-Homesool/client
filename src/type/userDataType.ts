@@ -1,7 +1,7 @@
 export interface UserDataType {
   id: number;
-  nickName: String;
-  rank: String;
+  nickName: string;
+  rank: string;
   point: number;
   coupon: number;
   interest: number;
@@ -10,6 +10,6 @@ export interface UserDataType {
   ready: number;
   delivering: number;
   delivered: number;
-  address: String;
-  phoneNumber: String;
+  address: string;
+  phoneNumber: string;
 }
