@@ -13,4 +13,6 @@ export default function CouponInfoBox() {
   );
 }
 
-const CouponInfoBoxWrapper = styled.section``;
+const CouponInfoBoxWrapper = styled.section`
+  display: flex;
+`;
