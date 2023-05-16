@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
+import UserProfile from "../@components/myPage/userProfile";
 
 export default function MyPage() {
-
   return (
-    <div>myPage</div>
-  )
+    <>
+      <UserProfile />
+    </>
+  );
 }
