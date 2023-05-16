@@ -44,21 +44,21 @@ interface Font {
 
 function FONT({ weight, size, lineHeight }: Font): string {
   return `
-    font-family:  'Roboto', sans-serif;
+    font-family:  'Noto Sans KR', sans-serif;
     font-weight : ${weight};
     font-size : ${size}rem;
-    line-height : ${lineHeight}%;
+    line-height : ${lineHeight}rem;
     `;
 }
 
 const fonts = {
-  head01: FONT({ weight: 700, size: 1.5, lineHeight: 140 }),
-  body01: FONT({ weight: 500, size: 1.05, lineHeight: 140 }),
-  body02: FONT({ weight: 500, size: 0.9, lineHeight: 160 }),
-  body03: FONT({ weight: 400, size: 0.825, lineHeight: 160 }),
-  body04: FONT({ weight: 400, size: 0.825, lineHeight: 160 }),
-  caption01: FONT({ weight: 500, size: 0.75, lineHeight: 100 }),
-  caption02: FONT({ weight: 500, size: 0.75, lineHeight: 160 }),
+  head01: FONT({ weight: 700, size: 2, lineHeight: 2.8 }),
+  body01: FONT({ weight: 500, size: 1.4, lineHeight: 1.9 }),
+  body02: FONT({ weight: 500, size: 1.2, lineHeight: 1.9 }),
+  body03: FONT({ weight: 400, size: 1.1, lineHeight: 1.9 }),
+  body04: FONT({ weight: 400, size: 1.1, lineHeight: 1.7 }),
+  caption01: FONT({ weight: 500, size: 1, lineHeight: 1 }),
+  caption02: FONT({ weight: 500, size: 1, lineHeight: 1.6 }),
 };
 
 export type FontsTypes = typeof fonts;

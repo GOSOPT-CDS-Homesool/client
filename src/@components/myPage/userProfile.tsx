@@ -6,24 +6,24 @@ export default function UserProfile() {
     <UserProfileContainer>
       <MyPageUserProfileImgIc />
       <UserProfileWrapper>
-        <FlexBox width={28.5}>
+        <FlexBox>
           <Name>이호재님</Name>
           <MyPageUpdateProfileIc />
         </FlexBox>
-        <FlexBox width={9.9}>
+        <RankWrapper>
           <RankTitle>이번달 등급</RankTitle>
           <p>브론즈</p>
-        </FlexBox>
+        </RankWrapper>
       </UserProfileWrapper>
     </UserProfileContainer>
   );
 }
 
-const FlexBox = styled.section<{ width: number }>`
+const FlexBox = styled.section`
   display: flex;
   justify-content: space-between;
 
-  width: ${({ width }) => width}rem;
+  width: 28.5rem;
   margin-left: 1.2rem;
 `;
 const UserProfileContainer = styled.section`
