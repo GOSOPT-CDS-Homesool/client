@@ -1,13 +1,13 @@
 import CardListHeader from "./cardListHeader";
 import CardList from "./cardList";
 
-export const ThisMonth = () => {
+import React from "react";
+
+export default function ThisMonth() {
   return (
     <>
       <CardListHeader></CardListHeader>
       <CardList></CardList>
     </>
   );
-};
-
-export default ThisMonth;
+}
