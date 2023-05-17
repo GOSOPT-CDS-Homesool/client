@@ -32,6 +32,7 @@ const colors = {
   GRAYSCALE800: "#323232",
   GRAYSCALE900: "#1C1C1C",
   SYMANTIC: "#2D1C24",
+  SYMANTICRED: "#ED1C24",
 };
 
 export type ColorsTypes = typeof colors;
@@ -51,14 +52,29 @@ function FONT({ weight, size, lineHeight }: Font): string {
     `;
 }
 
+function COUNTFONT({ weight, size, lineHeight }: Font): string {
+  return `
+    font-family: 'Roboto', sans-serif;
+    font-weight : ${weight};
+    font-size : ${size}rem;
+    line-height : ${lineHeight}rem;
+    `;
+}
+
 const fonts = {
   head01: FONT({ weight: 700, size: 2, lineHeight: 2.8 }),
+  head02: FONT({ weight: 500, size: 1.6, lineHeight: 2.4 }),
   body01: FONT({ weight: 500, size: 1.4, lineHeight: 1.9 }),
   body02: FONT({ weight: 500, size: 1.2, lineHeight: 1.9 }),
   body03: FONT({ weight: 400, size: 1.1, lineHeight: 1.9 }),
   body04: FONT({ weight: 400, size: 1.1, lineHeight: 1.7 }),
   caption01: FONT({ weight: 500, size: 1, lineHeight: 1 }),
   caption02: FONT({ weight: 500, size: 1, lineHeight: 1.6 }),
+  roboto01: COUNTFONT({ weight: 700, size: 1.7, lineHeight: 2.38 }),
+  roboto02: COUNTFONT({ weight: 600, size: 1.8, lineHeight: 2.52 }),
+  roboto02s: COUNTFONT({ weight: 600, size: 1.4, lineHeight: 2.26 }),
+  roboto03: COUNTFONT({ weight: 500, size: 1.4, lineHeight: 1.96 }),
+  roboto04: COUNTFONT({ weight: 400, size: 1.2, lineHeight: 2.16 }),
 };
 
 export type FontsTypes = typeof fonts;
