@@ -69,7 +69,7 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
 
     font-family: sans-serif;
-    font-size: 62.5%;
+    /* font-size: 62.5%; */
     user-select: none;    
 
     display: flex;

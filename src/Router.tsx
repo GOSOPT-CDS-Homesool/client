@@ -1,9 +1,12 @@
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MyPage from "./@pages/myPage";
 
 export default function Router() {
   return (
     <BrowserRouter>
-      <Routes></Routes>
+      <Routes>
+        <Route path="/mypage" element={<MyPage />} />
+      </Routes>
     </BrowserRouter>
   );
 }
