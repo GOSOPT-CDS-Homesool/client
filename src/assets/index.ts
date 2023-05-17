@@ -3,3 +3,9 @@ export { ReactComponent as MyPageUserProfileImgIc } from "./icon/myPageUserProfi
 export { ReactComponent as MyPageUpdateProfileIc } from "./icon/myPageUpdateProfileIc.svg";
 export { ReactComponent as MoveToSilverBannerIc } from "./icon/moveToSilverBannerIc.svg";
 export { ReactComponent as MyPageAdsIc } from "./icon/myPageAdsIc.svg";
+
+export { ReactComponent as DetailProductIc } from "./icon/datailProductImg.svg";
+export { ReactComponent as LikeIc } from "./icon/likeIc.svg";
+export { ReactComponent as ShareIc } from "./icon/shareIc.svg";
+export { ReactComponent as BackButtonIc } from "./icon/backButtonIc.svg";
+export { ReactComponent as OriginalHomeSoolIc } from "./icon/originalHomeSoolIc.svg";
