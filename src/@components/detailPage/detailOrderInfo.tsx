@@ -24,9 +24,9 @@ export default function DetailOrderInfo() {
 
       <DetailContentsWrapper>
         <DetailPriceContainer>
-          <ProductPrice>{PRODUCT_DATA.price}</ProductPrice>
+          <ProductPrice>{PRODUCT_DATA.price}원</ProductPrice>
           <ProductSale>{PRODUCT_DATA.sale}%</ProductSale>
-          <DiscountedPrice>{discountedPrice}</DiscountedPrice>
+          <DiscountedPrice>{discountedPrice}원</DiscountedPrice>
         </DetailPriceContainer>
         <AddFuntionContainer>
           <ShareIc />
@@ -38,7 +38,7 @@ export default function DetailOrderInfo() {
 }
 
 const AddFuntionContainer = styled.div`
-  margin: 2rem 0 0 16rem;
+  margin: 2rem 0 0 14rem;
 `;
 
 const DiscountedPrice = styled.p`
