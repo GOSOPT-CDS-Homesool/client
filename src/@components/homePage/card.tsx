@@ -11,10 +11,9 @@ export default function Card() {
     <CardWrapper>
       <ImgWrapper>
         <img src={PRODUCT_DATA1.image} alt="" />
-        <StSoldOut value={PRODUCT_DATA1.soldOut} />
+        <SoldOut value={PRODUCT_DATA1.soldOut} />
+        <Like value={PRODUCT_DATA1.like} />
       </ImgWrapper>
-
-      <Like value={PRODUCT_DATA1.like} />
       <Tags value={PRODUCT_DATA1.tags} />
       <p>{PRODUCT_DATA1.name}</p>
       <Price sale={PRODUCT_DATA1.sale} price={PRODUCT_DATA1.price} />
@@ -22,7 +21,12 @@ export default function Card() {
   );
 }
 
-const CardWrapper = styled.article``;
+const CardWrapper = styled.article`
+  p {
+    width: 143px;
+    margin-top: 5px;
+  }
+`;
 const ImgWrapper = styled.div`
   width: 142px;
   height: 214px;
@@ -33,11 +37,5 @@ const ImgWrapper = styled.div`
     height: 100%;
     object-fit: cover;
     position: absolute;
-    z-index: -1;
   }
-`;
-const StSoldOut = styled(SoldOut)`
-  position: absolute;
-  bottom: 0;
-  left: 0;
 `;

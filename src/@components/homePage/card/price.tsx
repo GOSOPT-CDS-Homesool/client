@@ -11,24 +11,26 @@ export default function Price(props: PriceProps) {
   return (
     <PriceWrapper>
       <Discount>{sale}%</Discount>
-      <SalePrice>{price - (price * sale) / 100}</SalePrice>
+      <SalePrice>{price - (price * sale) / 100}원</SalePrice>
       <OriginPrice>{price}원</OriginPrice>
     </PriceWrapper>
   );
 }
 
 const PriceWrapper = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
+  margin-top: 5px;
+  span {
+    margin-right: 3px;
+  }
 `;
-const Discount = styled.p`
+const Discount = styled.span`
   color: ${({ theme }) => theme.colors.SYMANTIC};
   font-weight: bold;
 `;
-const SalePrice = styled.p`
+const SalePrice = styled.span`
   font-weight: bold;
 `;
-const OriginPrice = styled.p`
+const OriginPrice = styled.span`
   color: gray;
   text-decoration: line-through;
 `;

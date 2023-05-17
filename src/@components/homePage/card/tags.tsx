@@ -37,10 +37,8 @@ export default function Tags(props: TagsProps) {
   );
 }
 const TagsWrapper = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-
   * {
+    margin-top: 5px;
     margin-right: 0.19rem;
   }
 `;

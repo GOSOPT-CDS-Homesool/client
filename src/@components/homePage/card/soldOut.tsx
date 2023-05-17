@@ -12,5 +12,10 @@ export default function SoldOut(props: SoldOutProps) {
 }
 
 const SvgWrapper = styled.div`
-  z-index: 1;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
