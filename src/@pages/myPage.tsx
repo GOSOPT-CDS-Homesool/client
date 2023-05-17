@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import UserProfile from "../@components/myPage/userProfile";
 import { MoveToSilverBannerIc, MyPageAdsIc } from "../assets";
 import CouponInfoBox from "../@components/myPage/couponInfoBox";
+import TotalOrderList from "../@components/myPage/totalOrderList";
 
 export default function MyPage() {
   return (
@@ -10,6 +11,7 @@ export default function MyPage() {
       <MoveToSilverBannerIcon />
       <CouponInfoBox />
       <MyPageAdsIcon />
+      <TotalOrderList />
     </>
   );
 }
