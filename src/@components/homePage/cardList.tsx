@@ -3,7 +3,6 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 // interface CardlistProps {
 //   images: string[]; // 카드 슬라이드에 사용될 이미지 URL 배열
 //   cards: CardProps[]; // 카드 정보 배열

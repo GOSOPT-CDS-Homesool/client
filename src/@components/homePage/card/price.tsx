@@ -1,12 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function Price() {
+interface PriceProps {
+  sale: number;
+  price: number;
+}
+
+export default function Price(props: PriceProps) {
+  const { sale, price } = props;
   return (
     <PriceWrapper>
-      <Discount>10%</Discount>
-      <SalePrice>9000</SalePrice>
-      <OriginPrice>10000</OriginPrice>
+      <Discount>{sale}%</Discount>
+      <SalePrice>{price - (price * sale) / 100}</SalePrice>
+      <OriginPrice>{price}원</OriginPrice>
     </PriceWrapper>
   );
 }
@@ -16,7 +22,7 @@ const PriceWrapper = styled.div`
   flex-wrap: nowrap;
 `;
 const Discount = styled.p`
-  color: red;
+  color: ${({ theme }) => theme.colors.SYMANTIC};
   font-weight: bold;
 `;
 const SalePrice = styled.p`

@@ -1,7 +1,7 @@
 import React from "react";
 import ThisMonth from "../@components/homePage/thisMonth";
 
-export default function HomePage() {
+export default function Home() {
   return (
     <div>
       <ThisMonth />

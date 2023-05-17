@@ -1,21 +1,43 @@
 import React from "react";
-import PopUp from "./card/popUp";
+import Like from "./card/like";
 import Price from "./card/price";
 import SoldOut from "./card/soldOut";
 import Tags from "./card/tags";
+import { PRODUCT_DATA1 } from "../../core/productDataDH";
+import styled from "styled-components";
 
 export default function Card() {
   return (
-    <>
-      <img
-        src="data:image/jpeg;base64,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"
-        alt=""
-      />
-      <PopUp />
-      <SoldOut />
-      <Tags />
-      <div>ProductName</div>
-      <Price />
-    </>
+    <CardWrapper>
+      <ImgWrapper>
+        <img src={PRODUCT_DATA1.image} alt="" />
+        <StSoldOut value={PRODUCT_DATA1.soldOut} />
+      </ImgWrapper>
+
+      <Like value={PRODUCT_DATA1.like} />
+      <Tags value={PRODUCT_DATA1.tags} />
+      <p>{PRODUCT_DATA1.name}</p>
+      <Price sale={PRODUCT_DATA1.sale} price={PRODUCT_DATA1.price} />
+    </CardWrapper>
   );
 }
+
+const CardWrapper = styled.article``;
+const ImgWrapper = styled.div`
+  width: 142px;
+  height: 214px;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+  }
+`;
+const StSoldOut = styled(SoldOut)`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;

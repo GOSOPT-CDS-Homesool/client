@@ -9,3 +9,5 @@ export { ReactComponent as BestTagIcon } from "./icon/tag_best.svg";
 export { ReactComponent as NewTagIcon } from "./icon/tag_new.svg";
 export { ReactComponent as RecommendTagIcon } from "./icon/tag_recommend.svg";
 export { ReactComponent as SoldOutTagIcon } from "./icon/tag_soldout.svg";
+export { ReactComponent as GrayLikeIcon } from "./icon/likeGray.svg";
+export { ReactComponent as OrangeLikeIcon } from "./icon/likeOrange.svg";

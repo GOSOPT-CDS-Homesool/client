@@ -1,34 +1,46 @@
 import React from "react";
 import styled from "styled-components";
+import { NewTagIcon } from "../../../assets";
+import { BestTagIcon } from "../../../assets";
+import { RecommendTagIcon } from "../../../assets";
+import { SoldOutTagIcon } from "../../../assets";
 
-export default function Tags() {
+interface TagsProps {
+  value: Array<string>;
+}
+
+export default function Tags(props: TagsProps) {
+  const { value } = props;
+  function isNew() {
+    const foundtag = value.includes("new");
+    return foundtag;
+  }
+  function isBest() {
+    const foundtag = value.includes("best");
+    return foundtag;
+  }
+  function isRecommend() {
+    const foundtag = value.includes("recommend");
+    return foundtag;
+  }
+  function isSoldOut() {
+    const foundtag = value.includes("soldout");
+    return foundtag;
+  }
   return (
     <TagsWrapper>
-      <SoldOutProduct>품절</SoldOutProduct>
-      <BestProduct>BEST</BestProduct>
-      <RecommendProduct>추천</RecommendProduct>
-      <NewProduct>신상품</NewProduct>
+      {isNew() ? <NewTagIcon /> : null}
+      {isBest() ? <BestTagIcon /> : null}
+      {isRecommend() ? <RecommendTagIcon /> : null}
+      {isSoldOut() ? <SoldOutTagIcon /> : null}
     </TagsWrapper>
   );
 }
 const TagsWrapper = styled.div`
   display: flex;
   flex-wrap: nowrap;
-`;
 
-const SoldOutProduct = styled.div`
-  background-color: black;
-  color: white;
-`;
-const BestProduct = styled.div`
-  background-color: orange;
-  color: white;
-`;
-const RecommendProduct = styled.div`
-  background-color: yellow;
-  color: white;
-`;
-const NewProduct = styled.div`
-  background-color: skyblue;
-  color: white;
+  * {
+    margin-right: 0.19rem;
+  }
 `;

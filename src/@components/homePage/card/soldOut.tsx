@@ -1,11 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { SoldOutIcon } from "../../../assets";
 
-export default function SoldOut() {
-  return <SoldOutWrapper>SoldOut</SoldOutWrapper>;
+interface SoldOutProps {
+  value: boolean;
 }
 
-const SoldOutWrapper = styled.div`
-  background-color: lightgray;
-  opacity: 0.7;
+export default function SoldOut(props: SoldOutProps) {
+  const { value } = props;
+  return <SvgWrapper>{value ? <SoldOutIcon /> : null}</SvgWrapper>;
+}
+
+const SvgWrapper = styled.div`
+  z-index: 1;
 `;

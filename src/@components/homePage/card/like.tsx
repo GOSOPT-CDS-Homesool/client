@@ -1,5 +1,11 @@
 import React from "react";
+import { GrayLikeIcon, OrangeLikeIcon } from "../../../assets";
 
-export default function Like() {
-  return <div>Like</div>;
+interface LikeProps {
+  value: boolean;
+}
+
+export default function Like(props: LikeProps) {
+  const { value } = props;
+  return <>{value ? <OrangeLikeIcon /> : <GrayLikeIcon />}</>;
 }
