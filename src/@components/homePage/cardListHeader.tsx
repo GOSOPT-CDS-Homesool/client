@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function CardListHeader() {
+interface HeaderProps {
+  title: string;
+  discription: string;
+}
+
+export default function CardListHeader(props: HeaderProps) {
+  const { title, discription } = props;
   return (
     <HeaderWrapper>
-      <h1> 이달의 홈술</h1>
-      <p>홈닷 큐레이터가 엄선한 이달의 홈술 컬렉션</p>
+      <h1>{title} </h1>
+      <p>{discription}</p>
     </HeaderWrapper>
   );
 }

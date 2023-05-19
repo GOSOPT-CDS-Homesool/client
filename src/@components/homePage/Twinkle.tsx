@@ -7,7 +7,7 @@ import React from "react";
 export default function ThisMonth() {
   return (
     <ThisMonthWrapper>
-      <CardListHeader title="이달의 홈술" discription="홈닷 큐레이터가 엄선한 이달의 콜렉션" />
+      <CardListHeader title="반짝홈술" discription="지금 아니면 없어요! 반짝 수량한정 특가" />
       <CardList />
     </ThisMonthWrapper>
   );

@@ -23,8 +23,8 @@ export default function Card() {
 
 const CardWrapper = styled.article`
   p {
-    width: 143px;
-    margin-top: 5px;
+    width: 14.3rem;
+    margin-top: 0.5rem;
   }
 `;
 const ImgWrapper = styled.div`
