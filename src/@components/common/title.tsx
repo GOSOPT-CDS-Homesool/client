@@ -9,4 +9,6 @@ export default function Title(props) {
 
 const TitleWrapper = styled.h1`
   ${({ theme }) => theme.fonts.head02};
+
+  color: ${({ theme }) => theme.colors.GRAYSCALE900};
 `;

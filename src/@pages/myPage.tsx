@@ -7,6 +7,7 @@ import { useState } from "react";
 import { USER_DATA } from "../core/userData";
 import { OrderListType } from "../type/mypage";
 import MyShopping from "../@components/myPage/myShopping";
+import CustomerCenter from "../@components/myPage/customerCenter";
 
 export default function MyPage() {
   const [orderList, setOrderList] = useState<OrderListType[]>([
@@ -25,6 +26,7 @@ export default function MyPage() {
       <MyPageAdsIcon />
       <TotalOrderList orderList={orderList} />
       <MyShopping />
+      <CustomerCenter />
     </>
   );
 }
