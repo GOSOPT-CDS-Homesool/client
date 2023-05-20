@@ -26,14 +26,14 @@ const TotalOrderWrapper = styled.article<{ isZero: boolean }>`
   width: 7rem;
   height: 7rem;
 
-  color: ${({ theme, isZero }) => (isZero ? theme.colors.GRAYSCALE600 : "#000000")};
+  color: ${({ theme, isZero }) => (isZero ? theme.colors.GRAYSCALE600 : theme.colors.GRAYSCALE800)};
 `;
 
 const OrderNum = styled.p`
-  ${({ theme }) => theme.fonts.head01};
+  ${({ theme }) => theme.fonts.roboto05};
 `;
 
 const OrderTitle = styled.h1`
-  margin-top: 2rem;
+  margin-top: 2.2rem;
   ${({ theme }) => theme.fonts.caption02};
 `;

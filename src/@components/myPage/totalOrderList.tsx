@@ -37,5 +37,5 @@ const TitleWrapper = styled.header`
 const OrderListWrapper = styled.section`
   display: flex;
 
-  margin-top: 3rem;
+  margin: 3rem 0 4.8rem 0;
 `;
