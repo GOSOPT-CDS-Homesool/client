@@ -4,6 +4,7 @@ import CalculateDiscount from "../../utils/calculateDiscount";
 import { useState } from "react";
 import { styled } from "styled-components";
 import SuccessOrderOption from "./successOrderOption";
+import FailOrderOption from "./failOrderOption";
 
 export default function DetailOrderInfo() {
   const [discountedPrice] = useState(CalculateDiscount(PRODUCT_DATA.price, PRODUCT_DATA.sale));
@@ -35,6 +36,7 @@ export default function DetailOrderInfo() {
         </AddFuntionContainer>
       </DetailContentsWrapper>
       <SuccessOrderOption discountedPrice={discountedPrice} />
+      <FailOrderOption discountedPrice={discountedPrice} />
     </div>
   );
 }

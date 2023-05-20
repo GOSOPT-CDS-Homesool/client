@@ -1,10 +1,11 @@
 import { PRODUCT_DATA } from "../../core/productData";
-import { SuccessOrderOptionProps } from "../../type/successOrderType";
+import { OrderOptionProps } from "../../type/successOrderType";
+import ChoiceOrderButton from "./choiceOrderButton";
 import { MinusIc } from "../../assets";
 import { PlusIc } from "../../assets";
 import { styled } from "styled-components";
 
-export default function SuccessOrderOption({ discountedPrice }: SuccessOrderOptionProps) {
+export default function SuccessOrderOption({ discountedPrice }: OrderOptionProps) {
   return (
     <SuccessOptionWrapper>
       <ProductName>{PRODUCT_DATA.name}</ProductName>
@@ -20,6 +21,7 @@ export default function SuccessOrderOption({ discountedPrice }: SuccessOrderOpti
         <ExtendedPriceText>총 합계금액</ExtendedPriceText>
         <ExtendedPriceCount>{discountedPrice}원</ExtendedPriceCount>
       </ExtendedPrice>
+      <ChoiceOrderButton />
     </SuccessOptionWrapper>
   );
 }

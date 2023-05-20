@@ -1,3 +1,3 @@
-export interface SuccessOrderOptionProps {
+export interface OrderOptionProps {
   discountedPrice: number;
 }
