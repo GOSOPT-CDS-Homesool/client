@@ -5,6 +5,7 @@ import { styled } from "styled-components";
 
 export default function TotalOrderList(props: OrderListType) {
   const { orderList } = props;
+  console.log(orderList);
 
   return (
     <>
