@@ -21,7 +21,7 @@ export default function MyPage() {
   ]);
 
   return (
-    <>
+    <MyPageWrapper>
       <CommonFooter />
       <UserProfile />
       <MoveToSilverBannerIcon />
@@ -31,7 +31,7 @@ export default function MyPage() {
       <MyShopping />
       <CustomerCenter />
       <PageFooter />
-    </>
+    </MyPageWrapper>
   );
 }
 
@@ -41,4 +41,8 @@ const MoveToSilverBannerIcon = styled(MoveToSilverBannerIc)`
 
 const MyPageAdsIcon = styled(MyPageAdsIc)`
   margin: 3.3rem 0 4rem -1.7rem;
+`;
+
+const MyPageWrapper = styled.section`
+  margin-top: 9.3rem;
 `;
