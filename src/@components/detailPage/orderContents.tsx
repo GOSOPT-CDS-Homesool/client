@@ -1,11 +1,10 @@
 import { PRODUCT_DATA } from "../../core/productData";
 import { OrderOptionProps } from "../../type/successOrderType";
-import ChoiceOrderButton from "./choiceOrderButton";
 import { MinusIc } from "../../assets";
 import { PlusIc } from "../../assets";
 import { styled } from "styled-components";
 
-export default function SuccessOrderOption({ discountedPrice }: OrderOptionProps) {
+export default function OrderContents({ discountedPrice }: OrderOptionProps) {
   return (
     <SuccessOptionWrapper>
       <ProductName>{PRODUCT_DATA.name}</ProductName>
@@ -21,10 +20,10 @@ export default function SuccessOrderOption({ discountedPrice }: OrderOptionProps
         <ExtendedPriceText>총 합계금액</ExtendedPriceText>
         <ExtendedPriceCount>{discountedPrice}원</ExtendedPriceCount>
       </ExtendedPrice>
-      <ChoiceOrderButton />
     </SuccessOptionWrapper>
   );
 }
+
 const ExtendedPriceCount = styled.p`
   margin-top: 1.6rem;
   ${({ theme }) => theme.fonts.roboto02s};
@@ -53,13 +52,14 @@ const CountingText = styled.p`
 const ProductName = styled.h1`
   width: 28rem;
   padding-top: 1.6rem;
+  margin-left: 1.6rem;
   ${({ theme }) => theme.fonts.head02_1}
 `;
 
 const QuantityContainer = styled.div`
   display: flex;
   width: 37.5rem;
-  margin: 0 0 2rem -1.6rem;
+  margin: 0 0 2rem 1.6rem;
 `;
 
 const CountContainer = styled.div`
@@ -76,10 +76,14 @@ const ExtendedPrice = styled.div`
   display: flex;
   width: 37.5rem;
   height: 5.4rem;
-  margin-left: -1.6rem;
   background-color: ${({ theme }) => theme.colors.GRAYSCALE100};
 `;
 
 const SuccessOptionWrapper = styled.div`
+  position: absolute;
+  bottom: 4rem;
+  width: 37.5rem;
+  margin-left: -1.6rem;
   background-color: ${({ theme }) => theme.colors.GRAYSCALE000};
+  z-index: 1;
 `;

@@ -3,8 +3,8 @@ import { PRODUCT_DATA } from "../../core/productData";
 import CalculateDiscount from "../../utils/calculateDiscount";
 import { useState } from "react";
 import { styled } from "styled-components";
-import SuccessOrderOption from "./successOrderOption";
-import FailOrderOption from "./failOrderOption";
+import OrderContents from "./orderContents";
+import FailBuyButton from "./failBuyButton";
 
 export default function DetailOrderInfo() {
   const [discountedPrice] = useState(CalculateDiscount(PRODUCT_DATA.price, PRODUCT_DATA.sale));
@@ -35,8 +35,8 @@ export default function DetailOrderInfo() {
           <LikeIc />
         </AddFuntionContainer>
       </DetailContentsWrapper>
-      <SuccessOrderOption discountedPrice={discountedPrice} />
-      <FailOrderOption discountedPrice={discountedPrice} />
+      <OrderContents discountedPrice={discountedPrice} />
+      <FailBuyButton />
     </div>
   );
 }
