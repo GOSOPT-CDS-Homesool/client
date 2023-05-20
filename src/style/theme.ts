@@ -53,6 +53,7 @@ function FONT({ weight, size, lineHeight }: Font): string {
 
 const fonts = {
   head01: FONT({ weight: 700, size: 2, lineHeight: 2.8 }),
+  head02: FONT({ weight: 500, size: 1.6, lineHeight: 2.2 }),
   body01: FONT({ weight: 500, size: 1.4, lineHeight: 1.9 }),
   body02: FONT({ weight: 500, size: 1.2, lineHeight: 1.9 }),
   body03: FONT({ weight: 400, size: 1.1, lineHeight: 1.9 }),
