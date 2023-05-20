@@ -9,3 +9,6 @@ export { ReactComponent as LikeIc } from "./icon/likeIc.svg";
 export { ReactComponent as ShareIc } from "./icon/shareIc.svg";
 export { ReactComponent as BackButtonIc } from "./icon/backButtonIc.svg";
 export { ReactComponent as OriginalHomeSoolIc } from "./icon/originalHomeSoolIc.svg";
+
+export { ReactComponent as MinusIc } from "./icon/minusIconIc.svg";
+export { ReactComponent as PlusIc } from "./icon/plusIconIc.svg";
