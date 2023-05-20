@@ -4,3 +4,4 @@ export { ReactComponent as MyPageUpdateProfileIc } from "./icon/myPageUpdateProf
 export { ReactComponent as MoveToSilverBannerIc } from "./icon/moveToSilverBannerIc.svg";
 export { ReactComponent as MyPageAdsIc } from "./icon/myPageAdsIc.svg";
 export { ReactComponent as FooterIc } from "./icon/footerIc.svg";
+export { ReactComponent as CommonFooterIc } from "./icon/commonFooterIc.svg";

@@ -9,6 +9,7 @@ import { OrderListType } from "../type/mypage";
 import MyShopping from "../@components/myPage/myShopping";
 import CustomerCenter from "../@components/myPage/customerCenter";
 import PageFooter from "../@components/common/pageFooter";
+import CommonFooter from "../@components/common/commonFooter";
 
 export default function MyPage() {
   const [orderList, setOrderList] = useState<OrderListType[]>([
@@ -21,6 +22,7 @@ export default function MyPage() {
 
   return (
     <>
+      <CommonFooter />
       <UserProfile />
       <MoveToSilverBannerIcon />
       <CouponInfoBox />
