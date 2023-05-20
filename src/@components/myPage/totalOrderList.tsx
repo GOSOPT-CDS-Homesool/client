@@ -4,7 +4,7 @@ import Title from "../common/title";
 import { styled } from "styled-components";
 import TotalOrder from "./totalOrder";
 
-export default function TotalOrderList(props: OrderListType) {
+export default function TotalOrderList(props: OrderListType[]) {
   const { orderList } = props;
   console.log(orderList);
 
@@ -14,8 +14,8 @@ export default function TotalOrderList(props: OrderListType) {
         <Title title="전체 주문 내역" />
         <SubTitle>(최근 30일)</SubTitle>
       </TitleWrapper>
-      {orderList.map((order, idx) => (
-        <TotalOrder order={order} />
+      {orderList.map(({ id, orderTitle, orderNum }: OrderListType) => (
+        <TotalOrder key={id} id={id} orderTitle={orderTitle} orderNum={orderNum} />
       ))}
     </>
   );
