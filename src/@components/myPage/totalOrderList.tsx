@@ -6,7 +6,6 @@ import TotalOrder from "./totalOrder";
 
 export default function TotalOrderList(props: OrderListType[]) {
   const { orderList } = props;
-  console.log(orderList);
 
   return (
     <>
@@ -14,9 +13,11 @@ export default function TotalOrderList(props: OrderListType[]) {
         <Title title="전체 주문 내역" />
         <SubTitle>(최근 30일)</SubTitle>
       </TitleWrapper>
-      {orderList.map(({ id, orderTitle, orderNum }: OrderListType) => (
-        <TotalOrder key={id} id={id} orderTitle={orderTitle} orderNum={orderNum} />
-      ))}
+      <OrderListWrapper>
+        {orderList.map(({ id, orderTitle, orderNum }: OrderListType) => (
+          <TotalOrder key={id} id={id} orderTitle={orderTitle} orderNum={orderNum} />
+        ))}
+      </OrderListWrapper>
     </>
   );
 }
@@ -31,4 +32,10 @@ const SubTitle = styled.p`
 const TitleWrapper = styled.header`
   display: flex;
   align-items: center;
+`;
+
+const OrderListWrapper = styled.section`
+  display: flex;
+
+  margin-top: 3rem;
 `;
