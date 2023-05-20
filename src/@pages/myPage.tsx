@@ -5,14 +5,15 @@ import CouponInfoBox from "../@components/myPage/couponInfoBox";
 import TotalOrderList from "../@components/myPage/totalOrderList";
 import { useState } from "react";
 import { USER_DATA } from "../core/userData";
+import { OrderListType } from "../type/mypage";
 
 export default function MyPage() {
-  const [orderList, setOrderList] = useState([
-    { waiting: USER_DATA.waiting },
-    { finish: USER_DATA.finish },
-    { ready: USER_DATA.ready },
-    { delivering: USER_DATA.delivering },
-    { delivered: USER_DATA.delivered },
+  const [orderList, setOrderList] = useState<OrderListType[]>([
+    { id: 1, orderTitle: "입금대기", orderNum: USER_DATA.waiting },
+    { id: 2, orderTitle: "결제완료", orderNum: USER_DATA.finish },
+    { id: 3, orderTitle: "상품준비중", orderNum: USER_DATA.ready },
+    { id: 4, orderTitle: "배송중", orderNum: USER_DATA.delivering },
+    { id: 5, orderTitle: "배송완료", orderNum: USER_DATA.delivered },
   ]);
 
   return (

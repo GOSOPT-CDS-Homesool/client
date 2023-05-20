@@ -2,6 +2,7 @@ import React from "react";
 import { OrderListType } from "../../type/mypage";
 import Title from "../common/title";
 import { styled } from "styled-components";
+import TotalOrder from "./totalOrder";
 
 export default function TotalOrderList(props: OrderListType) {
   const { orderList } = props;
@@ -13,7 +14,9 @@ export default function TotalOrderList(props: OrderListType) {
         <Title title="전체 주문 내역" />
         <SubTitle>(최근 30일)</SubTitle>
       </TitleWrapper>
-      {/* {orderList.map(({ waiting, finish, ready, delivering, delivered })=>())} */}
+      {orderList.map((order, idx) => (
+        <TotalOrder order={order} />
+      ))}
     </>
   );
 }
