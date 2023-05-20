@@ -6,6 +6,7 @@ import TotalOrderList from "../@components/myPage/totalOrderList";
 import { useState } from "react";
 import { USER_DATA } from "../core/userData";
 import { OrderListType } from "../type/mypage";
+import MyShopping from "../@components/myPage/myShopping";
 
 export default function MyPage() {
   const [orderList, setOrderList] = useState<OrderListType[]>([
@@ -23,6 +24,7 @@ export default function MyPage() {
       <CouponInfoBox />
       <MyPageAdsIcon />
       <TotalOrderList orderList={orderList} />
+      <MyShopping />
     </>
   );
 }
