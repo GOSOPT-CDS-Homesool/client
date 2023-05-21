@@ -1,4 +1,4 @@
-import DetailOrderInfo from "../@components/detailPage/detailOrderInfo";
+import DetailOrderInfo from "../@components/detailPage/detailProduct/detailOrderInfo";
 
 export default function Detail() {
   return (

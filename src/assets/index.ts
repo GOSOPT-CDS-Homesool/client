@@ -12,3 +12,7 @@ export { ReactComponent as OriginalHomeSoolIc } from "./icon/originalHomeSoolIc.
 
 export { ReactComponent as MinusIc } from "./icon/minusIconIc.svg";
 export { ReactComponent as PlusIc } from "./icon/plusIconIc.svg";
+
+export { ReactComponent as CheckButton } from "./icon/checkRadioIc.svg";
+export { ReactComponent as NonCheckButton } from "./icon/nonCheckRadioIc.svg";
+export { ReactComponent as AlertIcon } from "./icon/alertCircleIc.svg";

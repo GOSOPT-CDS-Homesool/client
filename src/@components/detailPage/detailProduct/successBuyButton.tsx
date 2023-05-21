@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { useState } from "react";
 import OrderChoice from "./orderChoice";
-import { OrderOptionProps } from "../../type/OrderOptionType";
+import { OrderOptionProps } from "../../../type/OrderOptionType";
 import OrderContents from "./orderContents";
 
 export default function SuccessBuyButton({ discountedPrice }: OrderOptionProps) {
@@ -13,7 +13,7 @@ export default function SuccessBuyButton({ discountedPrice }: OrderOptionProps) 
   return (
     <ChoiceOrderButtonWrapper>
       {visible && <OrderContents discountedPrice={discountedPrice} />}
-      {visible && <OrderChoice soldOut={true} discountedPrice={discountedPrice} />}
+      {visible && <OrderChoice soldOut={false} discountedPrice={discountedPrice} />}
       <AddToCartButton>장바구니 담기</AddToCartButton>
       <BuyButton onClick={goToBuy}>바로구매</BuyButton>
     </ChoiceOrderButtonWrapper>

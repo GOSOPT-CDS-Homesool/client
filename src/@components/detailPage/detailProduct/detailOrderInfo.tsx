@@ -1,9 +1,10 @@
-import { DetailProductIc, LikeIc, ShareIc, BackButtonIc, OriginalHomeSoolIc } from "../../assets";
-import { PRODUCT_DATA } from "../../core/productData";
-import CalculateDiscount from "../../utils/calculateDiscount";
+import { DetailProductIc, LikeIc, ShareIc, BackButtonIc, OriginalHomeSoolIc } from "../../../assets";
+import { PRODUCT_DATA } from "../../../core/productData";
+import CalculateDiscount from "../../../utils/calculateDiscount";
 import { useState } from "react";
 import { styled } from "styled-components";
 import OrderChoice from "./orderChoice";
+import ChoiceDelivery from "./choiceDelivery";
 
 export default function DetailOrderInfo() {
   const [discountedPrice] = useState(CalculateDiscount(PRODUCT_DATA.price, PRODUCT_DATA.sale));
@@ -34,6 +35,7 @@ export default function DetailOrderInfo() {
         </AddFuntionContainer>
       </DetailContentsWrapper>
       <OrderChoice soldOut={false} discountedPrice={discountedPrice} />
+      <ChoiceDelivery />
     </>
   );
 }

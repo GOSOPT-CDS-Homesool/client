@@ -1,7 +1,7 @@
-import { PRODUCT_DATA } from "../../core/productData";
-import { OrderOptionProps } from "../../type/OrderOptionType";
-import { MinusIc } from "../../assets";
-import { PlusIc } from "../../assets";
+import { PRODUCT_DATA } from "../../../core/productData";
+import { OrderOptionProps } from "../../../type/OrderOptionType";
+import { MinusIc } from "../../../assets";
+import { PlusIc } from "../../../assets";
 import { styled } from "styled-components";
 
 export default function OrderContents({ discountedPrice }: OrderOptionProps) {
@@ -44,9 +44,9 @@ const MinusIcon = styled(MinusIc)`
 `;
 
 const CountingText = styled.p`
+  margin-right: 1.8rem;
   color: ${({ theme }) => theme.colors.GRAYSCALE900};
   ${({ theme }) => theme.fonts.roboto02s}
-  margin-right: 1.8rem;
 `;
 
 const ProductName = styled.h1`
