@@ -3,26 +3,24 @@ import { PRODUCT_DATA } from "../../core/productData";
 import CalculateDiscount from "../../utils/calculateDiscount";
 import { useState } from "react";
 import { styled } from "styled-components";
-import OrderContents from "./orderContents";
-import FailBuyButton from "./failBuyButton";
+import OrderChoice from "./orderChoice";
 
 export default function DetailOrderInfo() {
   const [discountedPrice] = useState(CalculateDiscount(PRODUCT_DATA.price, PRODUCT_DATA.sale));
+
   return (
-    <div>
+    <>
       <DetailHeader>
         <BackButtonIc />
         <DetailTitle>상품상세</DetailTitle>
       </DetailHeader>
 
-      <DetailImage>
-        <DetailProductIc />
-      </DetailImage>
+      <DetailImage />
 
-      <DetailProductName>
+      <DetailProductContainer>
         <OriginalHomeSoolIc />
         <ProductName>{PRODUCT_DATA.name}</ProductName>
-      </DetailProductName>
+      </DetailProductContainer>
 
       <DetailContentsWrapper>
         <DetailPriceContainer>
@@ -35,9 +33,8 @@ export default function DetailOrderInfo() {
           <LikeIc />
         </AddFuntionContainer>
       </DetailContentsWrapper>
-      <OrderContents discountedPrice={discountedPrice} />
-      <FailBuyButton />
-    </div>
+      <OrderChoice soldOut={false} discountedPrice={discountedPrice} />
+    </>
   );
 }
 
@@ -47,19 +44,19 @@ const AddFuntionContainer = styled.div`
 
 const DiscountedPrice = styled.p`
   margin-left: 0.4rem;
-  ${({ theme }) => theme.fonts.roboto01};
   color: ${({ theme }) => theme.colors.GRAYSCALE800};
+  ${({ theme }) => theme.fonts.roboto01};
 `;
 
 const ProductSale = styled.p`
   margin-left: 0.4rem;
-  ${({ theme }) => theme.fonts.roboto02};
   color: ${({ theme }) => theme.colors.SYMANTICRED};
+  ${({ theme }) => theme.fonts.roboto02};
 `;
 
 const ProductPrice = styled.p`
-  ${({ theme }) => theme.fonts.roboto04};
   color: ${({ theme }) => theme.colors.GRAYSCALE600};
+  ${({ theme }) => theme.fonts.roboto04};
   text-decoration: line-through;
 `;
 
@@ -72,14 +69,14 @@ const DetailContentsWrapper = styled.div`
   display: flex;
 `;
 
-const DetailProductName = styled.div`
+const DetailProductContainer = styled.div`
   display: flex;
   margin-top: 2rem;
 `;
 
 const ProductName = styled.h1`
-  ${({ theme }) => theme.fonts.head02}
   margin-left: 0.8rem;
+  ${({ theme }) => theme.fonts.head02}
 `;
 
 const DetailTitle = styled.h1`
@@ -87,11 +84,11 @@ const DetailTitle = styled.h1`
   ${({ theme }) => theme.fonts.body03}
 `;
 
-const DetailHeader = styled.div`
+const DetailHeader = styled.header`
   display: flex;
   margin-top: 0.8rem;
 `;
 
-const DetailImage = styled.div`
+const DetailImage = styled(DetailProductIc)`
   margin: 1.3rem 0 0 -1.6rem;
 `;

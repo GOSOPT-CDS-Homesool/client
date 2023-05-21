@@ -1,5 +1,5 @@
 import { PRODUCT_DATA } from "../../core/productData";
-import { OrderOptionProps } from "../../type/successOrderType";
+import { OrderOptionProps } from "../../type/OrderOptionType";
 import { MinusIc } from "../../assets";
 import { PlusIc } from "../../assets";
 import { styled } from "styled-components";
