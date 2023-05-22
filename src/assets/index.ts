@@ -16,3 +16,5 @@ export { ReactComponent as PlusIc } from "./icon/plusIconIc.svg";
 export { ReactComponent as CheckButton } from "./icon/checkRadioIc.svg";
 export { ReactComponent as NonCheckButton } from "./icon/nonCheckRadioIc.svg";
 export { ReactComponent as AlertIcon } from "./icon/alertCircleIc.svg";
+export { ReactComponent as OpenDetailInfoIcon } from "./icon/openIcon.svg";
+export { ReactComponent as CloseDetailInfoIcon } from "./icon/closeIcon.svg";
