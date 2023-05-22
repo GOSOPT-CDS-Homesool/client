@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { BackButtonIc } from "../../../assets";
-
 import ShippingAddress from "./shippingAddress";
+import OrdererInfo from "./ordererInfo";
 
 export default function OrderConfirmation() {
   return (
@@ -11,6 +11,7 @@ export default function OrderConfirmation() {
         <DetailTitle>주문결제</DetailTitle>
       </DetailHeader>
       <ShippingAddress />
+      <OrdererInfo />
     </div>
   );
 }

@@ -45,7 +45,7 @@ export default function RequestForDelivery() {
 
 const DeliveryMessageList = styled.div`
   position: relative;
-  top: -3.2rem;
+  top: -4.2rem;
 `;
 
 const ListItem = styled.li`
