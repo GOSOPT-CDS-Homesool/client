@@ -31,7 +31,7 @@ const colors = {
   GRAYSCALE700: "#555555",
   GRAYSCALE800: "#323232",
   GRAYSCALE900: "#1C1C1C",
-  SYMANTIC: "#2D1C24",
+  SYMANTIC: "#ED1C24",
 };
 
 export type ColorsTypes = typeof colors;
