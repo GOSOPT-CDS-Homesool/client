@@ -18,3 +18,6 @@ export { ReactComponent as NonCheckButton } from "./icon/nonCheckRadioIc.svg";
 export { ReactComponent as AlertIcon } from "./icon/alertCircleIc.svg";
 export { ReactComponent as OpenDetailInfoIcon } from "./icon/openIcon.svg";
 export { ReactComponent as CloseDetailInfoIcon } from "./icon/closeIcon.svg";
+
+export { ReactComponent as RightSideOpenButton } from "./icon/sideOpenIcon.svg";
+export { ReactComponent as TriangleOpenIcon } from "./icon/triangleOpenIc.svg";

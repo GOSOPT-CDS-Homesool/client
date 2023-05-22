@@ -56,6 +56,7 @@ function FONT({ family, weight, size, lineHeight }: Font): string {
 const fonts = {
   head01: FONT({ family: true, weight: 700, size: 2, lineHeight: 2.8 }),
   head01_1: FONT({ family: true, weight: 700, size: 1.1, lineHeight: 1.76 }),
+  head01_2: FONT({ family: true, weight: 700, size: 0.8, lineHeight: 0.8 }),
   head02: FONT({ family: true, weight: 500, size: 1.6, lineHeight: 2.4 }),
   head02_1: FONT({ family: true, weight: 500, size: 1.6, lineHeight: 2.24 }),
   body01: FONT({ family: true, weight: 500, size: 1.4, lineHeight: 1.9 }),
@@ -64,6 +65,7 @@ const fonts = {
   body02_1: FONT({ family: true, weight: 500, size: 1.1, lineHeight: 1.76 }),
   body03: FONT({ family: true, weight: 400, size: 1.1, lineHeight: 1.9 }),
   body04: FONT({ family: true, weight: 400, size: 1.1, lineHeight: 1.7 }),
+
   caption01: FONT({ family: true, weight: 500, size: 1, lineHeight: 1 }),
   caption02: FONT({ family: true, weight: 500, size: 1, lineHeight: 1.6 }),
   roboto01: FONT({ family: false, weight: 700, size: 1.7, lineHeight: 2.38 }),
