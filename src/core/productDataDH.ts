@@ -14,6 +14,7 @@ export const PRODUCT_DATA1: ProductDataType = {
   subscribe: true,
   twinkle: true,
 };
+
 export const PRODUCT_DATA2: ProductDataType = {
   id: 0,
   name: "[팝업한정] 느린마을 증류주 미니세트",

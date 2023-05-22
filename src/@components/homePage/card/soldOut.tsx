@@ -8,10 +8,10 @@ interface SoldOutProps {
 
 export default function SoldOut(props: SoldOutProps) {
   const { value } = props;
-  return <SvgWrapper>{value ? <SoldOutIcon /> : null}</SvgWrapper>;
+  return <SoldOutIconIc>{value && <SoldOutIcon />}</SoldOutIconIc>;
 }
 
-const SvgWrapper = styled.div`
+const SoldOutIconIc = styled.div`
   width: fit-content;
   height: fit-content;
   position: absolute;

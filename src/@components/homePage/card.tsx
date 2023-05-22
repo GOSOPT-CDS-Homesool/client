@@ -10,7 +10,7 @@ export default function Card() {
   return (
     <CardWrapper>
       <ImgWrapper>
-        <img src={PRODUCT_DATA1.image} alt="" />
+        <img src={PRODUCT_DATA1.image} alt="이미지1" />
         <SoldOut value={PRODUCT_DATA1.soldOut} />
         <Like value={PRODUCT_DATA1.like} />
       </ImgWrapper>
@@ -22,20 +22,25 @@ export default function Card() {
 }
 
 const CardWrapper = styled.article`
+  margin-top: 1.6rem;
+  margin-right: 1rem;
   p {
     width: 14.3rem;
-    margin-top: 0.5rem;
+    margin-top: 1.2rem;
+    ${({ theme }) => theme.fonts.body01}
+    color: ${({ theme }) => theme.colors.GRAYSCALE800};
   }
 `;
 const ImgWrapper = styled.div`
-  width: 142px;
-  height: 214px;
+  width: 14.2rem;
+  height: 21.4rem;
   position: relative;
 
   img {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
+    border-radius: 0.8rem;
   }
 `;

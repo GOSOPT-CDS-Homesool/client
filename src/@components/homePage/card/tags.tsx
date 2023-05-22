@@ -11,34 +11,23 @@ interface TagsProps {
 
 export default function Tags(props: TagsProps) {
   const { value } = props;
-  function isNew() {
-    const foundtag = value.includes("new");
-    return foundtag;
+
+  function checkTagText(tag: string) {
+    return value.includes(tag);
   }
-  function isBest() {
-    const foundtag = value.includes("best");
-    return foundtag;
-  }
-  function isRecommend() {
-    const foundtag = value.includes("recommend");
-    return foundtag;
-  }
-  function isSoldOut() {
-    const foundtag = value.includes("soldout");
-    return foundtag;
-  }
+
   return (
     <TagsWrapper>
-      {isNew() ? <NewTagIcon /> : null}
-      {isBest() ? <BestTagIcon /> : null}
-      {isRecommend() ? <RecommendTagIcon /> : null}
-      {isSoldOut() ? <SoldOutTagIcon /> : null}
+      {checkTagText("new") && <NewTagIcon />}
+      {checkTagText("best") && <BestTagIcon />}
+      {checkTagText("recommend") && <RecommendTagIcon />}
+      {checkTagText("soldout") && <SoldOutTagIcon />}
     </TagsWrapper>
   );
 }
 const TagsWrapper = styled.div`
+  margin-top: 0.8rem;
   * {
-    margin-top: 5px;
-    margin-right: 0.19rem;
+    margin-right: 0.3rem;
   }
 `;

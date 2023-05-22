@@ -8,6 +8,7 @@ interface HeaderProps {
 
 export default function CardListHeader(props: HeaderProps) {
   const { title, discription } = props;
+
   return (
     <HeaderWrapper>
       <h1>{title} </h1>
@@ -21,7 +22,8 @@ const HeaderWrapper = styled.section`
     ${({ theme }) => theme.fonts.head01}
     color: ${({ theme }) => theme.colors.GRAYSCALE900};
   }
-  P {
+  p {
+    margin-top: 0.4rem;
     ${({ theme }) => theme.fonts.body02}
     color: ${({ theme }) => theme.colors.GRAYSCALE500};
   }

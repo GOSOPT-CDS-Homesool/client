@@ -8,14 +8,14 @@ interface LikeProps {
 
 export default function Like(props: LikeProps) {
   const { value } = props;
-  return <LikeWrapper>{value ? <OrangeLikeIcon /> : <GrayLikeIcon />}</LikeWrapper>;
+  return <LikeIconIc>{value ? <OrangeLikeIcon /> : <GrayLikeIcon />}</LikeIconIc>;
 }
 
-const LikeWrapper = styled.div`
+const LikeIconIc = styled.div`
+  position: absolute;
+  bottom: -1.3rem;
+  left: 12.6rem;
+  transform: translate(-50%, -50%);
   width: fit-content;
   height: fit-content;
-  position: absolute;
-  bottom: -5%;
-  left: 85%;
-  transform: translate(-50%, -50%);
 `;
