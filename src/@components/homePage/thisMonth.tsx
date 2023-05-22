@@ -13,4 +13,6 @@ export default function ThisMonth() {
   );
 }
 
-const ThisMonthWrapper = styled.section``;
+const ThisMonthWrapper = styled.section`
+  margin-bottom: 6rem;
+`;

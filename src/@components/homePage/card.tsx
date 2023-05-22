@@ -3,6 +3,7 @@ import Like from "./card/like";
 import Price from "./card/price";
 import SoldOut from "./card/soldOut";
 import Tags from "./card/tags";
+import Stock from "./card/stock";
 import { PRODUCT_DATA1 } from "../../core/productDataDH";
 import styled from "styled-components";
 
@@ -15,21 +16,20 @@ export default function Card() {
         <Like value={PRODUCT_DATA1.like} />
       </ImgWrapper>
       <Tags value={PRODUCT_DATA1.tags} />
-      <p>{PRODUCT_DATA1.name}</p>
+      <Stock value={PRODUCT_DATA1.stock} />
+      <NameWrapper>{PRODUCT_DATA1.name}</NameWrapper>
       <Price sale={PRODUCT_DATA1.sale} price={PRODUCT_DATA1.price} />
     </CardWrapper>
   );
 }
 
 const CardWrapper = styled.article`
-  margin-top: 1.6rem;
   margin-right: 1rem;
-  p {
-    width: 14.3rem;
-    margin-top: 1.2rem;
-    ${({ theme }) => theme.fonts.body01}
-    color: ${({ theme }) => theme.colors.GRAYSCALE800};
-  }
+`;
+const NameWrapper = styled.p`
+  width: 14.3rem;
+  ${({ theme }) => theme.fonts.body01}
+  color: ${({ theme }) => theme.colors.GRAYSCALE800};
 `;
 const ImgWrapper = styled.div`
   width: 14.2rem;

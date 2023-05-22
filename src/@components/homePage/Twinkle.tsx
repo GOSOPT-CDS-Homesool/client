@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import React from "react";
 
-export default function ThisMonth() {
+export default function Twinkle() {
   return (
     <ThisMonthWrapper>
       <CardListHeader title="반짝홈술" discription="지금 아니면 없어요! 반짝 수량한정 특가" />
@@ -13,4 +13,6 @@ export default function ThisMonth() {
   );
 }
 
-const ThisMonthWrapper = styled.section``;
+const ThisMonthWrapper = styled.section`
+  margin-bottom: 6rem;
+`;

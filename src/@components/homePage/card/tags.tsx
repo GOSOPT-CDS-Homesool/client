@@ -27,6 +27,7 @@ export default function Tags(props: TagsProps) {
 }
 const TagsWrapper = styled.div`
   margin-top: 0.8rem;
+  margin-bottom: 1.2rem;
   * {
     margin-right: 0.3rem;
   }

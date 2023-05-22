@@ -18,6 +18,7 @@ export default function CardListHeader(props: HeaderProps) {
 }
 
 const HeaderWrapper = styled.section`
+  margin-bottom: 1.6rem;
   h1 {
     ${({ theme }) => theme.fonts.head01}
     color: ${({ theme }) => theme.colors.GRAYSCALE900};

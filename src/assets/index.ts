@@ -15,3 +15,5 @@ export { ReactComponent as RecommendTagIcon } from "./icon/tag_recommend.svg";
 export { ReactComponent as SoldOutTagIcon } from "./icon/tag_soldout.svg";
 export { ReactComponent as GrayLikeIcon } from "./icon/likeGray.svg";
 export { ReactComponent as OrangeLikeIcon } from "./icon/likeOrange.svg";
+export { ReactComponent as TimeSaleIcon } from "./icon/timesale.svg";
+export { ReactComponent as SubscribeImg } from "./image/subscribe_banner.svg";
