@@ -5,3 +5,7 @@ export { ReactComponent as MoveToSilverBannerIc } from "./icon/moveToSilverBanne
 export { ReactComponent as MyPageAdsIc } from "./icon/myPageAdsIc.svg";
 export { ReactComponent as FooterIc } from "./icon/footerIc.svg";
 export { ReactComponent as CommonFooterIc } from "./icon/commonFooterIc.svg";
+export { ReactComponent as FooterHomeIc } from "./icon/footerHomeIc.svg";
+export { ReactComponent as FooterHomeActiveIc } from "./icon/footerHomeActiveIc.svg";
+export { ReactComponent as FooterMyIc } from "./icon/footerMyIc.svg";
+export { ReactComponent as FooterMyActiveIc } from "./icon/footerMyActiveIc.svg";
