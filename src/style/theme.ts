@@ -59,6 +59,7 @@ const fonts = {
   head02: FONT({ family: true, weight: 500, size: 1.6, lineHeight: 2.4 }),
   head02_1: FONT({ family: true, weight: 500, size: 1.6, lineHeight: 2.24 }),
   body01: FONT({ family: true, weight: 500, size: 1.4, lineHeight: 1.9 }),
+  bodyBold: FONT({ family: true, weight: 600, size: 1.3, lineHeight: 2.4 }),
   body02: FONT({ family: true, weight: 500, size: 1.2, lineHeight: 1.9 }),
   body02_1: FONT({ family: true, weight: 500, size: 1.1, lineHeight: 1.76 }),
   body03: FONT({ family: true, weight: 400, size: 1.1, lineHeight: 1.9 }),
