@@ -1,6 +1,6 @@
-import { RightSideOpenButton, TriangleOpenIcon } from "../../../assets";
+import { RightSideOpenButton } from "../../../assets";
 import { styled } from "styled-components";
-import GrayGap from "../../common/GrayGap";
+import RequestForDelivery from "./requestForDelivery";
 
 export default function ShippingAddress() {
   return (
@@ -17,32 +17,11 @@ export default function ShippingAddress() {
         <BaseAddress>
           부산광역시 강서구 녹산산단382로14번가길 10~29번지광주전남공동혁신도시빛가람대방엘리움로얄카운티광주까지
         </BaseAddress>
-        <RequestsForDelivery>
-          <RequestsForDeliveryTitle>배송시 요청사항을 선택해주세요.</RequestsForDeliveryTitle>
-          <TriangleOpenButton />
-        </RequestsForDelivery>
+        <RequestForDelivery />
       </>
-      <GrayGap />
     </>
   );
 }
-
-const RequestsForDeliveryTitle = styled.p`
-  color: ${({ theme }) => theme.colors.GRAYSCALE800};
-  ${({ theme }) => theme.fonts.body03};
-`;
-
-const TriangleOpenButton = styled(TriangleOpenIcon)`
-  margin: 0.6rem 0 0 14.1rem;
-`;
-
-const RequestsForDelivery = styled.div`
-  display: flex;
-  padding: 1rem 0 1.1rem 0.8rem;
-  margin: 1.6rem 0 3.2rem 0;
-  border: 0.1rem solid ${({ theme }) => theme.colors.HS_ORANGE500};
-  border-radius: 0.4rem;
-`;
 
 const BaseAddress = styled.p`
   margin-top: 0.4rem;

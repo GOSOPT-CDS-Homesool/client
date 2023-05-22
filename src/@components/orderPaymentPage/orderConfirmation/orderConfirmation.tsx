@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import { RightSideOpenButton } from "../../../assets";
 import { BackButtonIc } from "../../../assets";
 
 import ShippingAddress from "./shippingAddress";
