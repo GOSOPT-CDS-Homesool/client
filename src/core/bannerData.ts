@@ -1,4 +1,9 @@
-export const BANNER_DATAE = [
+interface BannerDataType {
+  id: number;
+  img: string;
+}
+
+export const BANNER_DATA: BannerDataType[] = [
   { id: 1, img: "https://homesool.s3.ap-northeast-2.amazonaws.com/banner_1.jpeg" },
   { id: 2, img: "https://homesool.s3.ap-northeast-2.amazonaws.com/banner_2.jpeg" },
   { id: 3, img: "https://homesool.s3.ap-northeast-2.amazonaws.com/banner_3.jpeg" },
