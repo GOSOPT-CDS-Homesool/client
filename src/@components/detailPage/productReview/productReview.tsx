@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 export default function ProductReview() {
   return (
-    <>
+    <ReviewContainer>
       <ReviewHeader>
         <Stars value={REVIEW_DATA.star} />
         <NameAndDate>nickname·{REVIEW_DATA.date}</NameAndDate>
@@ -17,12 +17,21 @@ export default function ProductReview() {
           <Content>{REVIEW_DATA.contents}</Content>
         </ContentWrapper>{" "}
       </ReviewBody>
-    </>
+    </ReviewContainer>
   );
 }
+const ReviewContainer = styled.section`
+  background-color: ${({ theme }) => theme.colors.GRAYSCALE100};
+  border-bottom: solid 1px;
+  border-color: ${({ theme }) => theme.colors.GRAYSCALE300};
+  margin: 0 -1.6rem;
+`;
+
 const ReviewHeader = styled.div`
-  margin-top: 1.2rem;
+  padding-top: 1.2rem;
   margin-bottom: 0.8rem;
+  margin-left: 1.6rem;
+  margin-right: 1.6rem;
   display: flex;
   align-items: center;
 `;
@@ -33,6 +42,8 @@ const NameAndDate = styled.span`
 
 const ReviewBody = styled.div`
   display: flex;
+  margin-left: 1.6rem;
+  margin-right: 1.6rem;
 `;
 const ContentWrapper = styled.div``;
 

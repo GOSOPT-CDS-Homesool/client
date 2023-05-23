@@ -9,7 +9,7 @@ export default function ProductReiviewList() {
       <ProductReviewHeader>
         <Title>상품후기(3)</Title>
         <SeeAllWrapper>
-          <p>펼쳐보기</p>
+          <p>전체보기</p>
           <SeeAllIcon />
         </SeeAllWrapper>
       </ProductReviewHeader>
