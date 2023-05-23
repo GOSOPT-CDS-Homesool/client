@@ -19,9 +19,11 @@ export default function Banner() {
   return (
     <BannerWrapper>
       <BannerImg src={BANNER_DATA.filter((banner) => banner.id === bannerId)[0]?.img} alt="배너 이미지" />
-      {[1, 2, 3, 4, 5, 6, 7].map((activateDot) => (
-        <>{activateDot === bannerId ? <PagenationSelectedDotIc /> : <PagenationDotIc />}</>
-      ))}
+      <DotWrapper>
+        {[1, 2, 3, 4, 5, 6, 7].map((activateDot) => (
+          <DotBox>{activateDot === bannerId ? <PagenationSelectedDotIc /> : <PagenationDotIc />}</DotBox>
+        ))}
+      </DotWrapper>
     </BannerWrapper>
   );
 }
@@ -34,4 +36,16 @@ const BannerImg = styled.img`
   width: 37.5rem;
 
   margin-left: -1.65rem;
+`;
+
+const DotBox = styled.i`
+  margin: 0 0.35rem;
+`;
+
+const DotWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  margin-top: -2rem;
 `;
