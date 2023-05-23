@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BANNER_DATA } from "../../core/bannerData";
 import { styled } from "styled-components";
+import { PagenationDotIc, PagenationSelectedDotIc } from "../../assets";
 
 export default function Banner() {
   const [bannerId, setBannerId] = useState<number>(1);
@@ -18,6 +19,9 @@ export default function Banner() {
   return (
     <BannerWrapper>
       <BannerImg src={BANNER_DATA.filter((banner) => banner.id === bannerId)[0]?.img} alt="배너 이미지" />
+      {[1, 2, 3, 4, 5, 6, 7].map((activateDot) => (
+        <>{activateDot === bannerId ? <PagenationSelectedDotIc /> : <PagenationDotIc />}</>
+      ))}
     </BannerWrapper>
   );
 }
