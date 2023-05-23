@@ -4,6 +4,22 @@ export { ReactComponent as MyPageUpdateProfileIc } from "./icon/myPageUpdateProf
 export { ReactComponent as MoveToSilverBannerIc } from "./icon/moveToSilverBannerIc.svg";
 export { ReactComponent as MyPageAdsIc } from "./icon/myPageAdsIc.svg";
 
+export { ReactComponent as SoldOutIc } from "./icon/sold_out.svg";
+export { ReactComponent as OneStarIc } from "./icon/star1.svg";
+export { ReactComponent as TwoStarIc } from "./icon/star2.svg";
+export { ReactComponent as ThreeStarIc } from "./icon/star3.svg";
+export { ReactComponent as FourStarIc } from "./icon/star4.svg";
+export { ReactComponent as FiveStarIc } from "./icon/star5.svg";
+export { ReactComponent as BestTagIc } from "./icon/tag_best.svg";
+export { ReactComponent as NewTagIc } from "./icon/tag_new.svg";
+export { ReactComponent as RecommendTagIc } from "./icon/tag_recommend.svg";
+export { ReactComponent as SoldOutTagIc } from "./icon/tag_soldout.svg";
+export { ReactComponent as GrayLikeIc } from "./icon/likeGray.svg";
+export { ReactComponent as OrangeLikeIc } from "./icon/likeOrange.svg";
+export { ReactComponent as TimeSaleIc } from "./icon/timesale.svg";
+export { ReactComponent as SubscribeImg } from "./image/subscribe_banner.svg";
+export { ReactComponent as SeeAllIc } from "./icon/right.svg";
+
 export { ReactComponent as DetailProductIc } from "./icon/datailProductImg.svg";
 export { ReactComponent as LikeIc } from "./icon/likeIc.svg";
 export { ReactComponent as ShareIc } from "./icon/shareIc.svg";
