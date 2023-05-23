@@ -21,7 +21,9 @@ export default function Banner() {
       <BannerImg src={BANNER_DATA.filter((banner) => banner.id === bannerId)[0]?.img} alt="배너 이미지" />
       <DotWrapper>
         {[1, 2, 3, 4, 5, 6, 7].map((activateDot) => (
-          <DotBox>{activateDot === bannerId ? <PagenationSelectedDotIc /> : <PagenationDotIc />}</DotBox>
+          <DotBox key={activateDot}>
+            {activateDot === bannerId ? <PagenationSelectedDotIc /> : <PagenationDotIc />}
+          </DotBox>
         ))}
       </DotWrapper>
     </BannerWrapper>
