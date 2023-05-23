@@ -11,21 +11,21 @@ export default function CardListHeader(props: HeaderProps) {
 
   return (
     <HeaderWrapper>
-      <h1>{title} </h1>
-      <p>{discription}</p>
+      <Title>{title} </Title>
+      <Description>{discription}</Description>
     </HeaderWrapper>
   );
 }
 
 const HeaderWrapper = styled.section`
   margin-bottom: 1.6rem;
-  h1 {
-    ${({ theme }) => theme.fonts.head01}
-    color: ${({ theme }) => theme.colors.GRAYSCALE900};
-  }
-  p {
-    margin-top: 0.4rem;
-    ${({ theme }) => theme.fonts.body02}
-    color: ${({ theme }) => theme.colors.GRAYSCALE500};
-  }
+`;
+const Title = styled.h1`
+  ${({ theme }) => theme.fonts.head01}
+  color: ${({ theme }) => theme.colors.GRAYSCALE900};
+`;
+const Description = styled.p`
+  margin-top: 0.4rem;
+  ${({ theme }) => theme.fonts.body02}
+  color: ${({ theme }) => theme.colors.GRAYSCALE500};
 `;

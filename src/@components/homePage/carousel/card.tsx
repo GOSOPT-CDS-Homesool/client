@@ -16,7 +16,7 @@ export default function Card(props: CardProps) {
   return (
     <CardWrapper>
       <ImgWrapper>
-        <img src={PRODUCT_DATA1.image} alt="이미지1" />
+        <CardImg src={PRODUCT_DATA1.image} alt="이미지1" />
         <SoldOut value={PRODUCT_DATA1.soldOut} />
         <Like value={PRODUCT_DATA1.like} />
       </ImgWrapper>
@@ -40,12 +40,11 @@ const ImgWrapper = styled.div`
   width: 14.2rem;
   height: 21.4rem;
   position: relative;
-
-  img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0.8rem;
-  }
+`;
+const CardImg = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.8rem;
 `;

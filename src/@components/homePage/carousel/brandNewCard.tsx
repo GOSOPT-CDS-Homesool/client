@@ -11,7 +11,7 @@ export default function BrandNewCard() {
   return (
     <CardWrapper>
       <ImgWrapper>
-        <img src={PRODUCT_DATA1.image} alt="이미지1" />
+        <CardImg src={PRODUCT_DATA1.image} alt="이미지1" />
       </ImgWrapper>
       <Tags value={PRODUCT_DATA1.tags} />
       <NameWrapper>{PRODUCT_DATA1.name}</NameWrapper>
@@ -36,11 +36,10 @@ const ImgWrapper = styled.div`
   width: 18.4rem;
   height: 28rem;
   position: relative;
-
-  img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+`;
+const CardImg = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
