@@ -15,5 +15,5 @@ export default function Review() {
 
 const ReviewWrapper = styled.section`
   margin-bottom: 3rem;
-  padding-left: 1.6rem;
+  margin-right: -1.6rem;
 `;

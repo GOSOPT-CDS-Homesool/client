@@ -25,6 +25,8 @@ export default function BrandNew() {
 
 const BrandNewWrapper = styled.section`
   margin-bottom: 6rem;
+  margin-left: -1.6rem;
+  margin-right: -1.6rem;
 `;
 const HeaderWrapper = styled.div`
   padding-left: 1.6rem;

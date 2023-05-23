@@ -15,5 +15,5 @@ export default function Twinkle() {
 
 const ThisMonthWrapper = styled.section`
   margin-bottom: 6rem;
-  padding-left: 1.6rem;
+  margin-right: -1.6rem;
 `;

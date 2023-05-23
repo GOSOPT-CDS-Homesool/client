@@ -14,6 +14,6 @@ export default function ThisMonth() {
 }
 
 const ThisMonthWrapper = styled.section`
-  padding-left: 1.6rem;
+  margin-right: -1.6rem;
   margin-bottom: 6rem;
 `;
