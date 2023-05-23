@@ -17,3 +17,4 @@ export { ReactComponent as GrayLikeIc } from "./icon/likeGray.svg";
 export { ReactComponent as OrangeLikeIc } from "./icon/likeOrange.svg";
 export { ReactComponent as TimeSaleIc } from "./icon/timesale.svg";
 export { ReactComponent as SubscribeImg } from "./image/subscribe_banner.svg";
+export { ReactComponent as SeeAllIc } from "./icon/right.svg";

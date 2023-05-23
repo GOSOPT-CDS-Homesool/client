@@ -1,6 +1,8 @@
 export interface ReviewDataType {
-  image: string;
+  id: number;
   title: string;
+  image: string;
   contents: string;
   star: number;
+  date: string;
 }
