@@ -5,6 +5,7 @@ import OrdererInfo from "./orderConfirmation/ordererInfo";
 import OrderProductInfo from "./orderConfirmation/orderProductInfo";
 import PaymentMethod from "./paymentConfirmation/paymentMethod";
 import DiscountCalculation from "./paymentConfirmation/ discountCalculation";
+import AmountOfPayment from "./paymentConfirmation/ amountOfPayment";
 
 export default function OrderConfirmation() {
   return (
@@ -18,6 +19,7 @@ export default function OrderConfirmation() {
       <OrderProductInfo />
       <PaymentMethod />
       <DiscountCalculation />
+      <AmountOfPayment />
     </div>
   );
 }
