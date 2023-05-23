@@ -61,3 +61,5 @@ export { ReactComponent as GrayLikeIcon } from "./icon/likeGray.svg";
 export { ReactComponent as OrangeLikeIcon } from "./icon/likeOrange.svg";
 
 export { ReactComponent as HomeHeaderIc } from "./icon/homeHeaderIc.svg";
+export { ReactComponent as PagenationDotIc } from "./icon/pagenationDotIc.svg";
+export { ReactComponent as PagenationSelectedDotIc } from "./icon/pagenationSelectedDotIc.svg";
