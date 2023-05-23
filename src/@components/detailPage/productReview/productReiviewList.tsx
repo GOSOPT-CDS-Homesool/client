@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SeeAllIc } from "../assets";
+import { SeeAllIc } from "../../../assets";
 import ProductReview from "./productReview";
 
 export default function ProductReiviewList() {
