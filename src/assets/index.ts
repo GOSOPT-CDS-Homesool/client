@@ -21,3 +21,6 @@ export { ReactComponent as CloseDetailInfoIcon } from "./icon/closeIcon.svg";
 
 export { ReactComponent as RightSideOpenButton } from "./icon/sideOpenIcon.svg";
 export { ReactComponent as TriangleOpenIcon } from "./icon/triangleOpenIc.svg";
+
+export { ReactComponent as CheckIcon } from "./icon/checkIc.svg";
+export { ReactComponent as NoneCheckIcon } from "./icon/noneCheckIc.svg";
