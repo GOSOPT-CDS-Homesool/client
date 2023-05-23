@@ -1,5 +1,5 @@
-import CardListHeader from "./cardListHeader";
-import CardList from "./cardList";
+import CardListHeader from "./carousel/cardListHeader";
+import CardList from "./carousel/cardList";
 import styled from "styled-components";
 
 import React from "react";
@@ -18,5 +18,6 @@ export default function Subscribe() {
 }
 const ThisMonthWrapper = styled.section`
   margin-bottom: 6rem;
+  padding-left: 1.6rem;
 `;
 // const SubscribeImg = styled(SubscribeImgIc)``;

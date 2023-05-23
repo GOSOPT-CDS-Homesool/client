@@ -1,5 +1,5 @@
-import CardListHeader from "./cardListHeader";
-import CardList from "./cardList";
+import CardListHeader from "./carousel/cardListHeader";
+import CardList from "./carousel/cardList";
 import styled from "styled-components";
 
 import React from "react";
@@ -14,5 +14,6 @@ export default function ThisMonth() {
 }
 
 const ThisMonthWrapper = styled.section`
+  padding-left: 1.6rem;
   margin-bottom: 6rem;
 `;
