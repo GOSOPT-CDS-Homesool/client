@@ -60,3 +60,4 @@ export { ReactComponent as SoldOutTagIcon } from "./icon/tag_soldout.svg";
 export { ReactComponent as GrayLikeIcon } from "./icon/likeGray.svg";
 export { ReactComponent as OrangeLikeIcon } from "./icon/likeOrange.svg";
 
+export { ReactComponent as HomeHeaderIc } from "./icon/homeHeaderIc.svg";
