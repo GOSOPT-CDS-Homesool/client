@@ -1,6 +1,5 @@
 declare module "*.mp3";
 declare module "*.jpg";
-declare module "*.png";
 declare module "*.jpeg";
 declare module "*.gif";
 
@@ -10,3 +9,5 @@ declare module "*.svg" {
   const src: string;
   export default src;
 }
+
+declare module "*.png";
