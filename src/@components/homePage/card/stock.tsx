@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { TimeSaleIcon } from "../../../assets";
+import { TimeSaleIc } from "../../../assets";
 
 interface StockProps {
   value: number;
@@ -11,7 +11,7 @@ export default function Stock(props: StockProps) {
   return (
     <>
       <StockWrapper>
-        <TimeSaleIcon />
+        <TimeSaleIc />
         <span>현재 남은 수량 {value}개</span>
       </StockWrapper>
     </>
@@ -31,5 +31,9 @@ const StockWrapper = styled.div`
     font-size: 0.9rem;
     line-height: 140%;
     color: ${({ theme }) => theme.colors.SYMANTIC};
+  }
+  svg {
+    position: relative;
+    top: -0.1rem;
   }
 `;

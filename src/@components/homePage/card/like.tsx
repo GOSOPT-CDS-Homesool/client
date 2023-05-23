@@ -1,5 +1,5 @@
 import React from "react";
-import { GrayLikeIcon, OrangeLikeIcon } from "../../../assets";
+import { GrayLikeIc, OrangeLikeIc } from "../../../assets";
 import styled from "styled-components";
 
 interface LikeProps {
@@ -8,10 +8,10 @@ interface LikeProps {
 
 export default function Like(props: LikeProps) {
   const { value } = props;
-  return <LikeIconIc>{value ? <OrangeLikeIcon /> : <GrayLikeIcon />}</LikeIconIc>;
+  return <LikeIcon>{value ? <OrangeLikeIc /> : <GrayLikeIc />}</LikeIcon>;
 }
 
-const LikeIconIc = styled.div`
+const LikeIcon = styled.div`
   position: absolute;
   bottom: -1.3rem;
   left: 12.6rem;

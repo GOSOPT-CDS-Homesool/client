@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { NewTagIcon } from "../../../assets";
-import { BestTagIcon } from "../../../assets";
-import { RecommendTagIcon } from "../../../assets";
-import { SoldOutTagIcon } from "../../../assets";
+import { NewTagIc } from "../../../assets";
+import { BestTagIc } from "../../../assets";
+import { RecommendTagIc } from "../../../assets";
+import { SoldOutTagIc } from "../../../assets";
 
 interface TagsProps {
   value: Array<string>;
@@ -18,10 +18,10 @@ export default function Tags(props: TagsProps) {
 
   return (
     <TagsWrapper>
-      {checkTagText("new") && <NewTagIcon />}
-      {checkTagText("best") && <BestTagIcon />}
-      {checkTagText("recommend") && <RecommendTagIcon />}
-      {checkTagText("soldout") && <SoldOutTagIcon />}
+      {checkTagText("new") && <NewTagIc />}
+      {checkTagText("best") && <BestTagIc />}
+      {checkTagText("recommend") && <RecommendTagIc />}
+      {checkTagText("soldout") && <SoldOutTagIc />}
     </TagsWrapper>
   );
 }

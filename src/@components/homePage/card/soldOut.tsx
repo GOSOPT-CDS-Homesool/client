@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SoldOutIcon } from "../../../assets";
+import { SoldOutIc } from "../../../assets";
 
 interface SoldOutProps {
   value: boolean;
@@ -8,10 +8,10 @@ interface SoldOutProps {
 
 export default function SoldOut(props: SoldOutProps) {
   const { value } = props;
-  return <SoldOutIconIc>{value && <SoldOutIcon />}</SoldOutIconIc>;
+  return <>{value && <SoldOutIcon />};</>;
 }
 
-const SoldOutIconIc = styled.div`
+const SoldOutIcon = styled(SoldOutIc)`
   width: fit-content;
   height: fit-content;
   position: absolute;

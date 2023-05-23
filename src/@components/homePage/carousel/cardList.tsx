@@ -3,8 +3,12 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+interface CardProps {
+  value: string;
+}
 
-export default function CardList() {
+export default function CardList(props: CardProps) {
+  const { value } = props;
   const settings = {
     dots: false,
     infinite: false,
@@ -35,12 +39,12 @@ export default function CardList() {
       {/* {cards.map((card, index) => (
         <Card key={index} {...card} image={images[index % images.length]} />
       ))} */}
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <Card value={value} />
+      <Card value={value} />
+      <Card value={value} />
+      <Card value={value} />
+      <Card value={value} />
+      <Card value={value} />
     </Slider>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { FiveStarIcon, FourStarIcon, OneStarIcon, ThreeStarIcon, TwoStarIcon } from "../../../assets";
+import { FiveStarIc, FourStarIc, OneStarIc, ThreeStarIc, TwoStarIc } from "../../../assets";
 
 interface StarsProps {
   value: number;
@@ -9,19 +9,19 @@ function Stars(props: StarsProps) {
   const { value } = props;
   switch (value) {
     case 1:
-      return <OneStarIcon />;
+      return <OneStarIc />;
       break;
     case 2:
-      return <TwoStarIcon />;
+      return <TwoStarIc />;
       break;
     case 3:
-      return <ThreeStarIcon />;
+      return <ThreeStarIc />;
       break;
     case 4:
-      return <FourStarIcon />;
+      return <FourStarIc />;
       break;
     default:
-      return <FiveStarIcon />;
+      return <FiveStarIc />;
       break;
   }
 }

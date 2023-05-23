@@ -7,7 +7,12 @@ import Stock from "../card/stock";
 import { PRODUCT_DATA1 } from "../../../core/productDataDH";
 import styled from "styled-components";
 
-export default function Card() {
+interface CardProps {
+  value: string;
+}
+
+export default function Card(props: CardProps) {
+  const { value } = props;
   return (
     <CardWrapper>
       <ImgWrapper>
@@ -16,7 +21,7 @@ export default function Card() {
         <Like value={PRODUCT_DATA1.like} />
       </ImgWrapper>
       <Tags value={PRODUCT_DATA1.tags} />
-      {PRODUCT_DATA1.stock && <Stock value={PRODUCT_DATA1.stock} />}
+      {value == "twinkle" && <Stock value={PRODUCT_DATA1.stock} />}
       <NameWrapper>{PRODUCT_DATA1.name}</NameWrapper>
       <Price sale={PRODUCT_DATA1.sale} price={PRODUCT_DATA1.price} />
     </CardWrapper>
