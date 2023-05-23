@@ -1,3 +1,6 @@
+import ArrowFooter from "../@components/common/arrowFooter";
+import Header from "../@components/common/header";
+import PageFooter from "../@components/common/pageFooter";
 import ProductBasicInfo from "../@components/detailPage/basicInfo/productBasicInfo";
 import DetailOrderInfo from "../@components/detailPage/detailProduct/detailOrderInfo";
 import ProductInfo from "../@components/detailPage/productDetailInfo/productInfo";
@@ -6,10 +9,13 @@ import ProductReiviewList from "../@components/detailPage/productReview/productR
 export default function Detail() {
   return (
     <>
+      <ArrowFooter />
+      <Header />
       <DetailOrderInfo />
       <ProductInfo />
       <ProductBasicInfo />
       <ProductReiviewList />
+      <PageFooter />
     </>
   );
 }
