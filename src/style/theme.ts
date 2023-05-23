@@ -75,6 +75,7 @@ const fonts = {
   roboto04: FONT({ family: false, weight: 400, size: 1.2, lineHeight: 2.16 }),
   roboto05: FONT({ family: false, weight: 500, size: 2, lineHeight: 2 }),
   roboto06: FONT({ family: false, weight: 400, size: 1.1, lineHeight: 1.76 }),
+  roboto07: FONT({ family: false, weight: 400, size: 0.8, lineHeight: 1 }),
 };
 
 export type FontsTypes = typeof fonts;

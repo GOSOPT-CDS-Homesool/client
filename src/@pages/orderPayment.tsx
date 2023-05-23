@@ -1,4 +1,4 @@
-import OrderConfirmation from "../@components/orderPaymentPage/orderConfirmation/orderConfirmation";
+import OrderConfirmation from "../@components/orderPaymentPage/orderConfirmation";
 
 export default function OrderPayment() {
   return (

@@ -1,8 +1,9 @@
 import { styled } from "styled-components";
-import { BackButtonIc } from "../../../assets";
-import ShippingAddress from "./shippingAddress";
-import OrdererInfo from "./ordererInfo";
-import OrderProductInfo from "./orderProductInfo";
+import { BackButtonIc } from "../../assets";
+import ShippingAddress from "./orderConfirmation/shippingAddress";
+import OrdererInfo from "./orderConfirmation/ordererInfo";
+import OrderProductInfo from "./orderConfirmation/orderProductInfo";
+import PaymentMethod from "./paymentConfirmation/paymentMethod";
 
 export default function OrderConfirmation() {
   return (
@@ -14,6 +15,7 @@ export default function OrderConfirmation() {
       <ShippingAddress />
       <OrdererInfo />
       <OrderProductInfo />
+      <PaymentMethod />
     </div>
   );
 }
