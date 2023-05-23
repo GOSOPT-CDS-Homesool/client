@@ -24,3 +24,15 @@ export { ReactComponent as TriangleOpenIcon } from "./icon/triangleOpenIc.svg";
 
 export { ReactComponent as CheckIcon } from "./icon/checkIc.svg";
 export { ReactComponent as NoneCheckIcon } from "./icon/noneCheckIc.svg";
+export { ReactComponent as SoldOutIcon } from "./icon/sold_out.svg";
+export { ReactComponent as OneStarIcon } from "./icon/star1.svg";
+export { ReactComponent as TwoStarIcon } from "./icon/star2.svg";
+export { ReactComponent as ThreeStarIcon } from "./icon/star3.svg";
+export { ReactComponent as FourStarIcon } from "./icon/star4.svg";
+export { ReactComponent as FiveStarIcon } from "./icon/star5.svg";
+export { ReactComponent as BestTagIcon } from "./icon/tag_best.svg";
+export { ReactComponent as NewTagIcon } from "./icon/tag_new.svg";
+export { ReactComponent as RecommendTagIcon } from "./icon/tag_recommend.svg";
+export { ReactComponent as SoldOutTagIcon } from "./icon/tag_soldout.svg";
+export { ReactComponent as GrayLikeIcon } from "./icon/likeGray.svg";
+export { ReactComponent as OrangeLikeIcon } from "./icon/likeOrange.svg";
