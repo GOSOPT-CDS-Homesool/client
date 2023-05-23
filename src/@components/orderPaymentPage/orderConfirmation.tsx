@@ -4,6 +4,7 @@ import ShippingAddress from "./orderConfirmation/shippingAddress";
 import OrdererInfo from "./orderConfirmation/ordererInfo";
 import OrderProductInfo from "./orderConfirmation/orderProductInfo";
 import PaymentMethod from "./paymentConfirmation/paymentMethod";
+import DiscountCalculation from "./paymentConfirmation/ discountCalculation";
 
 export default function OrderConfirmation() {
   return (
@@ -16,6 +17,7 @@ export default function OrderConfirmation() {
       <OrdererInfo />
       <OrderProductInfo />
       <PaymentMethod />
+      <DiscountCalculation />
     </div>
   );
 }
