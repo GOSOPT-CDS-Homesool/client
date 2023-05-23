@@ -7,8 +7,8 @@ export interface ProductDataType {
   sale: number;
   price: number;
   image: string;
-  detailImage?: string;
-  stock?: number;
+  stock: number;
+  detailImage: string;
   subscribe?: boolean;
   twinkle?: boolean;
 }

@@ -3,21 +3,22 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ReviewCard from "./reviewCard";
 
-export default function CardList() {
+export default function ReviewCardList() {
   const settings = {
     dots: false,
     infinite: false,
     arrows: false,
     speed: 400,
-    slidesToShow: 2.3,
-    slidesToScroll: 2,
+    slidesToShow: 1.6,
+    slidesToScroll: 1.6,
     responsive: [
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1.6,
+          slidesToScroll: 1.6,
         },
       },
       {
@@ -35,12 +36,11 @@ export default function CardList() {
       {/* {cards.map((card, index) => (
         <Card key={index} {...card} image={images[index % images.length]} />
       ))} */}
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <ReviewCard />
+      <ReviewCard />
+      <ReviewCard />
+      <ReviewCard />
+      <ReviewCard />
     </Slider>
   );
 }
