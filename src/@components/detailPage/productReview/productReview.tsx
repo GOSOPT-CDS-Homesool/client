@@ -1,4 +1,3 @@
-import React from "react";
 import Stars from "../../homePage/card/stars";
 import { REVIEW_DATA } from "../../../core/reviewData";
 import styled from "styled-components";

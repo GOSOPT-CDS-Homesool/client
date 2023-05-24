@@ -1,4 +1,3 @@
-import React from "react";
 import Like from "../card/like";
 import Price from "../card/price";
 import SoldOut from "../card/soldOut";

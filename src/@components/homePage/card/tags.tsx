@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { NewTagIc } from "../../../assets";
 import { BestTagIc } from "../../../assets";

@@ -2,7 +2,6 @@ import CardListHeader from "./carousel/cardListHeader";
 import CardList from "./carousel/cardList";
 import styled from "styled-components";
 
-import React from "react";
 import { SubscribeImg } from "../../assets";
 
 export default function Subscribe() {

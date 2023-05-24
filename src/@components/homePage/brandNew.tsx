@@ -1,9 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import BrandNewCard from "./carousel/brandNewCard";
-import Card from "./carousel/card";
 import CardListHeader from "./carousel/cardListHeader";
-import ReviewCard from "./carousel/reviewCard";
 export default function BrandNew() {
   return (
     <BrandNewWrapper>
