@@ -68,3 +68,4 @@ export { ReactComponent as HomeIndicatorChromeIc } from "./icon/homeIndicatorChr
 export { ReactComponent as DetailSeeAllIc } from "./icon/detailSeeAllIc.svg";
 
 export { ReactComponent as DetailEllipseIc } from "./icon/detailEllipseIc.svg";
+export { ReactComponent as DetailAskRectangleIc } from "./icon/detailAskRectangleIc.svg";
