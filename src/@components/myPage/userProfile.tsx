@@ -1,10 +1,13 @@
 import { MyPageUpdateProfileIc, MyPageUserProfileImgIc } from "../../assets";
 import { styled } from "styled-components";
-import { UserDataType } from "../../type/userDataType";
 
-export default function UserProfile(props: any) {
-  const { userData } = props;
-  const { nickName, userRank } = userData;
+interface UserProfileProps {
+  nickName: string;
+  userRank: string;
+}
+
+export default function UserProfile(props: UserProfileProps) {
+  const { nickName, userRank } = props;
 
   return (
     <UserProfileContainer>

@@ -4,9 +4,14 @@ import { USER_DATA } from "../../core/userData";
 import { styled } from "styled-components";
 import { UserDataType } from "../../type/userDataType";
 
-export default function CouponInfoBox(props: any) {
-  const { userData } = props;
-  const { point, coupon, interest } = userData;
+interface CouponInfoBoxProps {
+  point: number;
+  coupon: number;
+  interest: number;
+}
+
+export default function CouponInfoBox(props: CouponInfoBoxProps) {
+  const { point, coupon, interest } = props;
 
   return (
     <CouponInfoBoxWrapper>

@@ -39,9 +39,9 @@ export default function MyPage() {
       {userData && (
         <MyPageWrapper>
           <CommonFooter />
-          <UserProfile userData={userData} />
+          <UserProfile nickName={userData.nickName} userRank={userData.userRank} />
           <MoveToSilverBannerIcon />
-          <CouponInfoBox userData={userData} />
+          <CouponInfoBox point={userData.point} coupon={userData.coupon} interest={userData.interest} />
           <MyPageAdsIcon />
           <TotalOrderList orderList={orderList} />
           <MyShopping />
