@@ -1,6 +1,5 @@
-import React from "react";
-import { GrayLikeIc, OrangeLikeIc } from "../../../assets";
 import styled from "styled-components";
+import { GrayLikeIc, OrangeLikeIc } from "../../../assets";
 
 interface LikeProps {
   value: boolean;

@@ -1,7 +1,6 @@
-import React from "react";
-import CouponInfo from "./couponInfo";
-import { USER_DATA } from "../../core/userData";
 import { styled } from "styled-components";
+import { USER_DATA } from "../../core/userData";
+import CouponInfo from "./couponInfo";
 
 export default function CouponInfoBox() {
   return (

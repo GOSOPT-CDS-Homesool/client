@@ -1,18 +1,18 @@
+import { useState } from "react";
 import { styled } from "styled-components";
+import CommonFooter from "../@components/common/commonFooter";
+import PageFooter from "../@components/common/pageFooter";
+import CouponInfoBox from "../@components/myPage/couponInfoBox";
+import CustomerCenter from "../@components/myPage/customerCenter";
+import MyShopping from "../@components/myPage/myShopping";
+import TotalOrderList from "../@components/myPage/totalOrderList";
 import UserProfile from "../@components/myPage/userProfile";
 import { MoveToSilverBannerIc, MyPageAdsIc } from "../assets";
-import CouponInfoBox from "../@components/myPage/couponInfoBox";
-import TotalOrderList from "../@components/myPage/totalOrderList";
-import { useState } from "react";
 import { USER_DATA } from "../core/userData";
 import { OrderListType } from "../type/mypage";
-import MyShopping from "../@components/myPage/myShopping";
-import CustomerCenter from "../@components/myPage/customerCenter";
-import PageFooter from "../@components/common/pageFooter";
-import CommonFooter from "../@components/common/commonFooter";
 
 export default function MyPage() {
-  const [orderList, setOrderList] = useState<OrderListType[]>([
+  const [orderList] = useState<OrderListType[]>([
     { id: 1, orderTitle: "입금대기", orderNum: USER_DATA.waiting },
     { id: 2, orderTitle: "결제완료", orderNum: USER_DATA.finish },
     { id: 3, orderTitle: "상품준비중", orderNum: USER_DATA.ready },

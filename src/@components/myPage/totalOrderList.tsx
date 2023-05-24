@@ -1,10 +1,9 @@
-import React from "react";
+import { styled } from "styled-components";
 import { OrderListType } from "../../type/mypage";
 import Title from "../common/title";
-import { styled } from "styled-components";
 import TotalOrder from "./totalOrder";
 
-export default function TotalOrderList(props: OrderListType[]) {
+export default function TotalOrderList(props: any) {
   const { orderList } = props;
 
   return (

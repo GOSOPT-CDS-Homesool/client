@@ -1,9 +1,5 @@
-import React from "react";
 import styled from "styled-components";
-import { NewTagIc } from "../../../assets";
-import { BestTagIc } from "../../../assets";
-import { RecommendTagIc } from "../../../assets";
-import { SoldOutTagIc } from "../../../assets";
+import { BestTagIc, NewTagIc, RecommendTagIc, SoldOutTagIc } from "../../../assets";
 
 interface TagsProps {
   value: Array<string>;

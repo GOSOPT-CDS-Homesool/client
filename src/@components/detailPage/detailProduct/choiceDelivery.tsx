@@ -1,5 +1,5 @@
-import { AlertIcon, CheckButton, NonCheckButton } from "../../../assets";
 import { styled } from "styled-components";
+import { AlertIcon, CheckButton, NonCheckButton } from "../../../assets";
 
 export default function ChoiceDelivery() {
   return (
@@ -50,7 +50,7 @@ const AlertCircleIcon = styled(AlertIcon)`
 const SubscribeDeliveryText = styled.p`
   margin: 0.4rem 0 2rem 2rem;
   color: ${({ theme }) => theme.colors.GRAYSCALE500};
-  ${({ theme }) => theme.fonts.body05};
+  ${({ theme }) => theme.fonts.body04};
 `;
 
 const SubscribeDeliveryTitle = styled.p`

@@ -1,11 +1,10 @@
-import React from "react";
+import styled from "styled-components";
+import { PRODUCT_DATA1 } from "../../../core/productDataDH";
 import Like from "../card/like";
 import Price from "../card/price";
 import SoldOut from "../card/soldOut";
-import Tags from "../card/tags";
 import Stock from "../card/stock";
-import { PRODUCT_DATA1 } from "../../../core/productDataDH";
-import styled from "styled-components";
+import Tags from "../card/tags";
 
 interface CardProps {
   value: string;

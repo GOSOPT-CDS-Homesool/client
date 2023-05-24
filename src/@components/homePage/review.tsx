@@ -1,6 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-import CardList from "./carousel/cardList";
 import CardListHeader from "./carousel/cardListHeader";
 import ReviewCardList from "./carousel/reviewCardList";
 
