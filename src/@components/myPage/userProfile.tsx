@@ -1,18 +1,22 @@
 import { MyPageUpdateProfileIc, MyPageUserProfileImgIc } from "../../assets";
 import { styled } from "styled-components";
+import { UserDataType } from "../../type/userDataType";
 
-export default function UserProfile() {
+export default function UserProfile(props: any) {
+  const { userData } = props;
+  const { nickName, userRank } = userData;
+
   return (
     <UserProfileContainer>
       <MyPageUserProfileImgIc />
       <UserProfileWrapper>
         <FlexBox>
-          <Name>이호재님</Name>
+          <Name>{nickName}</Name>
           <MyPageUpdateProfileIc />
         </FlexBox>
         <RankWrapper>
           <RankTitle>이번달 등급</RankTitle>
-          <p>브론즈</p>
+          <p>{userRank}</p>
         </RankWrapper>
       </UserProfileWrapper>
     </UserProfileContainer>

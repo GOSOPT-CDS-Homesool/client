@@ -11,7 +11,7 @@ export default function DetailAsk() {
   const [length, setLength] = useState<number>(0);
 
   async function fetchDetailAsk() {
-    const response = await getDetailAsk(3);
+    const response = await getDetailAsk(1);
     setDetailAsks(response);
     setLength(response.length);
   }
