@@ -22,7 +22,8 @@ export default function ProductReiviewList() {
 }
 
 const ProductReviewHeader = styled.div`
-  margin-top: 0.9rem;
+  width: 37.5rem;
+  height: 3.6rem;
   margin-left: -1.6rem;
   margin-right: -1.6rem;
   padding-bottom: 0.9rem;

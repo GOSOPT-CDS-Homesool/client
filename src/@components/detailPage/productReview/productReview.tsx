@@ -15,11 +15,12 @@ export default function ProductReview() {
         <ContentWrapper>
           <Title>{REVIEW_DATA.title}</Title>
           <Content>{REVIEW_DATA.contents}</Content>
-        </ContentWrapper>{" "}
+        </ContentWrapper>
       </ReviewBody>
     </ReviewContainer>
   );
 }
+
 const ReviewContainer = styled.section`
   background-color: ${({ theme }) => theme.colors.GRAYSCALE100};
   border-bottom: solid 1px;
@@ -38,6 +39,13 @@ const ReviewHeader = styled.div`
 
 const NameAndDate = styled.span`
   margin-left: 0.8rem;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 140%;
+  text-align: right;
+  color: ${({ theme }) => theme.colors.GRAYSCALE500};
 `;
 
 const ReviewBody = styled.div`
@@ -49,11 +57,7 @@ const ContentWrapper = styled.div``;
 
 const Title = styled.h1`
   display: flex;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.1rem;
-  line-height: 140%;
+  ${({ theme }) => theme.fonts.body02_1};
   color: ${({ theme }) => theme.colors.GRAYSCALE900};
   margin-bottom: 0.4rem;
 `;

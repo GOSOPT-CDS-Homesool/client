@@ -1,5 +1,6 @@
 import Card from "./card";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,6 +10,7 @@ interface CardProps {
 
 export default function CardList(props: CardProps) {
   const { value } = props;
+
   const settings = {
     dots: false,
     infinite: false,
@@ -36,8 +38,8 @@ export default function CardList(props: CardProps) {
 
   return (
     <Slider {...settings}>
-      {/* {cards.map((card, index) => (
-        <Card key={index} {...card} image={images[index % images.length]} />
+      {/* {data.map((item) => (
+        <Card key={item.id} value={value} />
       ))} */}
       <Card value={value} />
       <Card value={value} />
