@@ -17,7 +17,7 @@ export default function Card(props: CardProps) {
       <ImgWrapper>
         <CardImg src={PRODUCT_DATA1.image} alt="이미지1" />
         <SoldOut value={PRODUCT_DATA1.soldOut} />
-        <Like value={PRODUCT_DATA1.like} />
+        <Like value={false} />
       </ImgWrapper>
       <Tags value={PRODUCT_DATA1.tags} />
       {value == "twinkle" && <Stock value={PRODUCT_DATA1.stock} />}

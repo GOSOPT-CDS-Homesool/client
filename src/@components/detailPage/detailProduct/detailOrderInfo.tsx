@@ -1,4 +1,12 @@
-import { DetailProductIc, LikeIc, ShareIc, BackButtonIc, OriginalHomeSoolIc } from "../../../assets";
+import {
+  DetailProductIc,
+  LikeIc,
+  ShareIc,
+  BackButtonIc,
+  OriginalHomeSoolIc,
+  OrangeLikeIc,
+  GrayLikeIc,
+} from "../../../assets";
 import { PRODUCT_DATA } from "../../../core/productData";
 import CalculateDiscount from "../../../utils/calculateDiscount";
 import { useState } from "react";
@@ -31,7 +39,7 @@ export default function DetailOrderInfo() {
         </DetailPriceContainer>
         <AddFuntionContainer>
           <ShareIc />
-          <LikeIc />
+          <LikeButton>{PRODUCT_DATA.like ? <OrangeLikeIc /> : <GrayLikeIc />}</LikeButton>
         </AddFuntionContainer>
       </DetailContentsWrapper>
       <OrderChoice soldOut={false} discountedPrice={discountedPrice} />
@@ -40,8 +48,16 @@ export default function DetailOrderInfo() {
   );
 }
 
+const LikeButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const AddFuntionContainer = styled.div`
   margin: 2rem 0 0 14rem;
+  display: flex;
+  align-items: center;
 `;
 
 const DiscountedPrice = styled.p`
