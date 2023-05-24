@@ -66,3 +66,5 @@ export { ReactComponent as PagenationSelectedDotIc } from "./icon/pagenationSele
 
 export { ReactComponent as HomeIndicatorChromeIc } from "./icon/homeIndicatorChromeIc.svg";
 export { ReactComponent as DetailSeeAllIc } from "./icon/detailSeeAllIc.svg";
+
+export { ReactComponent as DetailEllipseIc } from "./icon/detailEllipseIc.svg";
