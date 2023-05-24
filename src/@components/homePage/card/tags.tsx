@@ -3,24 +3,22 @@ import { NewTagIc } from "../../../assets";
 import { BestTagIc } from "../../../assets";
 import { RecommendTagIc } from "../../../assets";
 import { SoldOutTagIc } from "../../../assets";
+import { TagsDataType } from "../../../type/tagsDataType";
 
 interface TagsProps {
-  value: Array<string>;
+  tags: TagsDataType;
+  soldOut: boolean;
 }
 
 export default function Tags(props: TagsProps) {
-  const { value } = props;
-
-  function checkTagText(tag: string) {
-    return value.includes(tag);
-  }
+  const { tags, soldOut } = props;
 
   return (
     <TagsWrapper>
-      {checkTagText("new") && <NewTagIc />}
-      {checkTagText("best") && <BestTagIc />}
-      {checkTagText("recommend") && <RecommendTagIc />}
-      {checkTagText("soldout") && <SoldOutTagIc />}
+      {tags.newProduct && <NewTagIc />}
+      {tags.best && <BestTagIc />}
+      {tags.recommend && <RecommendTagIc />}
+      {soldOut && <SoldOutTagIc />}
     </TagsWrapper>
   );
 }
