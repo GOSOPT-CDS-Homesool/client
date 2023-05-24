@@ -11,7 +11,7 @@ export default function DetailAsk() {
   const [length, setLength] = useState<number>(0);
 
   async function fetchDetailAsk() {
-    const response = await getDetailAsk(1);
+    const response = await getDetailAsk(3);
     setDetailAsks(response);
     setLength(response.length);
   }
@@ -20,6 +20,10 @@ export default function DetailAsk() {
     fetchDetailAsk();
   }, []);
 
+  function checkAskIsZero() {
+    return length === 0;
+  }
+
   return (
     <>
       <GrayGap />
@@ -27,9 +31,13 @@ export default function DetailAsk() {
         <h1>상품문의({length})</h1>
         <DetailSeeAllIc />
       </Header>
-      {detailAsks?.map(({ userName, date, title, contents, answer }: DetailAskType, idx: number) => (
-        <DetailAskBox key={idx} userName={userName} date={date} title={title} contents={contents} answer={answer} />
-      ))}
+      {!checkAskIsZero() && (
+        <>
+          {detailAsks?.map(({ userName, date, title, contents, answer }: DetailAskType, idx: number) => (
+            <DetailAskBox key={idx} userName={userName} date={date} title={title} contents={contents} answer={answer} />
+          ))}
+        </>
+      )}
     </>
   );
 }
