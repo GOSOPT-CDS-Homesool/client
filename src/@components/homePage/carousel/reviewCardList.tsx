@@ -32,8 +32,8 @@ export default function ReviewCardList() {
 
   return (
     <Slider {...settings}>
-      {AllReviewData.map((item) => (
-        <ReviewCard key={item.id} data={item} />
+      {AllReviewData.map((item, index) => (
+        <ReviewCard key={index} data={item} />
       ))}
     </Slider>
   );

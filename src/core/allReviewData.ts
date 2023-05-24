@@ -2,7 +2,6 @@ import { AllReviewDataType } from "../type/allReviewDataType";
 
 export const AllReviewData: Array<AllReviewDataType> = [
   {
-    id: 1,
     image: "https://homesool.s3.ap-northeast-2.amazonaws.com/review_1.png",
     title: "패키지 디자인 너무 예뻐요.. ",
     contents:
@@ -10,7 +9,6 @@ export const AllReviewData: Array<AllReviewDataType> = [
     star: 5,
   },
   {
-    id: 2,
     image: "https://homesool.s3.ap-northeast-2.amazonaws.com/review_2.png",
     title: "사먹는 막걸리 맛은 안납니다",
     contents:
@@ -18,7 +16,6 @@ export const AllReviewData: Array<AllReviewDataType> = [
     star: 4,
   },
   {
-    id: 3,
     image: "https://homesool.s3.ap-northeast-2.amazonaws.com/review_3.png",
     title: "어버이날 선물로 제격입니다.",
     contents:
@@ -26,7 +23,6 @@ export const AllReviewData: Array<AllReviewDataType> = [
     star: 5,
   },
   {
-    id: 4,
     image: "https://homesool.s3.ap-northeast-2.amazonaws.com/review_4.png",
     title: "굿 !!! 느린마을 입문했네요",
     contents:
@@ -34,14 +30,12 @@ export const AllReviewData: Array<AllReviewDataType> = [
     star: 4,
   },
   {
-    id: 5,
     image: "https://homesool.s3.ap-northeast-2.amazonaws.com/review_5.png",
     title: "이 가격에 막걸리 키트를? 너무 좋아요ㅠㅠ",
     contents: "반짝홈술에 막걸리 킷 떠가지고 30% 할인하길래 바로 샀어요~ 얼른 숙성해서 혼술하고 싶네요~",
     star: 5,
   },
   {
-    id: 6,
     image: "https://homesool.s3.ap-northeast-2.amazonaws.com/review_6.png",
     title: "배송일 변경이 아쉽습니다.",
     contents:
