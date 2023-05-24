@@ -4,9 +4,10 @@ import { DetailAskType } from "../../type/detailAsk";
 import GrayGap from "../common/GrayGap";
 import { DetailSeeAllIc } from "../../assets";
 import { styled } from "styled-components";
+import DetailAskBox from "./detailAskBox";
 
 export default function DetailAsk() {
-  const [detailAsks, setDetailAsks] = useState<DetailAskType>();
+  const [detailAsks, setDetailAsks] = useState<DetailAskType[]>();
   const [length, setLength] = useState<number>(0);
 
   async function fetchDetailAsk() {
@@ -19,8 +20,6 @@ export default function DetailAsk() {
     fetchDetailAsk();
   }, []);
 
-  console.log(detailAsks);
-
   return (
     <>
       <GrayGap />
@@ -28,6 +27,9 @@ export default function DetailAsk() {
         <h1>상품문의({length})</h1>
         <DetailSeeAllIc />
       </Header>
+      {detailAsks?.map(({ userName, date, title, contents, answer }: DetailAskType, idx: number) => (
+        <DetailAskBox key={idx} userName={userName} date={date} title={title} contents={contents} answer={answer} />
+      ))}
     </>
   );
 }
