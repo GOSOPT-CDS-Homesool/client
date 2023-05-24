@@ -4,6 +4,7 @@ import { DetailAskRectangleIc, DetailEllipseIc } from "../../assets";
 
 export default function DetailAskBox(props: DetailAskType): JSX.Element {
   const { userName, date, title, contents, answer } = props;
+
   return (
     <>
       <AskBox>
@@ -17,13 +18,15 @@ export default function DetailAskBox(props: DetailAskType): JSX.Element {
         <Title>{title}지평생막걸리보다</Title>
         <Contents>{contents}</Contents>
       </AskBox>
-      <AnswerBox>
-        <AnswerAuthor>
-          <DetailAskRectangleIc />
-          <Author>관리자</Author>
-        </AnswerAuthor>
-        <Answer>{answer}</Answer>
-      </AnswerBox>
+      {answer && (
+        <AnswerBox>
+          <AnswerAuthor>
+            <DetailAskRectangleIc />
+            <Author>관리자</Author>
+          </AnswerAuthor>
+          <Answer>{answer}</Answer>
+        </AnswerBox>
+      )}
     </>
   );
 }
