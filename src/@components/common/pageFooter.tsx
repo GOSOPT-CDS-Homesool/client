@@ -1,6 +1,5 @@
-import React from "react";
-import { FooterIc } from "../../assets";
 import styled from "styled-components";
+import { FooterIc } from "../../assets";
 
 export default function PageFooter() {
   return <FooterIcon />;

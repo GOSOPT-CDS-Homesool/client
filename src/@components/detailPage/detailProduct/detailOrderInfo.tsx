@@ -1,18 +1,26 @@
-import { DetailProductIc, LikeIc, ShareIc, BackButtonIc, OriginalHomeSoolIc } from "../../../assets";
-import { PRODUCT_DATA } from "../../../core/productData";
-import CalculateDiscount from "../../../utils/calculateDiscount";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
-import OrderChoice from "./orderChoice";
+import { BackButtonIc, DetailProductIc, GrayLikeIc, OrangeLikeIc, OriginalHomeSoolIc, ShareIc } from "../../../assets";
+import { PRODUCT_DATA } from "../../../core/productData";
+import { DetailIdProps } from "../../../type/detailIdProps";
+import CalculateDiscount from "../../../utils/calculateDiscount";
 import ChoiceDelivery from "./choiceDelivery";
+import OrderChoice from "./orderChoice";
 
-export default function DetailOrderInfo() {
+export default function DetailOrderInfo(props: DetailIdProps) {
+  const { id } = props;
   const [discountedPrice] = useState(CalculateDiscount(PRODUCT_DATA.price, PRODUCT_DATA.sale));
+  const navigate = useNavigate();
+
+  function backToHome() {
+    navigate(-1);
+  }
 
   return (
     <>
       <DetailHeader>
-        <BackButtonIc />
+        <BackButtonIc onClick={backToHome} />
         <DetailTitle>상품상세</DetailTitle>
       </DetailHeader>
 
@@ -31,7 +39,7 @@ export default function DetailOrderInfo() {
         </DetailPriceContainer>
         <AddFuntionContainer>
           <ShareIc />
-          <LikeIc />
+          <LikeButton>{PRODUCT_DATA.like ? <OrangeLikeIc /> : <GrayLikeIc />}</LikeButton>
         </AddFuntionContainer>
       </DetailContentsWrapper>
       <OrderChoice soldOut={false} discountedPrice={discountedPrice} />
@@ -40,8 +48,16 @@ export default function DetailOrderInfo() {
   );
 }
 
+const LikeButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const AddFuntionContainer = styled.div`
   margin: 2rem 0 0 14rem;
+  display: flex;
+  align-items: center;
 `;
 
 const DiscountedPrice = styled.p`

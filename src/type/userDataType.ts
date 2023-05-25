@@ -1,7 +1,7 @@
 export interface UserDataType {
+  userRank: string;
   id: number;
   nickName: string;
-  rank: string;
   point: number;
   coupon: number;
   interest: number;

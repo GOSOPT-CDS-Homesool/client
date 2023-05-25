@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MyPage from "./@pages/myPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Detail from "./@pages/detail";
-import OrderPayment from "./@pages/orderPayment";
 import Home from "./@pages/home";
+import MyPage from "./@pages/myPage";
+import OrderPayment from "./@pages/orderPayment";
 
 export default function Router() {
   return (
@@ -10,7 +10,7 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/mypage" element={<MyPage />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/detail/:id" element={<Detail />} />
         <Route path="/orderPayment" element={<OrderPayment />} />
       </Routes>
     </BrowserRouter>
