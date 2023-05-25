@@ -1,9 +1,8 @@
-import React from "react";
-import { OrderListType } from "../../type/mypage";
 import { styled } from "styled-components";
+import { OrderListType } from "../../type/mypage";
 
 export default function TotalOrder(props: OrderListType) {
-  const { id, orderTitle, orderNum } = props;
+  const { orderTitle, orderNum } = props;
 
   function checkIsZero() {
     return orderNum === 0;

@@ -1,17 +1,19 @@
 import { styled } from "styled-components";
+import { DetailIdProps } from "../../../type/detailIdProps";
 import GrayGap from "../../common/GrayGap";
 import { getAlcoholData } from "../../../api/alcoholData";
 import { ProductDataType } from "../../../type/productDataType";
 import { useState, useEffect } from "react";
 
-export default function ProductInfo() {
+export default function ProductInfo(props: DetailIdProps) {
+  const { id } = props;
+
   const [open, setOpen] = useState(false);
   const [productData, setProductData] = useState<ProductDataType>();
 
   async function fetchAlcoholData() {
-    const id = 3;
     try {
-      const response = await getAlcoholData(id);
+      const response = await getAlcoholData(`${id}`);
       setProductData(response);
       console.log(response);
     } catch (error) {

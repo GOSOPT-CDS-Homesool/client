@@ -2,15 +2,26 @@ import { LikeIc, ShareIc, BackButtonIc, OriginalHomeSoolIc } from "../../../asse
 import { getAlcoholData } from "../../../api/alcoholData";
 import { ProductDataType } from "../../../type/productDataType";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
-import OrderChoice from "./orderChoice";
+import { PRODUCT_DATA } from "../../../core/productData";
+import { DetailIdProps } from "../../../type/detailIdProps";
+import CalculateDiscount from "../../../utils/calculateDiscount";
 import ChoiceDelivery from "./choiceDelivery";
+import LikeButton from "./likeButton";
+import OrderChoice from "./orderChoice";
 
-export default function DetailOrderInfo() {
+export default function DetailOrderInfo(props:DetailIdProps) {
   const [productData, setProductData] = useState<ProductDataType>();
+  const { id } = props;
+  const navigate = useNavigate();
+
+  function backToHome() {
+    navigate(-1);
+  }
 
   async function fetchAlcoholData() {
-    const id = 1;
+
     try {
       const response = await getAlcoholData(id);
       console.log(response.soldOut);
@@ -45,7 +56,7 @@ export default function DetailOrderInfo() {
             </DetailPriceContainer>
             <AddFuntionContainer>
               <ShareIc />
-              <LikeIc />
+              <LikeButtonIcon postId={`${id}`} />
             </AddFuntionContainer>
           </DetailContentsWrapper>
           <OrderChoice name={productData.name} salePrice={productData.salePrice} soldOut={productData.soldOut} />
@@ -56,9 +67,16 @@ export default function DetailOrderInfo() {
   );
 }
 
+const LikeButtonIcon = styled(LikeButton)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const AddFuntionContainer = styled.div`
   display: flex;
-  margin: 2rem 0 0 13rem;
+  align-items: center;
+  margin: 2rem 0 0 14rem;
 `;
 
 const DiscountedPrice = styled.p`

@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     vertical-align: baseline;
     font: inherit;
-    font-size: 62.5%;
+    font-size: 100%;
   }
   article, aside, details, figcaption, figure,
   footer, header, hgroup, main, menu, nav, section {
@@ -38,8 +38,6 @@ export const GlobalStyle = createGlobalStyle`
 
     width: 37.5rem;
     padding: 0 1.6rem;
-
-    border: 0.1rem solid skyblue;
   }
   menu, ol, ul {
     list-style: none;
@@ -69,7 +67,7 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
 
     font-family: sans-serif;
-    /* font-size: 62.5%; */
+    font-size: 62.5%;
     user-select: none;    
 
     display: flex;

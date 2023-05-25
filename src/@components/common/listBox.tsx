@@ -1,7 +1,10 @@
-import React from "react";
 import { styled } from "styled-components";
 
-export default function ListBox(props: string) {
+interface ListBoxProps {
+  listTitle: string;
+}
+
+export default function ListBox(props: ListBoxProps) {
   const { listTitle } = props;
 
   return <LisBoxWrapper>{listTitle}</LisBoxWrapper>;

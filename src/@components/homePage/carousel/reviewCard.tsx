@@ -1,17 +1,22 @@
-import React from "react";
 import styled from "styled-components";
-import { REVIEW_DATA } from "../../../core/reviewData";
 import Stars from "../card/stars";
+import { AllReviewDataType } from "../../../type/allReviewDataType";
 
-export default function ReviewCard() {
+interface ReviewProps {
+  key?: number;
+  data: AllReviewDataType;
+}
+
+export default function ReviewCard(props: ReviewProps) {
+  const { data } = props;
   return (
     <ReviewCardWrapper>
       <ImageWrapper>
-        <ReviewImg src={REVIEW_DATA.image} alt="리뷰이미지" />
+        <ReviewImg src={data.image} alt="리뷰이미지" />
       </ImageWrapper>
-      <Title>{REVIEW_DATA.title}</Title>
-      <Content>{REVIEW_DATA.contents}</Content>
-      <Stars value={REVIEW_DATA.star} />
+      <Title>{data.title}</Title>
+      <Content>{data.contents}</Content>
+      <Stars value={data.star} />
     </ReviewCardWrapper>
   );
 }

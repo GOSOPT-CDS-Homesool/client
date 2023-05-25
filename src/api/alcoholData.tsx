@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ProductDataType } from "../type/productDataType";
 
-export async function getAlcoholData(id: number): Promise<ProductDataType> {
+export async function getAlcoholData(id: string): Promise<ProductDataType> {
   try {
     const response = await axios.get(`https://api.homesool.p-e.kr/alcohol/${id}`);
     const data = response.data.data;
