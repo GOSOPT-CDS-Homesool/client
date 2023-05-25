@@ -3,8 +3,9 @@ import Card from "./card";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { PRODUCT_DATA2 } from "../../../core/productDataDH";
 import { ProductDataType } from "../../../type/productDataTypeDH";
+import { getAllAlcohol } from "../../../api/allAlcohol";
+import { useEffect, useState } from "react";
 
 interface CardProps {
   value: string;
@@ -12,6 +13,19 @@ interface CardProps {
 
 export default function CardList(props: CardProps) {
   const { value } = props;
+  const [allAlcohol, setAllAlcohol] = useState<Array<ProductDataType>>();
+
+  async function fetchAllAlcohol() {
+    const response = await getAllAlcohol();
+    setAllAlcohol(response);
+  }
+
+  useEffect(() => {
+    fetchAllAlcohol();
+  }, []);
+
+  console.log(allAlcohol);
+
   const settings = {
     dots: false,
     infinite: false,
@@ -40,7 +54,7 @@ export default function CardList(props: CardProps) {
 
   switch (value) {
     case "twinkle":
-      PRODUCT_DATA2.forEach((item) => {
+      allAlcohol?.forEach((item) => {
         if (item.twinkle === true) {
           filteredData.push(item);
         }
@@ -54,7 +68,7 @@ export default function CardList(props: CardProps) {
       );
       break;
     case "subscribe":
-      PRODUCT_DATA2.forEach((item) => {
+      allAlcohol?.forEach((item) => {
         if (item.twinkle === true) {
           filteredData.push(item);
         }
@@ -68,7 +82,7 @@ export default function CardList(props: CardProps) {
       );
       break;
     case "thismonth":
-      PRODUCT_DATA2.forEach((item) => {
+      allAlcohol?.forEach((item) => {
         if (item.twinkle !== true && item.subscribe !== true) {
           filteredData.push(item);
         }
