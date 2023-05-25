@@ -1,19 +1,28 @@
-import Stars from "../../homePage/card/stars";
-import { REVIEW_DATA } from "../../../core/reviewData";
 import styled from "styled-components";
+import Stars from "../../homePage/card/stars";
 
-export default function ProductReview() {
+interface ProductReviewProps {
+  title: string;
+  image: string;
+  contents: string;
+  star: number;
+  date: string;
+}
+
+export default function ProductReview(props: ProductReviewProps) {
+  const { title, image, contents, star, date } = props;
+
   return (
     <ReviewContainer>
       <ReviewHeader>
-        <Stars value={REVIEW_DATA.star} />
-        <NameAndDate>nickname·{REVIEW_DATA.date}</NameAndDate>
+        <Stars value={star} />
+        <NameAndDate>nickname · {date}</NameAndDate>
       </ReviewHeader>
       <ReviewBody>
-        <Image src={REVIEW_DATA.image} alt="후기 이미지" />
+        <Image src={image} alt="후기 이미지" />
         <ContentWrapper>
-          <Title>{REVIEW_DATA.title}</Title>
-          <Content>{REVIEW_DATA.contents}</Content>
+          <Title>{title}</Title>
+          <Content>{contents}</Content>
         </ContentWrapper>
       </ReviewBody>
     </ReviewContainer>

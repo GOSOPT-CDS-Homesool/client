@@ -1,8 +1,22 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { getDetailReview } from "../../../api/detailReview";
 import { SeeAllIc } from "../../../assets";
+import { ReviewDataType } from "../../../type/reviewDataType";
 import ProductReview from "./productReview";
 
 export default function ProductReiviewList() {
+  const [detailReviews, setDetailReviews] = useState<ReviewDataType[]>([]);
+
+  async function fetchDetailReview() {
+    const response = await getDetailReview(1);
+    setDetailReviews(response);
+  }
+
+  useEffect(() => {
+    fetchDetailReview();
+  }, []);
+
   return (
     <>
       <ProductReviewHeader>
@@ -12,9 +26,10 @@ export default function ProductReiviewList() {
           <SeeAllIcon />
         </SeeAllWrapper>
       </ProductReviewHeader>
-      <ProductReview />
-      <ProductReview />
-      <ProductReview />
+      {detailReviews?.map(({ id, title, image, contents, star, date }: ReviewDataType) => (
+        <ProductReview key={id} title={title} image={image} contents={contents} star={star} date={date} />
+      ))}
+
       <GreyGap />
     </>
   );
