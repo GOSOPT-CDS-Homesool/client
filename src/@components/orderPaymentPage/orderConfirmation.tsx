@@ -6,21 +6,39 @@ import OrderProductInfo from "./orderConfirmation/orderProductInfo";
 import PaymentMethod from "./paymentConfirmation/paymentMethod";
 import DiscountCalculation from "./paymentConfirmation/ discountCalculation";
 import AmountOfPayment from "./paymentConfirmation/ amountOfPayment";
+import { UserDataType } from "../../type/userDataType";
+import { useState, useEffect } from "react";
+import { getUserData } from "../../api/userData";
 
 export default function OrderConfirmation() {
+  const [userData, setUserData] = useState<UserDataType>();
+
+  async function fetchUserData() {
+    const response = await getUserData();
+    setUserData(response);
+  }
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
   return (
-    <div>
-      <DetailHeader>
-        <BackButtonIcon />
-        <DetailTitle>주문/결제</DetailTitle>
-      </DetailHeader>
-      <ShippingAddress />
-      <OrdererInfo />
-      <OrderProductInfo />
-      <PaymentMethod />
-      <DiscountCalculation />
-      <AmountOfPayment />
-    </div>
+    <>
+      {userData && (
+        <>
+          <DetailHeader>
+            <BackButtonIcon />
+            <DetailTitle>주문/결제</DetailTitle>
+          </DetailHeader>
+          <ShippingAddress address={userData.address} />
+          <OrdererInfo nickName={userData.nickName} phoneNumber={userData.phoneNumber} />
+          <OrderProductInfo />
+          <PaymentMethod />
+          <DiscountCalculation />
+          <AmountOfPayment />
+        </>
+      )}
+    </>
   );
 }
 

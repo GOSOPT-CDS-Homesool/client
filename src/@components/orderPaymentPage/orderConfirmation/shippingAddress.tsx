@@ -2,7 +2,13 @@ import { RightSideOpenButton } from "../../../assets";
 import { styled } from "styled-components";
 import RequestForDelivery from "./requestForDelivery";
 
-export default function ShippingAddress() {
+interface UserAddressProps {
+  address: string;
+}
+
+export default function ShippingAddress(props: UserAddressProps) {
+  const { address } = props;
+
   return (
     <>
       <ShippingAddressHeaderContainer>
@@ -14,9 +20,7 @@ export default function ShippingAddress() {
       </ShippingAddressHeaderContainer>
       <>
         <BaseAddressTitle>기본배송지</BaseAddressTitle>
-        <BaseAddress>
-          부산광역시 강서구 녹산산단382로14번가길 10~29번지광주전남공동혁신도시빛가람대방엘리움로얄카운티광주까지
-        </BaseAddress>
+        <BaseAddress>{address}</BaseAddress>
         <RequestForDelivery />
       </>
     </>

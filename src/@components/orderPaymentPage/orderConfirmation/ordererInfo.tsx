@@ -2,12 +2,21 @@ import { styled } from "styled-components";
 import { RightSideOpenButton } from "../../../assets";
 import GrayGap from "../../common/GrayGap";
 
-export default function OrdererInfo() {
+interface UserProfileProps {
+  nickName: string;
+  phoneNumber: string;
+}
+
+export default function OrdererInfo(props: UserProfileProps) {
+  const { nickName, phoneNumber } = props;
+
   return (
     <>
       <OrdererInfoContainer>
         <HeaderTitle>주문자</HeaderTitle>
-        <OrdererInfomation>이호재 010-1234-5678</OrdererInfomation>
+        <OrdererInfomation>
+          {nickName} {phoneNumber}
+        </OrdererInfomation>
         <RightSideOpenIcon />
       </OrdererInfoContainer>
       <GrayGap />
