@@ -1,9 +1,10 @@
-import { ThemeProvider } from "styled-components";
 import React from "react";
-import { theme } from "./style/theme";
-import { GlobalStyle } from "./style/globalStyle";
+import { RecoilRoot } from "recoil";
+import { ThemeProvider } from "styled-components";
+import Top from "./@components/common/top";
 import Router from "./Router";
-import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from "recoil";
+import { GlobalStyle } from "./style/globalStyle";
+import { theme } from "./style/theme";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <RecoilRoot>
           <ThemeProvider theme={theme}>
             <GlobalStyle />
+            <Top />
             <Router />
           </ThemeProvider>
         </RecoilRoot>
