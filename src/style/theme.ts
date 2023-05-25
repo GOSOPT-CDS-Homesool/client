@@ -66,6 +66,7 @@ const fonts = {
   body02_1: FONT({ family: true, weight: 500, size: 1.1, lineHeight: 1.76 }),
   body03: FONT({ family: true, weight: 400, size: 1.1, lineHeight: 1.9 }),
   body04: FONT({ family: true, weight: 400, size: 1.1, lineHeight: 1.7 }),
+  body05: FONT({ family: true, weight: 500, size: 0.9, lineHeight: 1.2 }),
 
   caption01: FONT({ family: true, weight: 500, size: 1, lineHeight: 1 }),
   caption02: FONT({ family: true, weight: 500, size: 1, lineHeight: 1.6 }),
@@ -77,6 +78,7 @@ const fonts = {
   roboto05: FONT({ family: false, weight: 500, size: 2, lineHeight: 2 }),
   roboto06: FONT({ family: false, weight: 400, size: 1.1, lineHeight: 1.76 }),
   roboto07: FONT({ family: false, weight: 400, size: 0.8, lineHeight: 1 }),
+  head03: FONT({ family: true, weight: 700, size: 1.3, lineHeight: 1.8 }),
 };
 
 export type FontsTypes = typeof fonts;

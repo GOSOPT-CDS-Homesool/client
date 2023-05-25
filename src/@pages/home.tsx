@@ -1,20 +1,25 @@
-import React from "react";
+import CommonFooter from "../@components/common/commonFooter";
+import Header from "../@components/common/header";
+import PageFooter from "../@components/common/pageFooter";
+import Banner from "../@components/homePage/banner";
 import BrandNew from "../@components/homePage/brandNew";
 import Review from "../@components/homePage/review";
 import Subscribe from "../@components/homePage/subscribe";
 import ThisMonth from "../@components/homePage/thisMonth";
 import Twinkle from "../@components/homePage/twinkle";
-import Header from "../@components/common/header";
 
 export default function Home() {
   return (
     <>
       <Header />
+      <Banner />
       <ThisMonth />
       <Twinkle />
       <Subscribe />
       <BrandNew />
       <Review />
+      <PageFooter />
+      <CommonFooter />
     </>
   );
 }

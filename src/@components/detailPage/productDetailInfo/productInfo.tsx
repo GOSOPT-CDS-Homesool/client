@@ -1,10 +1,13 @@
-import ProductDetailClose from "../../../assets/image/closeProductInfoImg.png";
-import ProductDetailOpen from "../../../assets/image/openProductInfoImg.png";
 import { useState } from "react";
 import { styled } from "styled-components";
+import ProductDetailClose from "../../../assets/image/closeProductInfoImg.png";
+import ProductDetailOpen from "../../../assets/image/openProductInfoImg.png";
+import { DetailIdProps } from "../../../type/detailIdProps";
 import GrayGap from "../../common/GrayGap";
 
-export default function ProductInfo() {
+export default function ProductInfo(props: DetailIdProps) {
+  const { id } = props;
+
   const [open, setOpen] = useState(false);
 
   function openDetailInfo() {

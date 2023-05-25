@@ -1,10 +1,11 @@
-import { useState } from "react";
 import { CommonFooterIc, FooterHomeActiveIc, FooterHomeIc, FooterMyActiveIc, FooterMyIc } from "../../assets";
 import { styled } from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { isHomePage } from "../../recoil/page";
 
 export default function CommonFooter() {
-  const [isHome, setIsHome] = useState<boolean>(false);
+  const [isHome, setIsHome] = useRecoilState<boolean>(isHomePage);
   const navigate = useNavigate();
 
   function activateHome() {
