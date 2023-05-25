@@ -1,14 +1,3 @@
-import {
-  DetailProductIc,
-  LikeIc,
-  ShareIc,
-  BackButtonIc,
-  OriginalHomeSoolIc,
-  OrangeLikeIc,
-  GrayLikeIc,
-} from "../../../assets";
-import { PRODUCT_DATA } from "../../../core/productData";
-import CalculateDiscount from "../../../utils/calculateDiscount";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
