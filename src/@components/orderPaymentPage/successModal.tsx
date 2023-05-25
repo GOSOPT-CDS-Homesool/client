@@ -37,7 +37,8 @@ const ModalLayOut = styled.div`
   align-items: center;
 
   position: absolute;
-  z-index: 5;
+  top: 0;
+  z-index: 1;
   width: 37.5rem;
   height: 100vh;
 
