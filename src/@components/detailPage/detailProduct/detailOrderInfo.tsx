@@ -1,47 +1,65 @@
 import { DetailProductIc, LikeIc, ShareIc, BackButtonIc, OriginalHomeSoolIc } from "../../../assets";
-import { PRODUCT_DATA } from "../../../core/productData";
-import CalculateDiscount from "../../../utils/calculateDiscount";
-import { useState } from "react";
+
+import { getAlcoholData } from "../../../api/alcoholApi";
+import { ProductDataType } from "../../../type/productDataType";
+import { useState, useEffect } from "react";
 import { styled } from "styled-components";
-import OrderChoice from "./orderChoice";
+// import OrderChoice from "./orderChoice";
 import ChoiceDelivery from "./choiceDelivery";
 
 export default function DetailOrderInfo() {
-  const [discountedPrice] = useState(CalculateDiscount(PRODUCT_DATA.price, PRODUCT_DATA.sale));
+  const [productData, setProductData] = useState<ProductDataType>();
+
+  async function fetchAlcoholData() {
+    const id = 3;
+    try {
+      const response = await getAlcoholData(id);
+      setProductData(response);
+      console.log(response);
+    } catch (error) {
+      console.error("데이터 패치 중 오류 발생:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchAlcoholData();
+  }, []);
 
   return (
     <>
-      <DetailHeader>
-        <BackButtonIc />
-        <DetailTitle>상품상세</DetailTitle>
-      </DetailHeader>
-
-      <DetailImage />
-
-      <DetailProductContainer>
-        <OriginalHomeSoolIc />
-        <ProductName>{PRODUCT_DATA.name}</ProductName>
-      </DetailProductContainer>
-
-      <DetailContentsWrapper>
-        <DetailPriceContainer>
-          <ProductPrice>{PRODUCT_DATA.price}원</ProductPrice>
-          <ProductSale>{PRODUCT_DATA.sale}%</ProductSale>
-          <DiscountedPrice>{discountedPrice}원</DiscountedPrice>
-        </DetailPriceContainer>
-        <AddFuntionContainer>
-          <ShareIc />
-          <LikeIc />
-        </AddFuntionContainer>
-      </DetailContentsWrapper>
-      <OrderChoice soldOut={false} discountedPrice={discountedPrice} />
-      <ChoiceDelivery />
+      {productData && (
+        <>
+          <DetailHeader>
+            <BackButtonIc />
+            <DetailTitle>상품상세</DetailTitle>
+          </DetailHeader>
+          <DetailImage src={productData.detailImage} alt="제품상세이미지"></DetailImage>
+          <DetailProductContainer>
+            <OriginalHomeSoolIc />
+            <ProductName>{productData.name}</ProductName>
+          </DetailProductContainer>
+          <DetailContentsWrapper>
+            <DetailPriceContainer>
+              <ProductPrice>{productData.price}원</ProductPrice>
+              <ProductSale>{productData.sale}%</ProductSale>
+              <DiscountedPrice>{productData.salePrice}원</DiscountedPrice>
+            </DetailPriceContainer>
+            <AddFuntionContainer>
+              <ShareIc />
+              <LikeIc />
+            </AddFuntionContainer>
+          </DetailContentsWrapper>
+          {/* <OrderChoice /> */}
+          <ChoiceDelivery />
+        </>
+      )}
     </>
   );
 }
 
 const AddFuntionContainer = styled.div`
-  margin: 2rem 0 0 14rem;
+  display: flex;
+  margin: 2rem 0 0 13rem;
 `;
 
 const DiscountedPrice = styled.p`
@@ -64,6 +82,7 @@ const ProductPrice = styled.p`
 
 const DetailPriceContainer = styled.div`
   display: flex;
+  width: 100%;
   margin-top: 2.2rem;
 `;
 
@@ -91,6 +110,8 @@ const DetailHeader = styled.header`
   margin-top: 0.8rem;
 `;
 
-const DetailImage = styled(DetailProductIc)`
+const DetailImage = styled.img`
+  width: 37.5rem;
+  height: 56rem;
   margin: 1.3rem 0 0 -1.6rem;
 `;

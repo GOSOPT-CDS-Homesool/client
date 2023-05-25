@@ -17,23 +17,23 @@ export default function AmountOfPayment() {
       <HeaderTitle>결제금액</HeaderTitle>
       <OneLineContainer>
         <TextTitle>총 상품 금액</TextTitle>
-        <TextTitle className="counting">+13,320원</TextTitle>
+        <TextTitle>+13,320원</TextTitle>
       </OneLineContainer>
       <OneLineContainer>
         <TextTitle>배송비</TextTitle>
-        <TextTitle className="counting">+0원</TextTitle>
+        <TextTitle>+0원</TextTitle>
       </OneLineContainer>
       <OneLineContainer>
         <TextTitle>포인트 사용</TextTitle>
-        <TextTitle className="counting">+0원</TextTitle>
+        <TextTitle>+0원</TextTitle>
       </OneLineContainer>
       <OneLineContainer>
         <TextTitle>쿠폰사용</TextTitle>
-        <TextTitle className="counting">+0원</TextTitle>
+        <TextTitle>+0원</TextTitle>
       </OneLineContainer>
       <FinalLineContainer>
         <FinalPaymentText>최종결제금액</FinalPaymentText>
-        <FinalPaymentText className="counting">+13,320원</FinalPaymentText>
+        <FinalPaymentText>+13,320원</FinalPaymentText>
       </FinalLineContainer>
 
       <CheckAgreementContainer>
@@ -84,14 +84,12 @@ const CheckAgreementText = styled.p`
 
 const OneLineContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   margin-top: 1rem;
-  .counting {
-    position: absolute;
-    right: 23rem;
-  }
 `;
 const FinalLineContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   padding-top: 2rem;
   margin: 2.2rem 0 2.8rem 0;
   border-top: 0.3rem solid ${({ theme }) => theme.colors.GRAYSCALE400};
