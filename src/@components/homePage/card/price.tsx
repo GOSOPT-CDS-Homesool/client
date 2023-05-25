@@ -1,23 +1,28 @@
-import React from "react";
 import styled from "styled-components";
 
 interface PriceProps {
   sale: number;
-  price: number;
+  price: string;
+  salePrice: string;
 }
 
 export default function Price(props: PriceProps) {
-  const { sale, price } = props;
-  function checkSalePrice(price: number, sale: number) {
-    return price - (price * sale) / 100;
+  const { sale, price, salePrice } = props;
+  if (sale === 0) {
+    return (
+      <PriceWrapper>
+        <SalePrice>{salePrice}원</SalePrice>
+      </PriceWrapper>
+    );
+  } else {
+    return (
+      <PriceWrapper>
+        <Discount>{sale}%</Discount>
+        <SalePrice>{salePrice}원</SalePrice>
+        <OriginPrice>{price}원</OriginPrice>
+      </PriceWrapper>
+    );
   }
-  return (
-    <PriceWrapper>
-      <Discount>{sale}%</Discount>
-      <SalePrice>{checkSalePrice(price, sale)}원</SalePrice>
-      <OriginPrice>{price}원</OriginPrice>
-    </PriceWrapper>
-  );
 }
 
 const PriceWrapper = styled.div`
@@ -56,4 +61,6 @@ const OriginPrice = styled.span`
   font-size: 8px;
   line-height: 160%;
   color: ${({ theme }) => theme.colors.GRAYSCALE500};
+  text-decoration: line-through;
+  text-decoration-color: ${({ theme }) => theme.colors.GRAYSCALE500};
 `;

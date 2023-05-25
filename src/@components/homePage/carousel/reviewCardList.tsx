@@ -1,9 +1,8 @@
-import Card from "./card";
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ReviewCard from "./reviewCard";
+import { AllReviewData } from "../../../core/allReviewData";
 
 export default function ReviewCardList() {
   const settings = {
@@ -33,14 +32,9 @@ export default function ReviewCardList() {
 
   return (
     <Slider {...settings}>
-      {/* {cards.map((card, index) => (
-        <Card key={index} {...card} image={images[index % images.length]} />
-      ))} */}
-      <ReviewCard />
-      <ReviewCard />
-      <ReviewCard />
-      <ReviewCard />
-      <ReviewCard />
+      {AllReviewData.map((item, index) => (
+        <ReviewCard key={index} data={item} />
+      ))}
     </Slider>
   );
 }

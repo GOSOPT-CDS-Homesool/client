@@ -2,8 +2,6 @@ import CardListHeader from "./carousel/cardListHeader";
 import CardList from "./carousel/cardList";
 import styled from "styled-components";
 
-import React from "react";
-
 export default function ThisMonth() {
   return (
     <ThisMonthWrapper>
