@@ -7,8 +7,8 @@ export default function SuccessModal() {
         <Modal>
           <Message>결제가 완료되었습니다!</Message>
           <ButtonWrapper>
-            <Button isOrange={false}>홈으로 가기</Button>
-            <Button isOrange={true}>주문정보 확인</Button>
+            <Button $isOrange={false}>홈으로 가기</Button>
+            <Button $isOrange={true}>주문정보 확인</Button>
           </ButtonWrapper>
         </Modal>
       </ModalLayOut>
@@ -36,24 +36,39 @@ const Modal = styled.section`
   height: 17.5rem;
 
   border-radius: 1.4rem;
+
+  overflow: hidden;
+
+  background-color: ${({ theme }) => theme.colors.GRAYSCALE000};
 `;
 
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
 
   height: 100%;
 `;
 
-const Button = styled.button<{ isOrange: boolean }>`
+const Button = styled.button<{ $isOrange: boolean }>`
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  background-color: ${({ isOrange, theme }) => (isOrange ? theme.colors.HS_YEOLLOW500 : theme.colors.GRAYSCALE300)};
+  width: 15rem;
+  height: 5.4rem;
+
+  color: ${({ $isOrange, theme }) => ($isOrange ? theme.colors.GRAYSCALE000 : theme.colors.GRAYSCALE800)};
+  background-color: ${({ $isOrange, theme }) => ($isOrange ? theme.colors.HS_ORANGE500 : theme.colors.GRAYSCALE300)};
   ${({ theme }) => theme.fonts.body01}
 `;
 
 const Message = styled.h1`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 12.5rem;
+
   ${({ theme }) => theme.fonts.head01}
 `;
