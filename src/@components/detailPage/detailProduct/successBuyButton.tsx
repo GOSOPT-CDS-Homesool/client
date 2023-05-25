@@ -15,7 +15,6 @@ export default function SuccessBuyButton(props: ProductInfoProps) {
 
   function goToBuy() {
     setVisible(true);
-    console.log(soldOut);
   }
 
   return (

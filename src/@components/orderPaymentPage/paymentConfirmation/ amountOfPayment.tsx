@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { useState } from "react";
 import { CheckIcon, NoneCheckIcon } from "../../../assets";
 import { ProductDataType } from "../../../type/productDataType";
+import { purchaseSuccess } from "../../../api/postPurchaseData";
 
 export default function AmountOfPayment(props: ProductDataType) {
   const { salePrice } = props;
@@ -12,6 +13,18 @@ export default function AmountOfPayment(props: ProductDataType) {
   }
   function ClickNoneCheckButton() {
     setCheck(false);
+  }
+
+  async function handlePayment() {
+    const purchaseData = {
+      result: true,
+    };
+    try {
+      const response = await purchaseSuccess(purchaseData);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
@@ -45,7 +58,7 @@ export default function AmountOfPayment(props: ProductDataType) {
           동의합니다.
         </CheckAgreementText>
       </CheckAgreementContainer>
-      <PaymentButton>{salePrice}원 결제하기</PaymentButton>
+      <PaymentButton onClick={handlePayment}>{salePrice}원 결제하기</PaymentButton>
     </>
   );
 }
