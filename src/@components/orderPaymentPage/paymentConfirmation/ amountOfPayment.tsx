@@ -1,12 +1,17 @@
-import { styled } from "styled-components";
 import { useState } from "react";
-import { CheckIcon, NoneCheckIcon } from "../../../assets";
-import { ProductDataType } from "../../../type/productDataType";
+import { styled } from "styled-components";
 import { purchaseSuccess } from "../../../api/postPurchaseData";
+import { CheckIcon, NoneCheckIcon } from "../../../assets";
+import SuccessModal from "../successModal";
 
-export default function AmountOfPayment(props: ProductDataType) {
+interface AmountOfPayment {
+  salePrice: number;
+}
+
+export default function AmountOfPayment(props: AmountOfPayment) {
   const { salePrice } = props;
   const [check, setCheck] = useState(false);
+  const [open, setOpen] = useState(false);
 
   function ClickCheckButton() {
     setCheck(true);
@@ -22,6 +27,7 @@ export default function AmountOfPayment(props: ProductDataType) {
     try {
       const response = await purchaseSuccess(purchaseData);
       console.log(response.data);
+      setOpen(true);
     } catch (error) {
       console.error(error);
     }
@@ -29,6 +35,7 @@ export default function AmountOfPayment(props: ProductDataType) {
 
   return (
     <>
+      {open && <SuccessModal />}
       <HeaderTitle>결제금액</HeaderTitle>
       <OneLineContainer>
         <TextTitle>총 상품 금액</TextTitle>

@@ -52,7 +52,7 @@ export default function OrderProductInfo(props: OrderProductInfoProps) {
           <GrayGap />
           <PaymentMethod />
           <DiscountCalculation coupon={coupon} point={point} />
-          <AmountOfPayment salePrice={productData.salePrice} />
+          <AmountOfPayment salePrice={productData?.salePrice} />
         </>
       )}
     </>
