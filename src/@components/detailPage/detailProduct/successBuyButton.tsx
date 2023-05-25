@@ -14,7 +14,6 @@ interface ProductInfoProps {
 export default function SuccessBuyButton(props: ProductInfoProps) {
   const { soldOut, salePrice, name, id } = props;
   const [visible, setVisible] = useState(false);
-  const [clickCnt, setClickCnt] = useState(0);
   const navigate = useNavigate();
 
   function toggleUp() {
@@ -26,24 +25,6 @@ export default function SuccessBuyButton(props: ProductInfoProps) {
     console.log("buy");
     navigate("/order-payment", { state: id });
   }
-  // useEffect(() => {
-  //   isClickCntOne() && setVisible(true);
-  //   // isClickCntTwo() && navigate("/order-payment", { state: id });
-  // }, [clickCnt]);
-
-  // useEffect(() => {
-  //   visible && setClickCnt(2);
-  // }, [visible]);
-
-  // function isClickCntOne() {
-  //   return clickCnt === 1;
-  // }
-
-  // function isClickCntTwo() {
-  //   return clickCnt === 2;
-  // }
-
-  // console.log(clickCnt);
 
   return (
     <ChoiceOrderButtonWrapper>
