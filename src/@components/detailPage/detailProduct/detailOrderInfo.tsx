@@ -1,18 +1,11 @@
-import {
-  DetailProductIc,
-  LikeIc,
-  ShareIc,
-  BackButtonIc,
-  OriginalHomeSoolIc,
-  OrangeLikeIc,
-  GrayLikeIc,
-} from "../../../assets";
+import { DetailProductIc, ShareIc, BackButtonIc, OriginalHomeSoolIc } from "../../../assets";
 import { PRODUCT_DATA } from "../../../core/productData";
 import CalculateDiscount from "../../../utils/calculateDiscount";
 import { useState } from "react";
 import { styled } from "styled-components";
 import OrderChoice from "./orderChoice";
 import ChoiceDelivery from "./choiceDelivery";
+import LikeButton from "./likeButton";
 
 export default function DetailOrderInfo() {
   const [discountedPrice] = useState(CalculateDiscount(PRODUCT_DATA.price, PRODUCT_DATA.sale));
@@ -39,7 +32,7 @@ export default function DetailOrderInfo() {
         </DetailPriceContainer>
         <AddFuntionContainer>
           <ShareIc />
-          <LikeButton>{PRODUCT_DATA.like ? <OrangeLikeIc /> : <GrayLikeIc />}</LikeButton>
+          <LikeButtonIcon postId={1} />
         </AddFuntionContainer>
       </DetailContentsWrapper>
       <OrderChoice soldOut={false} discountedPrice={discountedPrice} />
@@ -48,14 +41,14 @@ export default function DetailOrderInfo() {
   );
 }
 
-const LikeButton = styled.button`
+const LikeButtonIcon = styled(LikeButton)`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const AddFuntionContainer = styled.div`
-  margin: 2rem 0 0 14rem;
+  margin: 5rem 0 0 14rem;
   display: flex;
   align-items: center;
 `;

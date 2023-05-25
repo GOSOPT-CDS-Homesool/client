@@ -8,9 +8,9 @@ export default function Subscribe() {
   return (
     <SubscribeWrapper>
       <CardListHeader title="구독홈술" discription="간편한 정기구독으로 즐기는 진짜 홈술라이프" />
+      <SubscribeImgBanner />
       {/* <img src="../../assets/image/subscribe_banner.svg" alt="구독홈술 안내배너" /> */}
       {/* 왜 이건 안되지...? */}
-      <SubscribeImgBanner />
       <CardList value="subscribe" />
     </SubscribeWrapper>
   );
