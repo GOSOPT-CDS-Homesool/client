@@ -16,17 +16,20 @@ export default function SuccessBuyButton(props: ProductInfoProps) {
   const [visible, setVisible] = useState(false);
   const [clickCnt, setClickCnt] = useState(0);
   const navigate = useNavigate();
+  let count = 0;
 
-  function goToBuy() {
+  function toggleUp() {
     setVisible(!visible);
+    count += 1;
+    console.log("qksjdfkdfj");
     setClickCnt(clickCnt + 1);
   }
 
   useEffect(() => {
-    visible && navigate("/orderPayment", { state: id });
-    console.log(visible);
-    console.log(clickCnt);
+    count === 2 && navigate("/orderPayment", { state: id });
   }, [visible]);
+
+  console.log(count);
 
   return (
     <ChoiceOrderButtonWrapper>
@@ -37,7 +40,7 @@ export default function SuccessBuyButton(props: ProductInfoProps) {
         </>
       )}
       <AddToCartButton>장바구니 담기</AddToCartButton>
-      <BuyButton onClick={goToBuy}>바로구매</BuyButton>
+      <BuyButton onClick={toggleUp}>바로구매</BuyButton>
     </ChoiceOrderButtonWrapper>
   );
 }

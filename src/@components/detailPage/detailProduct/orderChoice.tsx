@@ -10,7 +10,6 @@ interface ProductInfoProps {
 }
 export default function OrderChoice(props: ProductInfoProps) {
   const { soldOut, salePrice, name, id } = props;
-  // console.log(soldOut);
 
   return (
     <OrderChoiceWrapper>
