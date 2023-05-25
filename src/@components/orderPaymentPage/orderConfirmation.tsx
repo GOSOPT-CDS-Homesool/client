@@ -17,7 +17,7 @@ export default function OrderConfirmation(props: OrderConfirmationProps) {
   const [userData, setUserData] = useState<UserDataType>();
 
   async function fetchUserData() {
-    const response = await getUserData(id);
+    const response = await getUserData("1");
     setUserData(response);
   }
 
@@ -35,7 +35,7 @@ export default function OrderConfirmation(props: OrderConfirmationProps) {
           </DetailHeader>
           <ShippingAddress address={userData.address} />
           <OrdererInfo nickName={userData.nickName} phoneNumber={userData.phoneNumber} />
-          <OrderProductInfo />
+          <OrderProductInfo coupon={userData.coupon} point={userData.point} id={id} />
         </>
       )}
     </>

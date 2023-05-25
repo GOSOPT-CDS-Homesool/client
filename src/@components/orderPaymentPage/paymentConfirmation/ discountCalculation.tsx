@@ -2,17 +2,24 @@ import { styled } from "styled-components";
 import { RightSideOpenButton } from "../../../assets";
 import GrayGap from "../../common/GrayGap";
 
-export default function DiscountCalculation() {
+interface DiscountCalculationProps {
+  coupon: number;
+  point: number;
+}
+
+export default function DiscountCalculation(props: DiscountCalculationProps) {
+  const { coupon, point } = props;
+
   return (
     <>
       <CouponContainer>
         <HeaderTitle>쿠폰</HeaderTitle>
-        <Count>0개</Count>
+        <Count>{coupon}개</Count>
       </CouponContainer>
       <RightSideOpenIcon />
       <PointContainer>
         <PointHeaderTitle>포인트</PointHeaderTitle>
-        <Count>0원</Count>
+        <Count>{point}원</Count>
       </PointContainer>
       <RightSideOpenIcon />
       <GrayGap />

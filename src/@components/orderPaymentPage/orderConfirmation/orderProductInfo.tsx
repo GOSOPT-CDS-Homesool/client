@@ -1,18 +1,26 @@
+import { useEffect, useState } from "react";
+import { styled } from "styled-components";
 import { getAlcoholData } from "../../../api/alcoholData";
 import { ProductDataType } from "../../../type/productDataType";
-import { useState, useEffect } from "react";
-import { styled } from "styled-components";
 import GrayGap from "../../common/GrayGap";
-import PaymentMethod from "../paymentConfirmation/paymentMethod";
-import DiscountCalculation from "../paymentConfirmation/ discountCalculation";
 import AmountOfPayment from "../paymentConfirmation/ amountOfPayment";
+import DiscountCalculation from "../paymentConfirmation/ discountCalculation";
+import PaymentMethod from "../paymentConfirmation/paymentMethod";
 
-export default function OrderProductInfo() {
+interface OrderProductInfoProps {
+  coupon: number;
+  point: number;
+  id: string;
+}
+
+export default function OrderProductInfo(props: OrderProductInfoProps) {
+  const { coupon, point, id } = props;
+
   const [productData, setProductData] = useState<ProductDataType>();
   async function fetchAlcoholData() {
-    const id = 3;
+    // const id = 3;
     try {
-      const response = await getAlcoholData(id);
+      const response = await getAlcoholData(`${id}`);
       setProductData(response);
       console.log(response);
     } catch (error) {
@@ -43,7 +51,7 @@ export default function OrderProductInfo() {
           </OrderProductInfoWrapper>
           <GrayGap />
           <PaymentMethod />
-          <DiscountCalculation />
+          <DiscountCalculation coupon={coupon} point={point} />
           <AmountOfPayment salePrice={productData.salePrice} />
         </>
       )}

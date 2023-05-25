@@ -18,24 +18,24 @@ export default function SuccessBuyButton(props: ProductInfoProps) {
   const navigate = useNavigate();
 
   function goToBuy() {
-    setVisible(true);
-
-    // setClickCnt((prev) => prev + 1);
-
-    clickCnt === 2 && navigate(`/orderPayment`, { state: id });
+    setVisible(!visible);
+    setClickCnt(clickCnt + 1);
   }
 
   useEffect(() => {
-    visible && setClickCnt(clickCnt + 1);
-    clickCnt === 2 && navigate(`/orderPayment`, { state: id });
-    // clickCnt === 2 && navigate(`/orderPayment`, { state: id });
-    // console.log(clickCnt);
+    visible && navigate("/orderPayment", { state: id });
+    console.log(visible);
+    console.log(clickCnt);
   }, [visible]);
 
   return (
     <ChoiceOrderButtonWrapper>
-      {visible && <OrderContents name={name} soldOut={soldOut} salePrice={salePrice} />}
-      {visible && <OrderChoice soldOut={soldOut} salePrice={salePrice} id={id} />}
+      {visible && (
+        <>
+          <OrderContents name={name} soldOut={soldOut} salePrice={salePrice} />
+          <OrderChoice soldOut={soldOut} salePrice={salePrice} id={id} />
+        </>
+      )}
       <AddToCartButton>장바구니 담기</AddToCartButton>
       <BuyButton onClick={goToBuy}>바로구매</BuyButton>
     </ChoiceOrderButtonWrapper>
@@ -45,7 +45,7 @@ export default function SuccessBuyButton(props: ProductInfoProps) {
 const ChoiceOrderButtonWrapper = styled.div`
   display: flex;
   position: fixed;
-  /* bottom: 12rem; */
+  /* bottom: -1rem; */
 `;
 
 const AddToCartButton = styled.button`
