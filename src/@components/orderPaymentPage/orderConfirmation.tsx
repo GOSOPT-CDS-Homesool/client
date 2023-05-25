@@ -1,17 +1,23 @@
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
-import { BackButtonIc } from "../../assets";
-import ShippingAddress from "./orderConfirmation/shippingAddress";
-import OrdererInfo from "./orderConfirmation/ordererInfo";
-import OrderProductInfo from "./orderConfirmation/orderProductInfo";
-import { UserDataType } from "../../type/userDataType";
-import { useState, useEffect } from "react";
 import { getUserData } from "../../api/userData";
+import { BackButtonIc } from "../../assets";
+import { UserDataType } from "../../type/userDataType";
+import OrderProductInfo from "./orderConfirmation/orderProductInfo";
+import OrdererInfo from "./orderConfirmation/ordererInfo";
+import ShippingAddress from "./orderConfirmation/shippingAddress";
 
-export default function OrderConfirmation() {
+interface OrderConfirmationProps {
+  id: string;
+}
+
+export default function OrderConfirmation(props: OrderConfirmationProps) {
+  const { id } = props;
+
   const [userData, setUserData] = useState<UserDataType>();
 
   async function fetchUserData() {
-    const response = await getUserData();
+    const response = await getUserData("1");
     setUserData(response);
   }
 
@@ -29,7 +35,7 @@ export default function OrderConfirmation() {
           </DetailHeader>
           <ShippingAddress address={userData.address} />
           <OrdererInfo nickName={userData.nickName} phoneNumber={userData.phoneNumber} />
-          <OrderProductInfo />
+          <OrderProductInfo coupon={userData.coupon} point={userData.point} id={id} />
         </>
       )}
     </>

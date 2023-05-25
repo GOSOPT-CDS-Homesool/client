@@ -10,12 +10,13 @@ interface CardProps {
   key?: number;
   value: string;
   data: ProductDataType;
+  onClick: () => void;
 }
 
 export default function Card(props: CardProps) {
-  const { value, data } = props;
+  const { value, data, onClick } = props;
   return (
-    <CardWrapper>
+    <CardWrapper onClick={onClick}>
       <ImgWrapper>
         <CardImg src={data.image} alt="이미지1" />
         <SoldOut value={data.soldOut} />

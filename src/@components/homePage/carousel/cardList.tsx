@@ -1,9 +1,10 @@
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
-import { ProductDataType } from "../../../type/productDataTypeDH";
 import { getAllAlcohol } from "../../../api/allAlcohol";
-import { useEffect, useState } from "react";
+import { ProductDataType } from "../../../type/productDataTypeDH";
 
+import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import Card from "./card";
 interface CardProps {
@@ -13,6 +14,7 @@ interface CardProps {
 export default function CardList(props: CardProps) {
   const { value } = props;
   const [allAlcohol, setAllAlcohol] = useState<Array<ProductDataType>>();
+  const navigate = useNavigate();
 
   async function fetchAllAlcohol() {
     const response = await getAllAlcohol();
@@ -23,7 +25,9 @@ export default function CardList(props: CardProps) {
     fetchAllAlcohol();
   }, []);
 
-  console.log(allAlcohol);
+  function moveToDetail(id: number, soldOut: boolean) {
+    navigate(`/detail/${id}`, { state: soldOut });
+  }
 
   const settings = {
     dots: false,
@@ -61,7 +65,7 @@ export default function CardList(props: CardProps) {
       return (
         <Slider {...settings}>
           {filteredData.map((item) => (
-            <Card key={item.id} value={value} data={item} />
+            <Card key={item.id} value={value} data={item} onClick={() => moveToDetail(item.id, item.soldOut)} />
           ))}
         </Slider>
       );
@@ -75,7 +79,7 @@ export default function CardList(props: CardProps) {
       return (
         <Slider {...settings}>
           {filteredData.map((item) => (
-            <Card key={item.id} value={value} data={item} />
+            <Card key={item.id} value={value} data={item} onClick={() => moveToDetail(item.id, item.soldOut)} />
           ))}
         </Slider>
       );
@@ -89,7 +93,7 @@ export default function CardList(props: CardProps) {
       return (
         <Slider {...settings}>
           {filteredData.map((item) => (
-            <Card key={item.id} value={value} data={item} />
+            <Card key={item.id} value={value} data={item} onClick={() => moveToDetail(item.id, item.soldOut)} />
           ))}
         </Slider>
       );

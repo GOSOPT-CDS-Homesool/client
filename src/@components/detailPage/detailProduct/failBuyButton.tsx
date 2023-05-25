@@ -14,7 +14,7 @@ export default function FailBuyButton() {
 const ChoiceOrderButtonWrapper = styled.div`
   display: flex;
   position: fixed;
-  bottom: 0;
+  /* bottom: 12rem; */
   z-index: 3;
 `;
 

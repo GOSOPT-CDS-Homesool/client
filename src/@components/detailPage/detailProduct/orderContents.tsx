@@ -1,6 +1,5 @@
-import { MinusIc } from "../../../assets";
-import { PlusIc } from "../../../assets";
 import { styled } from "styled-components";
+import { MinusIc, PlusIc } from "../../../assets";
 
 interface ProductInfoProps {
   soldOut?: boolean;
@@ -89,7 +88,7 @@ const ExtendedPrice = styled.div`
 
 const SuccessOptionWrapper = styled.div`
   position: fixed;
-  bottom: 4rem;
+  bottom: 12rem;
   width: 37.5rem;
   margin-left: -1.6rem;
   background-color: ${({ theme }) => theme.colors.GRAYSCALE000};

@@ -18,7 +18,7 @@ export default function MyPage() {
   const [orderList, setOrderList] = useState<OrderListType[]>([]);
 
   async function fetchUserData() {
-    const response = await getUserData();
+    const response = await getUserData("1");
     setUserData(response);
   }
 

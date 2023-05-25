@@ -1,30 +1,28 @@
-import { LikeIc, ShareIc, BackButtonIc, OriginalHomeSoolIc } from "../../../assets";
-import { getAlcoholData } from "../../../api/alcoholData";
-import { ProductDataType } from "../../../type/productDataType";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
-import { PRODUCT_DATA } from "../../../core/productData";
+import { getAlcoholData } from "../../../api/alcoholData";
+import { BackButtonIc, OriginalHomeSoolIc, ShareIc } from "../../../assets";
 import { DetailIdProps } from "../../../type/detailIdProps";
-import CalculateDiscount from "../../../utils/calculateDiscount";
+import { ProductDataType } from "../../../type/productDataType";
 import ChoiceDelivery from "./choiceDelivery";
 import LikeButton from "./likeButton";
 import OrderChoice from "./orderChoice";
 
-export default function DetailOrderInfo(props:DetailIdProps) {
+export default function DetailOrderInfo(props: DetailIdProps) {
   const [productData, setProductData] = useState<ProductDataType>();
   const { id } = props;
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   function backToHome() {
     navigate(-1);
   }
 
   async function fetchAlcoholData() {
-
     try {
       const response = await getAlcoholData(id);
-      console.log(response.soldOut);
+      // console.log(response.soldOut);
       setProductData(response);
     } catch (error) {
       console.error("데이터 패치 중 오류 발생:", error);
@@ -40,7 +38,7 @@ export default function DetailOrderInfo(props:DetailIdProps) {
       {productData && (
         <>
           <DetailHeader>
-            <BackButtonIc />
+            <BackButtonIc onClick={backToHome} />
             <DetailTitle>상품상세</DetailTitle>
           </DetailHeader>
           <DetailImage src={productData.detailImage} alt="제품상세이미지"></DetailImage>
@@ -59,7 +57,7 @@ export default function DetailOrderInfo(props:DetailIdProps) {
               <LikeButtonIcon postId={`${id}`} />
             </AddFuntionContainer>
           </DetailContentsWrapper>
-          <OrderChoice name={productData.name} salePrice={productData.salePrice} soldOut={productData.soldOut} />
+          <OrderChoice name={productData.name} salePrice={productData.salePrice} soldOut={state} id={id} />
           <ChoiceDelivery />
         </>
       )}

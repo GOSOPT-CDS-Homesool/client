@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
-import { useState } from "react";
 import OrderChoice from "./orderChoice";
 import OrderContents from "./orderContents";
 
@@ -7,22 +8,39 @@ interface ProductInfoProps {
   soldOut: boolean;
   salePrice: number;
   name?: string;
+  id: string;
 }
 
 export default function SuccessBuyButton(props: ProductInfoProps) {
-  const { soldOut, salePrice, name } = props;
+  const { soldOut, salePrice, name, id } = props;
   const [visible, setVisible] = useState(false);
+  const [clickCnt, setClickCnt] = useState(0);
+  const navigate = useNavigate();
+  let count = 0;
 
-  function goToBuy() {
-    setVisible(true);
+  function toggleUp() {
+    setVisible(!visible);
+    count += 1;
+    console.log("qksjdfkdfj");
+    setClickCnt(clickCnt + 1);
   }
+
+  useEffect(() => {
+    count === 2 && navigate("/orderPayment", { state: id });
+  }, [visible]);
+
+  console.log(count);
 
   return (
     <ChoiceOrderButtonWrapper>
-      {visible && <OrderContents name={name} soldOut={soldOut} salePrice={salePrice} />}
-      {visible && <OrderChoice soldOut={soldOut} salePrice={salePrice} />}
+      {visible && (
+        <>
+          <OrderContents name={name} soldOut={soldOut} salePrice={salePrice} />
+          <OrderChoice soldOut={soldOut} salePrice={salePrice} id={id} />
+        </>
+      )}
       <AddToCartButton>장바구니 담기</AddToCartButton>
-      <BuyButton onClick={goToBuy}>바로구매</BuyButton>
+      <BuyButton onClick={toggleUp}>바로구매</BuyButton>
     </ChoiceOrderButtonWrapper>
   );
 }
@@ -30,7 +48,7 @@ export default function SuccessBuyButton(props: ProductInfoProps) {
 const ChoiceOrderButtonWrapper = styled.div`
   display: flex;
   position: fixed;
-  bottom: 0;
+  /* bottom: -1rem; */
 `;
 
 const AddToCartButton = styled.button`
