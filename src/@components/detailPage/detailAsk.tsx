@@ -23,6 +23,10 @@ export default function DetailAsk() {
     return length === 0;
   }
 
+  function checkAskLessThanTwo(idx: number) {
+    return idx <= 2;
+  }
+
   return (
     <>
       <Header>
@@ -31,9 +35,19 @@ export default function DetailAsk() {
       </Header>
       {!checkAskIsZero() && (
         <>
-          {detailAsks?.map(({ userName, date, title, contents, answer }: DetailAskType, idx: number) => (
-            <DetailAskBox key={idx} userName={userName} date={date} title={title} contents={contents} answer={answer} />
-          ))}
+          {detailAsks?.map(
+            ({ userName, date, title, contents, answer }: DetailAskType, idx: number) =>
+              checkAskLessThanTwo(idx) && (
+                <DetailAskBox
+                  key={idx}
+                  userName={userName}
+                  date={date}
+                  title={title}
+                  contents={contents}
+                  answer={answer}
+                />
+              ),
+          )}
         </>
       )}
     </>
