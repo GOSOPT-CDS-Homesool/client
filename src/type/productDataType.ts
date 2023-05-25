@@ -1,8 +1,9 @@
 export interface ProductDataType {
-  id: number;
-  detailImage: string;
-  name: string;
-  price: number;
-  sale: number;
+  id?: number;
+  detailImage?: string;
+  name?: string;
+  price?: number;
+  sale?: number;
   salePrice: number;
+  imageInfoImage?: string;
 }

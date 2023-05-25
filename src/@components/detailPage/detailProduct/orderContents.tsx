@@ -1,26 +1,51 @@
-import { PRODUCT_DATA } from "../../../core/productData";
-import { OrderOptionProps } from "../../../type/OrderOptionType";
+import { ProductDataType } from "../../../type/productDataType";
+import { useState, useEffect } from "react";
+import { getAlcoholData } from "../../../api/alcoholApi";
+
 import { MinusIc } from "../../../assets";
 import { PlusIc } from "../../../assets";
 import { styled } from "styled-components";
 
-export default function OrderContents({ discountedPrice }: OrderOptionProps) {
+export default function OrderContents() {
+  const [productData, setProductData] = useState<ProductDataType>();
+
+  async function fetchAlcoholData() {
+    const id = 3;
+    try {
+      const response = await getAlcoholData(id);
+      setProductData(response);
+      console.log(response);
+    } catch (error) {
+      console.error("데이터 패치 중 오류 발생:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchAlcoholData();
+  }, []);
+
   return (
-    <SuccessOptionWrapper>
-      <ProductName>{PRODUCT_DATA.name}</ProductName>
-      <QuantityContainer>
-        <ExtendedAmountText>수량</ExtendedAmountText>
-        <CountContainer>
-          <MinusIcon />
-          <CountingText>1</CountingText>
-          <PlusIc />
-        </CountContainer>
-      </QuantityContainer>
-      <ExtendedPrice>
-        <ExtendedPriceText>총 합계금액</ExtendedPriceText>
-        <ExtendedPriceCount>{discountedPrice}원</ExtendedPriceCount>
-      </ExtendedPrice>
-    </SuccessOptionWrapper>
+    <>
+      {productData && (
+        <>
+          <SuccessOptionWrapper>
+            <ProductName>{productData.name}</ProductName>
+            <QuantityContainer>
+              <ExtendedAmountText>수량</ExtendedAmountText>
+              <CountContainer>
+                <MinusIcon />
+                <CountingText>1</CountingText>
+                <PlusIc />
+              </CountContainer>
+            </QuantityContainer>
+            <ExtendedPrice>
+              <ExtendedPriceText>총 합계금액</ExtendedPriceText>
+              <ExtendedPriceCount>{productData.salePrice}원</ExtendedPriceCount>
+            </ExtendedPrice>
+          </SuccessOptionWrapper>
+        </>
+      )}
+    </>
   );
 }
 
@@ -80,10 +105,10 @@ const ExtendedPrice = styled.div`
 `;
 
 const SuccessOptionWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 4rem;
   width: 37.5rem;
   margin-left: -1.6rem;
   background-color: ${({ theme }) => theme.colors.GRAYSCALE000};
-  z-index: 1;
+  z-index: 5;
 `;

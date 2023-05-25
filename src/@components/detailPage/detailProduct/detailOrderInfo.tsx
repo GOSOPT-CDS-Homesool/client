@@ -1,10 +1,10 @@
-import { DetailProductIc, LikeIc, ShareIc, BackButtonIc, OriginalHomeSoolIc } from "../../../assets";
+import { LikeIc, ShareIc, BackButtonIc, OriginalHomeSoolIc } from "../../../assets";
 
 import { getAlcoholData } from "../../../api/alcoholApi";
 import { ProductDataType } from "../../../type/productDataType";
 import { useState, useEffect } from "react";
 import { styled } from "styled-components";
-// import OrderChoice from "./orderChoice";
+import OrderChoice from "./orderChoice";
 import ChoiceDelivery from "./choiceDelivery";
 
 export default function DetailOrderInfo() {
@@ -49,7 +49,7 @@ export default function DetailOrderInfo() {
               <LikeIc />
             </AddFuntionContainer>
           </DetailContentsWrapper>
-          {/* <OrderChoice /> */}
+          <OrderChoice salePrice={productData.salePrice} soldOut={false} />
           <ChoiceDelivery />
         </>
       )}

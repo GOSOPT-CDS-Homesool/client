@@ -3,8 +3,8 @@ import SuccessBuyButton from "./successBuyButton";
 
 interface SoldOutProps {
   soldOut: boolean;
-  discountedPrice: number;
+  salePrice: number;
 }
-export default function OrderChoice({ soldOut, discountedPrice }: SoldOutProps) {
-  return <div>{soldOut ? <FailBuyButton /> : <SuccessBuyButton discountedPrice={discountedPrice} />}</div>;
+export default function OrderChoice({ soldOut, salePrice }: SoldOutProps) {
+  return <div>{soldOut ? <FailBuyButton /> : <SuccessBuyButton salePrice={salePrice} />}</div>;
 }

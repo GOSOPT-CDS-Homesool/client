@@ -27,7 +27,6 @@ export { ReactComponent as TimeSaleIc } from "./icon/timesale.svg";
 export { ReactComponent as SubscribeImg } from "./image/subscribe_banner.svg";
 export { ReactComponent as SeeAllIc } from "./icon/right.svg";
 
-export { ReactComponent as DetailProductIc } from "./icon/datailProductImg.svg";
 export { ReactComponent as LikeIc } from "./icon/likeIc.svg";
 export { ReactComponent as ShareIc } from "./icon/shareIc.svg";
 export { ReactComponent as BackButtonIc } from "./icon/backButtonIc.svg";
@@ -59,4 +58,3 @@ export { ReactComponent as RecommendTagIcon } from "./icon/tag_recommend.svg";
 export { ReactComponent as SoldOutTagIcon } from "./icon/tag_soldout.svg";
 export { ReactComponent as GrayLikeIcon } from "./icon/likeGray.svg";
 export { ReactComponent as OrangeLikeIcon } from "./icon/likeOrange.svg";
-

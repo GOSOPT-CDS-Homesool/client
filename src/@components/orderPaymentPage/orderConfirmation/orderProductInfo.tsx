@@ -1,5 +1,4 @@
 import { PRODUCT_DATA } from "../../../core/productData";
-import { DetailProductIc } from "../../../assets";
 import { styled } from "styled-components";
 import GrayGap from "../../common/GrayGap";
 
@@ -31,14 +30,14 @@ const InfoContainer = styled.div`
 `;
 
 const CountText = styled.p`
-  ${({ theme }) => theme.fonts.body05};
+  ${({ theme }) => theme.fonts.body04};
   padding-left: 0.4rem;
 `;
 
 const PriceText = styled.p`
   border-right: 0.1rem solid ${({ theme }) => theme.colors.GRAYSCALE400};
   padding-right: 0.4rem;
-  ${({ theme }) => theme.fonts.body05};
+  ${({ theme }) => theme.fonts.body04};
 `;
 
 const ProductPriceContainer = styled.div`
@@ -55,7 +54,7 @@ const ProductName = styled.header`
   ${({ theme }) => theme.fonts.body04};
 `;
 
-const ProductImage = styled(DetailProductIc)`
+const ProductImage = styled.img`
   width: 6.4rem;
   height: 6.4rem;
   border: 0.1rem solid ${({ theme }) => theme.colors.GRAYSCALE000};
