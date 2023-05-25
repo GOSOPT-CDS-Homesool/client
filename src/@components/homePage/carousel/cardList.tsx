@@ -25,8 +25,8 @@ export default function CardList(props: CardProps) {
     fetchAllAlcohol();
   }, []);
 
-  function moveToDetail(id: number) {
-    navigate(`/detail/${id}`);
+  function moveToDetail(id: number, soldOut: boolean) {
+    navigate(`/detail/${id}`, { state: soldOut });
   }
 
   const settings = {
@@ -65,7 +65,7 @@ export default function CardList(props: CardProps) {
       return (
         <Slider {...settings}>
           {filteredData.map((item) => (
-            <Card key={item.id} value={value} data={item} onClick={() => moveToDetail(item.id)} />
+            <Card key={item.id} value={value} data={item} onClick={() => moveToDetail(item.id, item.soldOut)} />
           ))}
         </Slider>
       );
@@ -79,7 +79,7 @@ export default function CardList(props: CardProps) {
       return (
         <Slider {...settings}>
           {filteredData.map((item) => (
-            <Card key={item.id} value={value} data={item} onClick={() => moveToDetail(item.id)} />
+            <Card key={item.id} value={value} data={item} onClick={() => moveToDetail(item.id, item.soldOut)} />
           ))}
         </Slider>
       );
@@ -93,7 +93,7 @@ export default function CardList(props: CardProps) {
       return (
         <Slider {...settings}>
           {filteredData.map((item) => (
-            <Card key={item.id} value={value} data={item} onClick={() => moveToDetail(item.id)} />
+            <Card key={item.id} value={value} data={item} onClick={() => moveToDetail(item.id, item.soldOut)} />
           ))}
         </Slider>
       );
