@@ -1,19 +1,26 @@
 import { styled } from "styled-components";
 import { useState } from "react";
 import OrderChoice from "./orderChoice";
-import { OrderOptionProps } from "../../../type/OrderOptionType";
 import OrderContents from "./orderContents";
 
-export default function SuccessBuyButton({ discountedPrice }: OrderOptionProps) {
+interface ProductInfoProps {
+  soldOut: boolean;
+  salePrice: number;
+  name?: string;
+}
+
+export default function SuccessBuyButton(props: ProductInfoProps) {
+  const { soldOut, salePrice, name } = props;
   const [visible, setVisible] = useState(false);
+
   function goToBuy() {
     setVisible(true);
   }
 
   return (
     <ChoiceOrderButtonWrapper>
-      {visible && <OrderContents discountedPrice={discountedPrice} />}
-      {visible && <OrderChoice soldOut={false} discountedPrice={discountedPrice} />}
+      {visible && <OrderContents name={name} soldOut={soldOut} salePrice={salePrice} />}
+      {visible && <OrderChoice soldOut={soldOut} salePrice={salePrice} />}
       <AddToCartButton>장바구니 담기</AddToCartButton>
       <BuyButton onClick={goToBuy}>바로구매</BuyButton>
     </ChoiceOrderButtonWrapper>
@@ -22,7 +29,7 @@ export default function SuccessBuyButton({ discountedPrice }: OrderOptionProps) 
 
 const ChoiceOrderButtonWrapper = styled.div`
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 `;
 

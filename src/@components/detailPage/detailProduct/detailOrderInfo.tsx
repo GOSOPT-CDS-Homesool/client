@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { LikeIc, ShareIc, BackButtonIc, OriginalHomeSoolIc } from "../../../assets";
+import { getAlcoholData } from "../../../api/alcoholData";
+import { ProductDataType } from "../../../type/productDataType";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
-import { BackButtonIc, DetailProductIc, GrayLikeIc, OrangeLikeIc, OriginalHomeSoolIc, ShareIc } from "../../../assets";
 import { PRODUCT_DATA } from "../../../core/productData";
 import { DetailIdProps } from "../../../type/detailIdProps";
 import CalculateDiscount from "../../../utils/calculateDiscount";
@@ -9,42 +11,58 @@ import ChoiceDelivery from "./choiceDelivery";
 import LikeButton from "./likeButton";
 import OrderChoice from "./orderChoice";
 
-export default function DetailOrderInfo(props: DetailIdProps) {
+export default function DetailOrderInfo(props:DetailIdProps) {
+  const [productData, setProductData] = useState<ProductDataType>();
   const { id } = props;
-  const [discountedPrice] = useState(CalculateDiscount(PRODUCT_DATA.price, PRODUCT_DATA.sale));
   const navigate = useNavigate();
 
   function backToHome() {
     navigate(-1);
   }
 
+  async function fetchAlcoholData() {
+
+    try {
+      const response = await getAlcoholData(id);
+      console.log(response.soldOut);
+      setProductData(response);
+    } catch (error) {
+      console.error("데이터 패치 중 오류 발생:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchAlcoholData();
+  }, []);
+
   return (
     <>
-      <DetailHeader>
-        <BackButtonIc onClick={backToHome} />
-        <DetailTitle>상품상세</DetailTitle>
-      </DetailHeader>
-
-      <DetailImage />
-
-      <DetailProductContainer>
-        <OriginalHomeSoolIc />
-        <ProductName>{PRODUCT_DATA.name}</ProductName>
-      </DetailProductContainer>
-
-      <DetailContentsWrapper>
-        <DetailPriceContainer>
-          <ProductPrice>{PRODUCT_DATA.price}원</ProductPrice>
-          <ProductSale>{PRODUCT_DATA.sale}%</ProductSale>
-          <DiscountedPrice>{discountedPrice}원</DiscountedPrice>
-        </DetailPriceContainer>
-        <AddFuntionContainer>
-          <ShareIc />
-          <LikeButtonIcon postId={1} />
-        </AddFuntionContainer>
-      </DetailContentsWrapper>
-      <OrderChoice soldOut={false} discountedPrice={discountedPrice} />
-      <ChoiceDelivery />
+      {productData && (
+        <>
+          <DetailHeader>
+            <BackButtonIc />
+            <DetailTitle>상품상세</DetailTitle>
+          </DetailHeader>
+          <DetailImage src={productData.detailImage} alt="제품상세이미지"></DetailImage>
+          <DetailProductContainer>
+            <OriginalHomeSoolIc />
+            <ProductName>{productData.name}</ProductName>
+          </DetailProductContainer>
+          <DetailContentsWrapper>
+            <DetailPriceContainer>
+              <ProductPrice>{productData.price}원</ProductPrice>
+              <ProductSale>{productData.sale}%</ProductSale>
+              <DiscountedPrice>{productData.salePrice}원</DiscountedPrice>
+            </DetailPriceContainer>
+            <AddFuntionContainer>
+              <ShareIc />
+              <LikeButtonIcon postId={`${id}`} />
+            </AddFuntionContainer>
+          </DetailContentsWrapper>
+          <OrderChoice name={productData.name} salePrice={productData.salePrice} soldOut={productData.soldOut} />
+          <ChoiceDelivery />
+        </>
+      )}
     </>
   );
 }
@@ -56,9 +74,9 @@ const LikeButtonIcon = styled(LikeButton)`
 `;
 
 const AddFuntionContainer = styled.div`
-  margin: 2rem 0 0 14rem;
   display: flex;
   align-items: center;
+  margin: 2rem 0 0 14rem;
 `;
 
 const DiscountedPrice = styled.p`
@@ -81,6 +99,7 @@ const ProductPrice = styled.p`
 
 const DetailPriceContainer = styled.div`
   display: flex;
+  width: 100%;
   margin-top: 2.2rem;
 `;
 
@@ -108,6 +127,8 @@ const DetailHeader = styled.header`
   margin-top: 0.8rem;
 `;
 
-const DetailImage = styled(DetailProductIc)`
+const DetailImage = styled.img`
+  width: 37.5rem;
+  height: 56rem;
   margin: 1.3rem 0 0 -1.6rem;
 `;

@@ -1,10 +1,14 @@
 import FailBuyButton from "./failBuyButton";
 import SuccessBuyButton from "./successBuyButton";
 
-interface SoldOutProps {
+interface ProductInfoProps {
   soldOut: boolean;
-  discountedPrice: number;
+  salePrice: number;
+  name?: string;
 }
-export default function OrderChoice({ soldOut, discountedPrice }: SoldOutProps) {
-  return <div>{soldOut ? <FailBuyButton /> : <SuccessBuyButton discountedPrice={discountedPrice} />}</div>;
+export default function OrderChoice(props: ProductInfoProps) {
+  const { soldOut, salePrice, name } = props;
+  console.log(soldOut);
+
+  return <>{soldOut ? <FailBuyButton /> : <SuccessBuyButton name={name} salePrice={salePrice} soldOut={soldOut} />}</>;
 }

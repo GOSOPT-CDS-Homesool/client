@@ -1,8 +1,11 @@
 import { styled } from "styled-components";
 import { useState } from "react";
 import { CheckIcon, NoneCheckIcon } from "../../../assets";
+import { ProductDataType } from "../../../type/productDataType";
+import { purchaseSuccess } from "../../../api/postPurchaseData";
 
-export default function AmountOfPayment() {
+export default function AmountOfPayment(props: ProductDataType) {
+  const { salePrice } = props;
   const [check, setCheck] = useState(false);
 
   function ClickCheckButton() {
@@ -12,28 +15,40 @@ export default function AmountOfPayment() {
     setCheck(false);
   }
 
+  async function handlePayment() {
+    const purchaseData = {
+      result: true,
+    };
+    try {
+      const response = await purchaseSuccess(purchaseData);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <>
       <HeaderTitle>결제금액</HeaderTitle>
       <OneLineContainer>
         <TextTitle>총 상품 금액</TextTitle>
-        <TextTitle className="counting">+13,320원</TextTitle>
+        <TextTitle>+{salePrice}원</TextTitle>
       </OneLineContainer>
       <OneLineContainer>
         <TextTitle>배송비</TextTitle>
-        <TextTitle className="counting">+0원</TextTitle>
+        <TextTitle>+0원</TextTitle>
       </OneLineContainer>
       <OneLineContainer>
         <TextTitle>포인트 사용</TextTitle>
-        <TextTitle className="counting">+0원</TextTitle>
+        <TextTitle>+0원</TextTitle>
       </OneLineContainer>
       <OneLineContainer>
         <TextTitle>쿠폰사용</TextTitle>
-        <TextTitle className="counting">+0원</TextTitle>
+        <TextTitle>+0원</TextTitle>
       </OneLineContainer>
       <FinalLineContainer>
         <FinalPaymentText>최종결제금액</FinalPaymentText>
-        <FinalPaymentText className="counting">+13,320원</FinalPaymentText>
+        <FinalPaymentText>+{salePrice}원</FinalPaymentText>
       </FinalLineContainer>
 
       <CheckAgreementContainer>
@@ -43,7 +58,7 @@ export default function AmountOfPayment() {
           동의합니다.
         </CheckAgreementText>
       </CheckAgreementContainer>
-      <PaymentButton>13,320원 결제하기</PaymentButton>
+      <PaymentButton onClick={handlePayment}>{salePrice}원 결제하기</PaymentButton>
     </>
   );
 }
@@ -84,14 +99,12 @@ const CheckAgreementText = styled.p`
 
 const OneLineContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   margin-top: 1rem;
-  .counting {
-    position: absolute;
-    right: 23rem;
-  }
 `;
 const FinalLineContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   padding-top: 2rem;
   margin: 2.2rem 0 2.8rem 0;
   border-top: 0.3rem solid ${({ theme }) => theme.colors.GRAYSCALE400};
