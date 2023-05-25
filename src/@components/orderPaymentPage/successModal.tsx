@@ -1,16 +1,23 @@
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
 import { styled } from "styled-components";
+import { isHomePage } from "../../recoil/page";
 
 export default function SuccessModal() {
   const navigate = useNavigate();
+  const [isHome, setIsHome] = useRecoilState<boolean>(isHomePage);
 
   function moveToHome() {
+    setIsHome(true);
     navigate("/");
   }
 
   function moveToMy() {
+    setIsHome(false);
     navigate("/mypage");
   }
+
+  console.debug(isHome);
 
   return (
     <>
