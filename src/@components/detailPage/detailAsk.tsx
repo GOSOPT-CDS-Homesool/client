@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+import { styled } from "styled-components";
 import { getDetailAsk } from "../../api/detailAsk";
+import { DetailSeeAllIc } from "../../assets";
 import { DetailAskType } from "../../type/detailAsk";
 import GrayGap from "../common/GrayGap";
-import { DetailSeeAllIc } from "../../assets";
-import { styled } from "styled-components";
 import DetailAskBox from "./detailAskBox";
 
 export default function DetailAsk() {
@@ -11,7 +11,7 @@ export default function DetailAsk() {
   const [length, setLength] = useState<number>(0);
 
   async function fetchDetailAsk() {
-    const response = await getDetailAsk(1);
+    const response = await getDetailAsk(2);
     setDetailAsks(response);
     setLength(response.length);
   }

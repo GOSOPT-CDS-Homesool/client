@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import { DetailAskType } from "../../type/detailAsk";
 import { DetailAskRectangleIc, DetailEllipseIc } from "../../assets";
+import { DetailAskType } from "../../type/detailAsk";
 
 export default function DetailAskBox(props: DetailAskType): JSX.Element {
   const { userName, date, title, contents, answer } = props;
@@ -15,7 +15,7 @@ export default function DetailAskBox(props: DetailAskType): JSX.Element {
             {date}
           </AskAsideTitle>
         </AskAside>
-        <Title>{title}지평생막걸리보다</Title>
+        <Title>{title}</Title>
         <Contents>{contents}</Contents>
       </AskBox>
       {answer && (
