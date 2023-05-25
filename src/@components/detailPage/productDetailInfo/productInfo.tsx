@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import GrayGap from "../../common/GrayGap";
-import { getAlcoholData } from "../../../api/alcoholApi";
+import { getAlcoholData } from "../../../api/alcoholData";
 import { ProductDataType } from "../../../type/productDataType";
 import { useState, useEffect } from "react";
 

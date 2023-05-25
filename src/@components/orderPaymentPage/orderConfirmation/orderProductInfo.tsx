@@ -1,4 +1,4 @@
-import { getAlcoholData } from "../../../api/alcoholApi";
+import { getAlcoholData } from "../../../api/alcoholData";
 import { ProductDataType } from "../../../type/productDataType";
 import { useState, useEffect } from "react";
 import { styled } from "styled-components";
@@ -43,7 +43,7 @@ export default function OrderProductInfo() {
           </OrderProductInfoWrapper>
           <GrayGap />
           <PaymentMethod />
-          <DiscountCalculation salePrice={productData.salePrice} />
+          <DiscountCalculation />
           <AmountOfPayment salePrice={productData.salePrice} />
         </>
       )}

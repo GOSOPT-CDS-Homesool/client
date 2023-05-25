@@ -2,12 +2,12 @@ import { styled } from "styled-components";
 import { RightSideOpenButton } from "../../../assets";
 import GrayGap from "../../common/GrayGap";
 
-interface UserProfileProps {
+interface UserInfoProps {
   nickName: string;
   phoneNumber: string;
 }
 
-export default function OrdererInfo(props: UserProfileProps) {
+export default function OrdererInfo(props: UserInfoProps) {
   const { nickName, phoneNumber } = props;
 
   return (

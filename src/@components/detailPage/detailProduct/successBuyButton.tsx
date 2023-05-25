@@ -2,18 +2,26 @@ import { styled } from "styled-components";
 import { useState } from "react";
 import OrderChoice from "./orderChoice";
 import OrderContents from "./orderContents";
-import { ProductDataType } from "../../../type/productDataType";
 
-export default function SuccessBuyButton({ salePrice }: ProductDataType) {
+interface ProductInfoProps {
+  soldOut: boolean;
+  salePrice: number;
+  name?: string;
+}
+
+export default function SuccessBuyButton(props: ProductInfoProps) {
+  const { soldOut, salePrice, name } = props;
   const [visible, setVisible] = useState(false);
+
   function goToBuy() {
     setVisible(true);
+    console.log(soldOut);
   }
 
   return (
     <ChoiceOrderButtonWrapper>
-      {visible && <OrderContents />}
-      {visible && <OrderChoice soldOut={true} salePrice={salePrice} />}
+      {visible && <OrderContents name={name} soldOut={soldOut} salePrice={salePrice} />}
+      {visible && <OrderChoice soldOut={soldOut} salePrice={salePrice} />}
       <AddToCartButton>장바구니 담기</AddToCartButton>
       <BuyButton onClick={goToBuy}>바로구매</BuyButton>
     </ChoiceOrderButtonWrapper>

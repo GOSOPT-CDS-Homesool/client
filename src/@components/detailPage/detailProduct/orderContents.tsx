@@ -1,50 +1,33 @@
-import { ProductDataType } from "../../../type/productDataType";
-import { useState, useEffect } from "react";
-import { getAlcoholData } from "../../../api/alcoholApi";
-
 import { MinusIc } from "../../../assets";
 import { PlusIc } from "../../../assets";
 import { styled } from "styled-components";
 
-export default function OrderContents() {
-  const [productData, setProductData] = useState<ProductDataType>();
+interface ProductInfoProps {
+  soldOut?: boolean;
+  salePrice: number;
+  name?: string;
+}
 
-  async function fetchAlcoholData() {
-    const id = 3;
-    try {
-      const response = await getAlcoholData(id);
-      setProductData(response);
-      console.log(response);
-    } catch (error) {
-      console.error("데이터 패치 중 오류 발생:", error);
-    }
-  }
-
-  useEffect(() => {
-    fetchAlcoholData();
-  }, []);
+export default function OrderContents(props: ProductInfoProps) {
+  const { salePrice, name } = props;
 
   return (
     <>
-      {productData && (
-        <>
-          <SuccessOptionWrapper>
-            <ProductName>{productData.name}</ProductName>
-            <QuantityContainer>
-              <ExtendedAmountText>수량</ExtendedAmountText>
-              <CountContainer>
-                <MinusIcon />
-                <CountingText>1</CountingText>
-                <PlusIc />
-              </CountContainer>
-            </QuantityContainer>
-            <ExtendedPrice>
-              <ExtendedPriceText>총 합계금액</ExtendedPriceText>
-              <ExtendedPriceCount>{productData.salePrice}원</ExtendedPriceCount>
-            </ExtendedPrice>
-          </SuccessOptionWrapper>
-        </>
-      )}
+      <SuccessOptionWrapper>
+        <ProductName>{name}</ProductName>
+        <QuantityContainer>
+          <ExtendedAmountText>수량</ExtendedAmountText>
+          <CountContainer>
+            <MinusIcon />
+            <CountingText>1</CountingText>
+            <PlusIc />
+          </CountContainer>
+        </QuantityContainer>
+        <ExtendedPrice>
+          <ExtendedPriceText>총 합계금액</ExtendedPriceText>
+          <ExtendedPriceCount>{salePrice}원</ExtendedPriceCount>
+        </ExtendedPrice>
+      </SuccessOptionWrapper>
     </>
   );
 }

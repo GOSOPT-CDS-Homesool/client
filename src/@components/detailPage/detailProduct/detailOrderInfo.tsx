@@ -1,6 +1,5 @@
 import { LikeIc, ShareIc, BackButtonIc, OriginalHomeSoolIc } from "../../../assets";
-
-import { getAlcoholData } from "../../../api/alcoholApi";
+import { getAlcoholData } from "../../../api/alcoholData";
 import { ProductDataType } from "../../../type/productDataType";
 import { useState, useEffect } from "react";
 import { styled } from "styled-components";
@@ -11,11 +10,11 @@ export default function DetailOrderInfo() {
   const [productData, setProductData] = useState<ProductDataType>();
 
   async function fetchAlcoholData() {
-    const id = 3;
+    const id = 1;
     try {
       const response = await getAlcoholData(id);
+      console.log(response.soldOut);
       setProductData(response);
-      console.log(response);
     } catch (error) {
       console.error("데이터 패치 중 오류 발생:", error);
     }
@@ -49,7 +48,7 @@ export default function DetailOrderInfo() {
               <LikeIc />
             </AddFuntionContainer>
           </DetailContentsWrapper>
-          <OrderChoice salePrice={productData.salePrice} soldOut={false} />
+          <OrderChoice name={productData.name} salePrice={productData.salePrice} soldOut={productData.soldOut} />
           <ChoiceDelivery />
         </>
       )}
