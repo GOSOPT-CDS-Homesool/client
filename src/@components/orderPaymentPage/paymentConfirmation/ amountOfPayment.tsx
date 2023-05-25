@@ -1,8 +1,10 @@
 import { styled } from "styled-components";
 import { useState } from "react";
 import { CheckIcon, NoneCheckIcon } from "../../../assets";
+import { ProductDataType } from "../../../type/productDataType";
 
-export default function AmountOfPayment() {
+export default function AmountOfPayment(props: ProductDataType) {
+  const { salePrice } = props;
   const [check, setCheck] = useState(false);
 
   function ClickCheckButton() {
@@ -17,7 +19,7 @@ export default function AmountOfPayment() {
       <HeaderTitle>결제금액</HeaderTitle>
       <OneLineContainer>
         <TextTitle>총 상품 금액</TextTitle>
-        <TextTitle>+13,320원</TextTitle>
+        <TextTitle>+{salePrice}원</TextTitle>
       </OneLineContainer>
       <OneLineContainer>
         <TextTitle>배송비</TextTitle>
@@ -33,7 +35,7 @@ export default function AmountOfPayment() {
       </OneLineContainer>
       <FinalLineContainer>
         <FinalPaymentText>최종결제금액</FinalPaymentText>
-        <FinalPaymentText>+13,320원</FinalPaymentText>
+        <FinalPaymentText>+{salePrice}원</FinalPaymentText>
       </FinalLineContainer>
 
       <CheckAgreementContainer>
@@ -43,7 +45,7 @@ export default function AmountOfPayment() {
           동의합니다.
         </CheckAgreementText>
       </CheckAgreementContainer>
-      <PaymentButton>13,320원 결제하기</PaymentButton>
+      <PaymentButton>{salePrice}원 결제하기</PaymentButton>
     </>
   );
 }

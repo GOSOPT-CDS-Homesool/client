@@ -1,25 +1,52 @@
-import { PRODUCT_DATA } from "../../../core/productData";
+import { getAlcoholData } from "../../../api/alcoholApi";
+import { ProductDataType } from "../../../type/productDataType";
+import { useState, useEffect } from "react";
 import { styled } from "styled-components";
 import GrayGap from "../../common/GrayGap";
+import PaymentMethod from "../paymentConfirmation/paymentMethod";
+import DiscountCalculation from "../paymentConfirmation/ discountCalculation";
+import AmountOfPayment from "../paymentConfirmation/ amountOfPayment";
 
 export default function OrderProductInfo() {
+  const [productData, setProductData] = useState<ProductDataType>();
+  async function fetchAlcoholData() {
+    const id = 3;
+    try {
+      const response = await getAlcoholData(id);
+      setProductData(response);
+      console.log(response);
+    } catch (error) {
+      console.error("데이터 패치 중 오류 발생:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchAlcoholData();
+  }, []);
   return (
     <>
-      <OrderProductInfoWrapper>
-        <HeaderTitle>주문 상품</HeaderTitle>
-        <ProductInfoContainer>
-          <ProductImage />
-          <InfoContainer>
-            <ProductName>{PRODUCT_DATA.name}</ProductName>
-            <ProductPriceContainer>
-              <PriceText>{PRODUCT_DATA.price}원</PriceText>
-              {/* 할인된 가격 계산한 데이터 있음 */}
-              <CountText>1개</CountText>
-            </ProductPriceContainer>
-          </InfoContainer>
-        </ProductInfoContainer>
-      </OrderProductInfoWrapper>
-      <GrayGap />
+      {productData && (
+        <>
+          <OrderProductInfoWrapper>
+            <HeaderTitle>주문 상품</HeaderTitle>
+            <ProductInfoContainer>
+              <ProductImage src={productData.detailImage} />
+              <InfoContainer>
+                <ProductName>{productData.name}</ProductName>
+                <ProductPriceContainer>
+                  <PriceText>{productData.price}원</PriceText>
+                  {/* 할인된 가격 계산한 데이터 있음 */}
+                  <CountText>1개</CountText>
+                </ProductPriceContainer>
+              </InfoContainer>
+            </ProductInfoContainer>
+          </OrderProductInfoWrapper>
+          <GrayGap />
+          <PaymentMethod />
+          <DiscountCalculation salePrice={productData.salePrice} />
+          <AmountOfPayment salePrice={productData.salePrice} />
+        </>
+      )}
     </>
   );
 }
@@ -27,6 +54,7 @@ export default function OrderProductInfo() {
 const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: 1.2rem;
 `;
 
 const CountText = styled.p`

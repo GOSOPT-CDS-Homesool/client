@@ -1,8 +1,11 @@
 import { styled } from "styled-components";
 import { RightSideOpenButton } from "../../../assets";
 import GrayGap from "../../common/GrayGap";
+import { ProductDataType } from "../../../type/productDataType";
 
-export default function DiscountCalculation() {
+export default function DiscountCalculation(props: ProductDataType) {
+  const { salePrice } = props;
+
   return (
     <>
       <CouponContainer>
