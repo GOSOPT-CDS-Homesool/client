@@ -26,7 +26,7 @@ export default function AmountOfPayment(props: AmountOfPayment) {
     };
     try {
       const response = await purchaseSuccess(purchaseData);
-      console.log(response.data);
+      console.debug(response);
       setOpen(true);
     } catch (error) {
       console.error(error);
