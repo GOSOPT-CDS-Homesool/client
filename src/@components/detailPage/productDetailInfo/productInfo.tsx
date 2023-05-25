@@ -1,14 +1,29 @@
-import { useState } from "react";
 import { styled } from "styled-components";
-import ProductDetailClose from "../../../assets/image/closeProductInfoImg.png";
-import ProductDetailOpen from "../../../assets/image/openProductInfoImg.png";
 import { DetailIdProps } from "../../../type/detailIdProps";
 import GrayGap from "../../common/GrayGap";
+import { getAlcoholData } from "../../../api/alcoholData";
+import { ProductDataType } from "../../../type/productDataType";
+import { useState, useEffect } from "react";
 
 export default function ProductInfo(props: DetailIdProps) {
   const { id } = props;
 
   const [open, setOpen] = useState(false);
+  const [productData, setProductData] = useState<ProductDataType>();
+
+  async function fetchAlcoholData() {
+    try {
+      const response = await getAlcoholData(`${id}`);
+      setProductData(response);
+      console.log(response);
+    } catch (error) {
+      console.error("데이터 패치 중 오류 발생:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchAlcoholData();
+  }, []);
 
   function openDetailInfo() {
     setOpen(true);
@@ -16,15 +31,36 @@ export default function ProductInfo(props: DetailIdProps) {
 
   return (
     <>
-      <HeaderTitle>제품 상세정보</HeaderTitle>
-      {open ? <DetailInfoImage src={ProductDetailOpen} /> : <DetailInfoImage src={ProductDetailClose} />}
-      <OpenDetailIfoButton onClick={openDetailInfo}>상세정보 펼쳐보기</OpenDetailIfoButton>
-      <GrayGap />
+      {productData && (
+        <>
+          <HeaderTitle>제품 상세정보</HeaderTitle>
+          {open ? (
+            <DetailInfoImage src={productData.imageInfoImage} />
+          ) : (
+            <CropCloseImage>
+              <CloseDetailInfoImage src={productData.imageInfoImage} />
+            </CropCloseImage>
+          )}
+          <OpenDetailIfoButton onClick={openDetailInfo}>상세정보 펼쳐보기</OpenDetailIfoButton>
+          <GrayGap />
+        </>
+      )}
     </>
   );
 }
 
+const CropCloseImage = styled.div`
+  max-height: 120rem;
+  overflow: hidden;
+`;
+
+const CloseDetailInfoImage = styled.img`
+  width: 34.3rem;
+`;
+
 const DetailInfoImage = styled.img`
+  width: 34.3rem;
+  height: 100%;
   margin-top: 2rem;
 `;
 
@@ -36,6 +72,7 @@ const OpenDetailIfoButton = styled.button`
   color: ${({ theme }) => theme.colors.GRAYSCALE700};
   border: 0.1rem solid ${({ theme }) => theme.colors.GRAYSCALE400};
   ${({ theme }) => theme.fonts.body02_1};
+  z-index: 1;
 `;
 
 const HeaderTitle = styled.header`

@@ -1,26 +1,34 @@
-import { PRODUCT_DATA } from "../../../core/productData";
-import { OrderOptionProps } from "../../../type/OrderOptionType";
 import { MinusIc } from "../../../assets";
 import { PlusIc } from "../../../assets";
 import { styled } from "styled-components";
 
-export default function OrderContents({ discountedPrice }: OrderOptionProps) {
+interface ProductInfoProps {
+  soldOut?: boolean;
+  salePrice: number;
+  name?: string;
+}
+
+export default function OrderContents(props: ProductInfoProps) {
+  const { salePrice, name } = props;
+
   return (
-    <SuccessOptionWrapper>
-      <ProductName>{PRODUCT_DATA.name}</ProductName>
-      <QuantityContainer>
-        <ExtendedAmountText>수량</ExtendedAmountText>
-        <CountContainer>
-          <MinusIcon />
-          <CountingText>1</CountingText>
-          <PlusIc />
-        </CountContainer>
-      </QuantityContainer>
-      <ExtendedPrice>
-        <ExtendedPriceText>총 합계금액</ExtendedPriceText>
-        <ExtendedPriceCount>{discountedPrice}원</ExtendedPriceCount>
-      </ExtendedPrice>
-    </SuccessOptionWrapper>
+    <>
+      <SuccessOptionWrapper>
+        <ProductName>{name}</ProductName>
+        <QuantityContainer>
+          <ExtendedAmountText>수량</ExtendedAmountText>
+          <CountContainer>
+            <MinusIcon />
+            <CountingText>1</CountingText>
+            <PlusIc />
+          </CountContainer>
+        </QuantityContainer>
+        <ExtendedPrice>
+          <ExtendedPriceText>총 합계금액</ExtendedPriceText>
+          <ExtendedPriceCount>{salePrice}원</ExtendedPriceCount>
+        </ExtendedPrice>
+      </SuccessOptionWrapper>
+    </>
   );
 }
 
@@ -80,10 +88,10 @@ const ExtendedPrice = styled.div`
 `;
 
 const SuccessOptionWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 4rem;
   width: 37.5rem;
   margin-left: -1.6rem;
   background-color: ${({ theme }) => theme.colors.GRAYSCALE000};
-  z-index: 1;
+  z-index: 5;
 `;

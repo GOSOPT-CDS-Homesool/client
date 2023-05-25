@@ -1,14 +1,16 @@
 export interface ProductDataType {
   id: number;
   name: string;
-  tags?: [];
-  soldOut?: boolean;
-  like: boolean;
-  sale: number;
+  tags: boolean;
+  soldOut: boolean;
+  like: false;
   price: number;
-  image?: string;
-  detailImage?: string;
-  stock?: number;
+  sale: number;
+  salePrice: number;
+  image: string;
+  detailImage: string;
+  imageInfoImage?: string;
+  stock: 0;
   subscribe: boolean;
-  twinkle: boolean;
+  twinckle: boolean;
 }

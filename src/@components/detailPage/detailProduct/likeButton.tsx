@@ -4,7 +4,7 @@ import { GrayLikeIc, OrangeLikeIc } from "../../../assets";
 import styled from "styled-components";
 
 interface LikeButtonProps {
-  postId: number;
+  postId: string;
 }
 
 const LikeButton: React.FC<LikeButtonProps> = ({ postId }) => {
@@ -13,7 +13,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({ postId }) => {
   const handleLike = async () => {
     try {
       // 서버에 좋아요 상태값을 변경하는 POST 요청을 보냄
-      const response = await axios.post(`https://api.homesool.p-e.kr/alcohol/like?alcoholId=${1}`);
+      const response = await axios.post(`https://api.homesool.p-e.kr/alcohol/like?alcoholId=${postId}`);
       console.log(response);
       // 성공 시에 아이콘 색깔을 변경
       if (response.status === 200) {
