@@ -11,7 +11,7 @@ export default function Router() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/orderPayment" element={<OrderPayment />} />
+        <Route path="/order-payment" element={<OrderPayment />} />
       </Routes>
     </BrowserRouter>
   );

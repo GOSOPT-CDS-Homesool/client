@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import OrderChoice from "./orderChoice";
@@ -16,28 +16,44 @@ export default function SuccessBuyButton(props: ProductInfoProps) {
   const [visible, setVisible] = useState(false);
   const [clickCnt, setClickCnt] = useState(0);
   const navigate = useNavigate();
-  let count = 0;
 
   function toggleUp() {
-    setVisible(!visible);
-    count += 1;
-    console.log("qksjdfkdfj");
-    setClickCnt(clickCnt + 1);
+    console.log("toggle");
+    setVisible(true);
   }
 
-  useEffect(() => {
-    count === 2 && navigate("/orderPayment", { state: id });
-  }, [visible]);
+  function goToBuy() {
+    console.log("buy");
+    navigate("/order-payment", { state: id });
+  }
+  // useEffect(() => {
+  //   isClickCntOne() && setVisible(true);
+  //   // isClickCntTwo() && navigate("/order-payment", { state: id });
+  // }, [clickCnt]);
 
-  console.log(count);
+  // useEffect(() => {
+  //   visible && setClickCnt(2);
+  // }, [visible]);
+
+  // function isClickCntOne() {
+  //   return clickCnt === 1;
+  // }
+
+  // function isClickCntTwo() {
+  //   return clickCnt === 2;
+  // }
+
+  // console.log(clickCnt);
 
   return (
     <ChoiceOrderButtonWrapper>
       {visible && (
-        <>
+        <ToggleWrapper onClick={goToBuy}>
           <OrderContents name={name} soldOut={soldOut} salePrice={salePrice} />
           <OrderChoice soldOut={soldOut} salePrice={salePrice} id={id} />
-        </>
+          <AddToCartButton>장바구니 담기</AddToCartButton>
+          <BuyButton>바로구매</BuyButton>
+        </ToggleWrapper>
       )}
       <AddToCartButton>장바구니 담기</AddToCartButton>
       <BuyButton onClick={toggleUp}>바로구매</BuyButton>
@@ -67,4 +83,9 @@ const BuyButton = styled.button`
   background-color: ${({ theme }) => theme.colors.HS_ORANGE500};
   color: ${({ theme }) => theme.colors.GRAYSCALE000};
   ${({ theme }) => theme.fonts.body02}
+`;
+
+const ToggleWrapper = styled.section`
+  position: absolute;
+  z-index: 2;
 `;
