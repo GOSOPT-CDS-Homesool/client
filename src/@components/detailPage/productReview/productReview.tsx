@@ -1,5 +1,4 @@
 import styled from "styled-components";
-<<<<<<< HEAD
 import Stars from "../../homePage/card/stars";
 
 interface ProductReviewProps {
@@ -12,10 +11,6 @@ interface ProductReviewProps {
 
 export default function ProductReview(props: ProductReviewProps) {
   const { title, image, contents, star, date } = props;
-=======
-import { REVIEW_DATA } from "../../../core/reviewData";
-import Stars from "../../homePage/card/stars";
->>>>>>> ff78dce59cf4ab2b30716c5986caa291b79a36cd
 
   return (
     <ReviewContainer>

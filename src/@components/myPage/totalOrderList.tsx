@@ -3,15 +3,11 @@ import { OrderListType } from "../../type/mypage";
 import Title from "../common/title";
 import TotalOrder from "./totalOrder";
 
-<<<<<<< HEAD
 interface TotalOrderListType {
   orderList: OrderListType[];
 }
 
 export default function TotalOrderList(props: TotalOrderListType) {
-=======
-export default function TotalOrderList(props: any) {
->>>>>>> ff78dce59cf4ab2b30716c5986caa291b79a36cd
   const { orderList } = props;
 
   console.log(orderList);

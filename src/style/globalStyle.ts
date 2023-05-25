@@ -38,8 +38,6 @@ export const GlobalStyle = createGlobalStyle`
 
     width: 37.5rem;
     padding: 0 1.6rem;
-
-    border: 0.1rem solid skyblue;
   }
   menu, ol, ul {
     list-style: none;
