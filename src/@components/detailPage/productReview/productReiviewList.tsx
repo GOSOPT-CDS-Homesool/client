@@ -9,7 +9,7 @@ export default function ProductReiviewList() {
   const [detailReviews, setDetailReviews] = useState<ReviewDataType[]>([]);
 
   async function fetchDetailReview() {
-    const response = await getDetailReview(2);
+    const response = await getDetailReview(1);
     setDetailReviews(response);
   }
 
@@ -19,6 +19,10 @@ export default function ProductReiviewList() {
 
   function checkIsReviewZero() {
     return detailReviews.length === 0;
+  }
+
+  function checkIsReviewLessThenThree(idx: number) {
+    return idx <= 3;
   }
 
   return (
@@ -31,9 +35,12 @@ export default function ProductReiviewList() {
         <DetailNoReviewIc />
       ) : (
         <>
-          {detailReviews?.map(({ id, title, image, contents, star, date }: ReviewDataType) => (
-            <ProductReview key={id} title={title} image={image} contents={contents} star={star} date={date} />
-          ))}
+          {detailReviews?.map(
+            ({ id, title, image, contents, star, date }: ReviewDataType, idx: number) =>
+              checkIsReviewLessThenThree(idx) && (
+                <ProductReview key={id} title={title} image={image} contents={contents} star={star} date={date} />
+              ),
+          )}
         </>
       )}
       <GreyGap />
