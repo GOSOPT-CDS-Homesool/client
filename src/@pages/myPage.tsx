@@ -8,7 +8,8 @@ import MyShopping from "../@components/myPage/myShopping";
 import TotalOrderList from "../@components/myPage/totalOrderList";
 import UserProfile from "../@components/myPage/userProfile";
 import { getUserData } from "../api/userData";
-import { MoveToSilverBannerIc, MyPageAdsIc } from "../assets";
+import { MoveToSilverBannerIc } from "../assets";
+import ads from "../assets/image/myPageAdsImage.png";
 import { OrderListType } from "../type/mypage";
 import { UserDataType } from "../type/userDataType";
 
@@ -44,7 +45,7 @@ export default function MyPage() {
           <UserProfile nickName={userData.nickName} userRank={userData.userRank} />
           <MoveToSilverBannerIcon />
           <CouponInfoBox point={userData.point} coupon={userData.coupon} interest={userData.interest} />
-          <MyPageAdsIcon />
+          <AdsImg src={ads} alt="광고이미지" />
           <TotalOrderList orderList={orderList} />
           <MyShopping />
           <CustomerCenter />
@@ -59,10 +60,10 @@ const MoveToSilverBannerIcon = styled(MoveToSilverBannerIc)`
   margin: 1.5rem 0 3rem 0;
 `;
 
-const MyPageAdsIcon = styled(MyPageAdsIc)`
+const AdsImg = styled.img`
   margin: 3.3rem 0 4rem -1.7rem;
 `;
 
 const MyPageWrapper = styled.section`
-  margin-top: 9.3rem;
+  /* margin-top: 9.3rem; */
 `;

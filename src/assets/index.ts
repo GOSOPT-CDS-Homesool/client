@@ -24,7 +24,6 @@ export { ReactComponent as LikeIc } from "./icon/likeIc.svg";
 export { ReactComponent as OrangeLikeIc, ReactComponent as OrangeLikeIcon } from "./icon/likeOrange.svg";
 export { ReactComponent as MinusIc } from "./icon/minusIconIc.svg";
 export { ReactComponent as MoveToSilverBannerIc } from "./icon/moveToSilverBannerIc.svg";
-export { ReactComponent as MyPageAdsIc } from "./icon/myPageAdsIc.svg";
 export { ReactComponent as MyPageUpdateProfileIc } from "./icon/myPageUpdateProfileIc.svg";
 export { ReactComponent as MyPageUserProfileImgIc } from "./icon/myPageUserProfileImgIc.svg";
 export { ReactComponent as NonCheckButton } from "./icon/nonCheckRadioIc.svg";
@@ -49,4 +48,3 @@ export { ReactComponent as RecommendTagIc, ReactComponent as RecommendTagIcon } 
 export { ReactComponent as SoldOutTagIc, ReactComponent as SoldOutTagIcon } from "./icon/tag_soldout.svg";
 export { ReactComponent as TimeSaleIc } from "./icon/timesale.svg";
 export { ReactComponent as TriangleOpenIcon } from "./icon/triangleOpenIc.svg";
-export { ReactComponent as SubscribeImg } from "./image/subscribe_banner.svg";
