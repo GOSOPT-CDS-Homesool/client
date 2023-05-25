@@ -1,11 +1,10 @@
-import Card from "./card";
-
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { PRODUCT_DATA2 } from "../../../core/productDataDH";
 import { ProductDataType } from "../../../type/productDataTypeDH";
 
+import "slick-carousel/slick/slick.css";
+import Card from "./card";
 interface CardProps {
   value: string;
 }

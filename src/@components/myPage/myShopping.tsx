@@ -1,15 +1,16 @@
-import React from "react";
-import Title from "../common/title";
-import ListBox from "../common/listBox";
-import { myShoppingList } from "../../core/myPage";
 import { styled } from "styled-components";
+import { myShoppingList } from "../../core/myPage";
+import ListBox from "../common/listBox";
+import Title from "../common/title";
 
 export default function MyShopping() {
   return (
     <MyShoppingWrapper>
       <Title title="나의 쇼핑" />
       {myShoppingList.map(({ id, listTitle }) => (
-        <ListBox key={id} listTitle={listTitle} />
+        <div key={id}>
+          <ListBox listTitle={listTitle} />
+        </div>
       ))}
     </MyShoppingWrapper>
   );

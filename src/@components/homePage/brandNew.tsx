@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import BrandNewCard from "./carousel/brandNewCard";
-import CardListHeader from "./carousel/cardListHeader";
 import { PRODUCT_DATA2 } from "../../core/productDataDH";
 import { ProductDataType } from "../../type/productDataTypeDH";
+import BrandNewCard from "./carousel/brandNewCard";
+import CardListHeader from "./carousel/cardListHeader";
 
 export default function BrandNew() {
   const filteredData: ProductDataType[] = [];

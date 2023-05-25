@@ -1,7 +1,5 @@
-import React from "react";
-import CouponInfo from "./couponInfo";
-import { USER_DATA } from "../../core/userData";
 import { styled } from "styled-components";
+<<<<<<< HEAD
 import { UserDataType } from "../../type/userDataType";
 
 interface CouponInfoBoxProps {
@@ -12,6 +10,10 @@ interface CouponInfoBoxProps {
 
 export default function CouponInfoBox(props: CouponInfoBoxProps) {
   const { point, coupon, interest } = props;
+=======
+import { USER_DATA } from "../../core/userData";
+import CouponInfo from "./couponInfo";
+>>>>>>> ff78dce59cf4ab2b30716c5986caa291b79a36cd
 
   return (
     <CouponInfoBoxWrapper>

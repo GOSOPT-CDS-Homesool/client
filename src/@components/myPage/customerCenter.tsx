@@ -1,15 +1,16 @@
-import React from "react";
-import Title from "../common/title";
-import ListBox from "../common/listBox";
-import { customerCenterList } from "../../core/myPage";
 import { styled } from "styled-components";
+import { customerCenterList } from "../../core/myPage";
+import ListBox from "../common/listBox";
+import Title from "../common/title";
 
 export default function CustomerCenter() {
   return (
     <CustomerCenterWrapper>
       <Title title="나의 쇼핑" />
       {customerCenterList.map(({ id, listTitle }) => (
-        <ListBox key={id} listTitle={listTitle} />
+        <div key={id}>
+          <ListBox listTitle={listTitle} />
+        </div>
       ))}
     </CustomerCenterWrapper>
   );

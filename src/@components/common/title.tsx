@@ -1,7 +1,10 @@
-import React from "react";
 import { styled } from "styled-components";
 
-export default function Title(props) {
+interface TitleProps {
+  title: string;
+}
+
+export default function Title(props: TitleProps) {
   const { title } = props;
 
   return <TitleWrapper>{title}</TitleWrapper>;

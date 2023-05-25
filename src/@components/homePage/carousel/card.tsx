@@ -1,10 +1,10 @@
+import styled from "styled-components";
+import { ProductDataType } from "../../../type/productDataTypeDH";
 import Like from "../card/like";
 import Price from "../card/price";
 import SoldOut from "../card/soldOut";
-import Tags from "../card/tags";
 import Stock from "../card/stock";
-import styled from "styled-components";
-import { ProductDataType } from "../../../type/productDataTypeDH";
+import Tags from "../card/tags";
 
 interface CardProps {
   key?: number;

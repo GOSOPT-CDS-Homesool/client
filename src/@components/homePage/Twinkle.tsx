@@ -1,6 +1,6 @@
-import CardListHeader from "./carousel/cardListHeader";
-import CardList from "./carousel/cardList";
 import styled from "styled-components";
+import CardList from "./carousel/cardList";
+import CardListHeader from "./carousel/cardListHeader";
 
 export default function Twinkle() {
   return (

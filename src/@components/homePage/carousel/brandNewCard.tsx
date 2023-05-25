@@ -1,7 +1,7 @@
-import Price from "../card/price";
-import Tags from "../card/tags";
 import styled from "styled-components";
 import { ProductDataType } from "../../../type/productDataTypeDH";
+import Price from "../card/price";
+import Tags from "../card/tags";
 
 interface CardProps {
   key: number;

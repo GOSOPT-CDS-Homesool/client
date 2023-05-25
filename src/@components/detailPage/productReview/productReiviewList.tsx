@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
+=======
+>>>>>>> ff78dce59cf4ab2b30716c5986caa291b79a36cd
 import styled from "styled-components";
 import { getDetailReview } from "../../../api/detailReview";
 import { DetailNoReviewIc, DetailSeeAllIc } from "../../../assets";
