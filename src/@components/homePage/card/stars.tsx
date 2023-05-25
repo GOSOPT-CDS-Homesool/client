@@ -1,4 +1,3 @@
-import React from "react";
 import { FiveStarIc, FourStarIc, OneStarIc, ThreeStarIc, TwoStarIc } from "../../../assets";
 
 interface StarsProps {

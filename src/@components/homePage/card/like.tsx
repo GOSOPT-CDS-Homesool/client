@@ -1,4 +1,3 @@
-import React from "react";
 import { GrayLikeIc, OrangeLikeIc } from "../../../assets";
 import styled from "styled-components";
 

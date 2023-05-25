@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { SeeAllIc } from "../../../assets";
 import ProductReview from "./productReview";
@@ -9,7 +8,7 @@ export default function ProductReiviewList() {
       <ProductReviewHeader>
         <Title>상품후기(3)</Title>
         <SeeAllWrapper>
-          <p>펼쳐보기</p>
+          <p>전체보기</p>
           <SeeAllIcon />
         </SeeAllWrapper>
       </ProductReviewHeader>
@@ -22,7 +21,8 @@ export default function ProductReiviewList() {
 }
 
 const ProductReviewHeader = styled.div`
-  margin-top: 0.9rem;
+  width: 37.5rem;
+  height: 3.6rem;
   margin-left: -1.6rem;
   margin-right: -1.6rem;
   padding-bottom: 0.9rem;
