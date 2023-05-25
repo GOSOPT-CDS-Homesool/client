@@ -14,7 +14,7 @@ export default function DetailOrderInfo(props: DetailIdProps) {
   const navigate = useNavigate();
 
   function backToHome() {
-    navigate("/");
+    navigate(-1);
   }
 
   return (
