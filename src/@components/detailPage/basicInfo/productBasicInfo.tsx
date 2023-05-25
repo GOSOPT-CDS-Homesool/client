@@ -3,9 +3,12 @@ import { styled } from "styled-components";
 import { DetailFoldIc, DetailUnfoldIc } from "../../../assets";
 import BasicInfoClose from "../../../assets/image/closeBasicInfoImg.png";
 import BasicInfoOpen from "../../../assets/image/openBasicInfoImg.png";
+import { DetailIdProps } from "../../../type/detailIdProps";
 import GrayGap from "../../common/GrayGap";
 
-export default function ProductBasicInfo() {
+export default function ProductBasicInfo(props: DetailIdProps) {
+  const { id } = props;
+
   const [open, setOpen] = useState(false);
 
   function openDetailInfo() {

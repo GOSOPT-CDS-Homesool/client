@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getDetailReview } from "../../../api/detailReview";
 import { DetailNoReviewIc, DetailSeeAllIc } from "../../../assets";
+import { DetailIdProps } from "../../../type/detailIdProps";
 import { ReviewDataType } from "../../../type/reviewDataType";
 import ProductReview from "./productReview";
 
-export default function ProductReiviewList() {
+export default function ProductReiviewList(props: DetailIdProps) {
+  const { id } = props;
   const [detailReviews, setDetailReviews] = useState<ReviewDataType[]>([]);
 
   async function fetchDetailReview() {
-    const response = await getDetailReview(1);
+    const response = await getDetailReview(`${id}`);
     setDetailReviews(response);
   }
 

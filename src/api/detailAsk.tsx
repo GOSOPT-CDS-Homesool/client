@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function getDetailAsk(id: number) {
+export async function getDetailAsk(id: string) {
   try {
     const data = await axios.get(`https://api.homesool.p-e.kr/alcohol/inquiry/${id}`);
 

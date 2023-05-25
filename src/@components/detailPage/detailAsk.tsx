@@ -3,14 +3,16 @@ import { styled } from "styled-components";
 import { getDetailAsk } from "../../api/detailAsk";
 import { DetailSeeAllIc } from "../../assets";
 import { DetailAskType } from "../../type/detailAsk";
+import { DetailIdProps } from "../../type/detailIdProps";
 import DetailAskBox from "./detailAskBox";
 
-export default function DetailAsk() {
+export default function DetailAsk(props: DetailIdProps) {
+  const { id } = props;
   const [detailAsks, setDetailAsks] = useState<DetailAskType[]>();
   const [length, setLength] = useState<number>(0);
 
   async function fetchDetailAsk() {
-    const response = await getDetailAsk(2);
+    const response = await getDetailAsk(`${id}`);
     setDetailAsks(response);
     setLength(response.length);
   }
