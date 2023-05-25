@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import { BackButtonIc, DetailProductIc, GrayLikeIc, OrangeLikeIc, OriginalHomeSoolIc, ShareIc } from "../../../assets";
 import { PRODUCT_DATA } from "../../../core/productData";
@@ -10,11 +11,16 @@ import OrderChoice from "./orderChoice";
 export default function DetailOrderInfo(props: DetailIdProps) {
   const { id } = props;
   const [discountedPrice] = useState(CalculateDiscount(PRODUCT_DATA.price, PRODUCT_DATA.sale));
+  const navigate = useNavigate();
+
+  function backToHome() {
+    navigate("/");
+  }
 
   return (
     <>
       <DetailHeader>
-        <BackButtonIc />
+        <BackButtonIc onClick={backToHome} />
         <DetailTitle>상품상세</DetailTitle>
       </DetailHeader>
 
