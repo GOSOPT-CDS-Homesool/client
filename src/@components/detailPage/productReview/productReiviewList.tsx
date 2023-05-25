@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getDetailReview } from "../../../api/detailReview";
-import { DetailSeeAllIc, SeeAllIc } from "../../../assets";
+import { DetailSeeAllIc } from "../../../assets";
 import { ReviewDataType } from "../../../type/reviewDataType";
 import ProductReview from "./productReview";
 
@@ -49,19 +49,6 @@ const ProductReviewHeader = styled.div`
 const Title = styled.header`
   color: ${({ theme }) => theme.colors.GRAYSCALE800};
   ${({ theme }) => theme.fonts.bodyBold}
-`;
-
-const SeeAllIcon = styled(SeeAllIc)`
-  margin-bottom: 0.1rem;
-  color: ${({ theme }) => theme.colors.GRAYSCALE600};
-  ${({ theme }) => theme.fonts.body04};
-`;
-
-const SeeAllWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 0.9rem;
-  margin-right: 1.4rem;
 `;
 
 const GreyGap = styled.div`
