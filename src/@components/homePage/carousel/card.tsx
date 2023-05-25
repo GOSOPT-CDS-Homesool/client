@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PRODUCT_DATA1 } from "../../../core/productDataDH";
+import { ProductDataType } from "../../../type/productDataTypeDH";
 import Like from "../card/like";
 import Price from "../card/price";
 import SoldOut from "../card/soldOut";
@@ -7,22 +7,24 @@ import Stock from "../card/stock";
 import Tags from "../card/tags";
 
 interface CardProps {
+  key?: number;
   value: string;
+  data: ProductDataType;
 }
 
 export default function Card(props: CardProps) {
-  const { value } = props;
+  const { value, data } = props;
   return (
     <CardWrapper>
       <ImgWrapper>
-        <CardImg src={PRODUCT_DATA1.image} alt="이미지1" />
-        <SoldOut value={PRODUCT_DATA1.soldOut} />
-        <Like value={PRODUCT_DATA1.like} />
+        <CardImg src={data.image} alt="이미지1" />
+        <SoldOut value={data.soldOut} />
+        <Like value={false} />
       </ImgWrapper>
-      <Tags value={PRODUCT_DATA1.tags} />
-      {value == "twinkle" && <Stock value={PRODUCT_DATA1.stock} />}
-      <NameWrapper>{PRODUCT_DATA1.name}</NameWrapper>
-      <Price sale={PRODUCT_DATA1.sale} price={PRODUCT_DATA1.price} />
+      <Tags tags={data.tags} soldOut={data.soldOut} />
+      {value == "twinkle" && <Stock value={data.stock} />}
+      <NameWrapper>{data.name}</NameWrapper>
+      <Price sale={data.sale} price={data.price} salePrice={data.salePrice} />
     </CardWrapper>
   );
 }

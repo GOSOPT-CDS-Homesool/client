@@ -1,17 +1,23 @@
 import styled from "styled-components";
-import { PRODUCT_DATA1 } from "../../../core/productDataDH";
+import { ProductDataType } from "../../../type/productDataTypeDH";
 import Price from "../card/price";
 import Tags from "../card/tags";
 
-export default function BrandNewCard() {
+interface CardProps {
+  key: number;
+  data: ProductDataType;
+}
+
+export default function BrandNewCard(props: CardProps) {
+  const { data } = props;
   return (
     <CardWrapper>
       <ImgWrapper>
-        <CardImg src={PRODUCT_DATA1.image} alt="이미지1" />
+        <CardImg src={data.image} alt="이미지1" />
       </ImgWrapper>
-      <Tags value={PRODUCT_DATA1.tags} />
-      <NameWrapper>{PRODUCT_DATA1.name}</NameWrapper>
-      <Price sale={PRODUCT_DATA1.sale} price={PRODUCT_DATA1.price} />
+      <Tags tags={data.tags} soldOut={data.soldOut} />
+      <NameWrapper>{data.name}</NameWrapper>
+      <Price sale={data.sale} price={data.price} salePrice={data.salePrice} />
     </CardWrapper>
   );
 }
@@ -27,6 +33,7 @@ const NameWrapper = styled.p`
   width: 18.4rem;
   ${({ theme }) => theme.fonts.body01}
   color: ${({ theme }) => theme.colors.GRAYSCALE800};
+  text-align: center;
 `;
 const ImgWrapper = styled.div`
   width: 18.4rem;

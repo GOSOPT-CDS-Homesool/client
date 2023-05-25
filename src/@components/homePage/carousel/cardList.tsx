@@ -1,5 +1,8 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
+import { PRODUCT_DATA2 } from "../../../core/productDataDH";
+import { ProductDataType } from "../../../type/productDataTypeDH";
+
 import "slick-carousel/slick/slick.css";
 import Card from "./card";
 interface CardProps {
@@ -32,18 +35,53 @@ export default function CardList(props: CardProps) {
       },
     ],
   };
+  const filteredData: ProductDataType[] = [];
 
-  return (
-    <Slider {...settings}>
-      {/* {cards.map((card, index) => (
-        <Card key={index} {...card} image={images[index % images.length]} />
-      ))} */}
-      <Card value={value} />
-      <Card value={value} />
-      <Card value={value} />
-      <Card value={value} />
-      <Card value={value} />
-      <Card value={value} />
-    </Slider>
-  );
+  switch (value) {
+    case "twinkle":
+      PRODUCT_DATA2.forEach((item) => {
+        if (item.twinkle === true) {
+          filteredData.push(item);
+        }
+      });
+      return (
+        <Slider {...settings}>
+          {filteredData.map((item) => (
+            <Card key={item.id} value={value} data={item} />
+          ))}
+        </Slider>
+      );
+      break;
+    case "subscribe":
+      PRODUCT_DATA2.forEach((item) => {
+        if (item.twinkle === true) {
+          filteredData.push(item);
+        }
+      });
+      return (
+        <Slider {...settings}>
+          {filteredData.map((item) => (
+            <Card key={item.id} value={value} data={item} />
+          ))}
+        </Slider>
+      );
+      break;
+    case "thismonth":
+      PRODUCT_DATA2.forEach((item) => {
+        if (item.twinkle !== true && item.subscribe !== true) {
+          filteredData.push(item);
+        }
+      });
+      return (
+        <Slider {...settings}>
+          {filteredData.map((item) => (
+            <Card key={item.id} value={value} data={item} />
+          ))}
+        </Slider>
+      );
+      break;
+    default:
+      return <></>;
+      break;
+  }
 }
