@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import { DetailAskType } from "../../type/detailAsk";
 import { DetailAskRectangleIc, DetailEllipseIc } from "../../assets";
+import { DetailAskType } from "../../type/detailAsk";
 
 export default function DetailAskBox(props: DetailAskType): JSX.Element {
   const { userName, date, title, contents, answer } = props;
@@ -15,7 +15,7 @@ export default function DetailAskBox(props: DetailAskType): JSX.Element {
             {date}
           </AskAsideTitle>
         </AskAside>
-        <Title>{title}지평생막걸리보다</Title>
+        <Title>{title}</Title>
         <Contents>{contents}</Contents>
       </AskBox>
       {answer && (
@@ -32,6 +32,8 @@ export default function DetailAskBox(props: DetailAskType): JSX.Element {
 }
 
 const Answer = styled.article`
+  margin-left: 2rem;
+
   color: ${({ theme }) => theme.colors.GRAYSCALE600};
   ${({ theme }) => theme.fonts.body04};
 `;
@@ -52,7 +54,7 @@ const AnswerBox = styled.section`
 
   width: 37.5rem;
   margin-left: -1.6rem;
-  padding: 1.2rem 2.4rem;
+  padding: 1.2rem 1.6rem 2rem 2.4rem;
 
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.GRAYSCALE400};
   background-color: ${({ theme }) => theme.colors.GRAYSCALE300};

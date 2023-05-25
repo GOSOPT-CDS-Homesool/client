@@ -1,17 +1,17 @@
-import { styled } from "styled-components";
-import UserProfile from "../@components/myPage/userProfile";
-import { MoveToSilverBannerIc, MyPageAdsIc } from "../assets";
-import CouponInfoBox from "../@components/myPage/couponInfoBox";
-import TotalOrderList from "../@components/myPage/totalOrderList";
 import { useEffect, useState } from "react";
-import { USER_DATA } from "../core/userData";
-import { OrderListType } from "../type/mypage";
-import MyShopping from "../@components/myPage/myShopping";
-import CustomerCenter from "../@components/myPage/customerCenter";
-import PageFooter from "../@components/common/pageFooter";
+import { styled } from "styled-components";
 import CommonFooter from "../@components/common/commonFooter";
-import { UserDataType } from "../type/userDataType";
+import PageFooter from "../@components/common/pageFooter";
+import CouponInfoBox from "../@components/myPage/couponInfoBox";
+import CustomerCenter from "../@components/myPage/customerCenter";
+import MyShopping from "../@components/myPage/myShopping";
+import TotalOrderList from "../@components/myPage/totalOrderList";
+import UserProfile from "../@components/myPage/userProfile";
 import { getUserData } from "../api/userData";
+import { MoveToSilverBannerIc } from "../assets";
+import ads from "../assets/image/myPageAdsImage.png";
+import { OrderListType } from "../type/mypage";
+import { UserDataType } from "../type/userDataType";
 
 export default function MyPage() {
   const [userData, setUserData] = useState<UserDataType>();
@@ -20,6 +20,13 @@ export default function MyPage() {
   async function fetchUserData() {
     const response = await getUserData();
     setUserData(response);
+  }
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
+  useEffect(() => {
     userData &&
       setOrderList([
         { id: 1, orderTitle: "입금대기", orderNum: userData.waiting },
@@ -28,11 +35,7 @@ export default function MyPage() {
         { id: 4, orderTitle: "배송중", orderNum: userData.delivering },
         { id: 5, orderTitle: "배송완료", orderNum: userData.delivered },
       ]);
-  }
-
-  useEffect(() => {
-    fetchUserData();
-  }, []);
+  }, [userData]);
 
   return (
     <>
@@ -42,7 +45,7 @@ export default function MyPage() {
           <UserProfile nickName={userData.nickName} userRank={userData.userRank} />
           <MoveToSilverBannerIcon />
           <CouponInfoBox point={userData.point} coupon={userData.coupon} interest={userData.interest} />
-          <MyPageAdsIcon />
+          <AdsImg src={ads} alt="광고이미지" />
           <TotalOrderList orderList={orderList} />
           <MyShopping />
           <CustomerCenter />
@@ -57,10 +60,10 @@ const MoveToSilverBannerIcon = styled(MoveToSilverBannerIc)`
   margin: 1.5rem 0 3rem 0;
 `;
 
-const MyPageAdsIcon = styled(MyPageAdsIc)`
+const AdsImg = styled.img`
   margin: 3.3rem 0 4rem -1.7rem;
 `;
 
 const MyPageWrapper = styled.section`
-  margin-top: 9.3rem;
+  /* margin-top: 9.3rem; */
 `;

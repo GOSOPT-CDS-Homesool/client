@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import { getDetailAsk } from "../../api/detailAsk";
-import { DetailAskType } from "../../type/detailAsk";
-import GrayGap from "../common/GrayGap";
-import { DetailSeeAllIc } from "../../assets";
 import { styled } from "styled-components";
+import { getDetailAsk } from "../../api/detailAsk";
+import { DetailSeeAllIc } from "../../assets";
+import { DetailAskType } from "../../type/detailAsk";
+import { DetailIdProps } from "../../type/detailIdProps";
 import DetailAskBox from "./detailAskBox";
 
-export default function DetailAsk() {
+export default function DetailAsk(props: DetailIdProps) {
+  const { id } = props;
   const [detailAsks, setDetailAsks] = useState<DetailAskType[]>();
   const [length, setLength] = useState<number>(0);
 
   async function fetchDetailAsk() {
-    const response = await getDetailAsk(1);
+    const response = await getDetailAsk(`${id}`);
     setDetailAsks(response);
     setLength(response.length);
   }
@@ -24,18 +25,31 @@ export default function DetailAsk() {
     return length === 0;
   }
 
+  function checkAskLessThanTwo(idx: number) {
+    return idx <= 2;
+  }
+
   return (
     <>
-      <GrayGap />
       <Header>
         <h1>상품문의({length})</h1>
         <DetailSeeAllIc />
       </Header>
       {!checkAskIsZero() && (
         <>
-          {detailAsks?.map(({ userName, date, title, contents, answer }: DetailAskType, idx: number) => (
-            <DetailAskBox key={idx} userName={userName} date={date} title={title} contents={contents} answer={answer} />
-          ))}
+          {detailAsks?.map(
+            ({ userName, date, title, contents, answer }: DetailAskType, idx: number) =>
+              checkAskLessThanTwo(idx) && (
+                <DetailAskBox
+                  key={idx}
+                  userName={userName}
+                  date={date}
+                  title={title}
+                  contents={contents}
+                  answer={answer}
+                />
+              ),
+          )}
         </>
       )}
     </>
@@ -54,5 +68,5 @@ const Header = styled.header`
   margin-left: -1.65rem;
 
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.GRAYSCALE400};
-  ${({ theme }) => theme.fonts.head03}
+  ${({ theme }) => theme.fonts.bodyBold}
 `;

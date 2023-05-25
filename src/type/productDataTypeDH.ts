@@ -1,14 +1,18 @@
+import { TagsDataType } from "./tagsDataType";
+
 export interface ProductDataType {
   id: number;
   name: string;
-  tags: Array<string>;
+  tags: TagsDataType;
   soldOut: boolean;
   like: boolean;
   sale: number;
-  price: number;
+  price: string;
+  salePrice: string;
   image: string;
-  stock: number;
   detailImage: string;
-  subscribe?: boolean;
-  twinkle?: boolean;
+  imageInfoImage: string;
+  stock: number;
+  subscribe: boolean;
+  twinkle: boolean;
 }
