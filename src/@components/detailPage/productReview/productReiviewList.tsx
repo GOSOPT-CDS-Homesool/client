@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getDetailReview } from "../../../api/detailReview";
-import { DetailSeeAllIc } from "../../../assets";
+import { DetailNoReviewIc, DetailSeeAllIc } from "../../../assets";
 import { ReviewDataType } from "../../../type/reviewDataType";
 import ProductReview from "./productReview";
 
@@ -17,16 +17,25 @@ export default function ProductReiviewList() {
     fetchDetailReview();
   }, []);
 
+  function checkIsReviewZero() {
+    return detailReviews.length === 0;
+  }
+
   return (
     <>
       <ProductReviewHeader>
         <Title>상품후기({detailReviews.length})</Title>
         <DetailSeeAllIc />
       </ProductReviewHeader>
-      {detailReviews?.map(({ id, title, image, contents, star, date }: ReviewDataType) => (
-        <ProductReview key={id} title={title} image={image} contents={contents} star={star} date={date} />
-      ))}
-
+      {checkIsReviewZero() ? (
+        <DetailNoReviewIc />
+      ) : (
+        <>
+          {detailReviews?.map(({ id, title, image, contents, star, date }: ReviewDataType) => (
+            <ProductReview key={id} title={title} image={image} contents={contents} star={star} date={date} />
+          ))}
+        </>
+      )}
       <GreyGap />
     </>
   );

@@ -8,6 +8,7 @@ export { ReactComponent as DetailProductIc } from "./icon/datailProductImg.svg";
 export { ReactComponent as DetailAskRectangleIc } from "./icon/detailAskRectangleIc.svg";
 export { ReactComponent as DetailEllipseIc } from "./icon/detailEllipseIc.svg";
 export { ReactComponent as DetailFoldIc } from "./icon/detailFoldIc.svg";
+export { ReactComponent as DetailNoReviewIc } from "./icon/detailNoReviewIc.svg";
 export { ReactComponent as DetailSeeAllIc } from "./icon/detailSeeAllIc.svg";
 export { ReactComponent as DetailUnfoldIc } from "./icon/detailUnfoldIc.svg";
 export { ReactComponent as FooterHomeActiveIc } from "./icon/footerHomeActiveIc.svg";
