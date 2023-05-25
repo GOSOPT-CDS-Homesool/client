@@ -1,8 +1,8 @@
-import BasicInfoOpen from "../../../assets/image/openBasicInfoImg.png";
-import BasicInfoClose from "../../../assets/image/closeBasicInfoImg.png";
-import { OpenDetailInfoIcon, CloseDetailInfoIcon } from "../../../assets";
 import { useState } from "react";
 import { styled } from "styled-components";
+import { CloseDetailInfoIcon, DetailFoldIc, DetailUnfoldIc, OpenDetailInfoIcon } from "../../../assets";
+import BasicInfoClose from "../../../assets/image/closeBasicInfoImg.png";
+import BasicInfoOpen from "../../../assets/image/openBasicInfoImg.png";
 import GrayGap from "../../common/GrayGap";
 
 export default function ProductBasicInfo() {
@@ -22,13 +22,12 @@ export default function ProductBasicInfo() {
         <HeaderTitle>기본정보</HeaderTitle>
         {open ? (
           <BasicInfoOpenContainer onClick={closeDetailInfo}>
-            <p>접어두기</p>
-            <CloseIcon />
+            <DetailFoldIc />
           </BasicInfoOpenContainer>
         ) : (
           <BasicInfoOpenContainer onClick={openDetailInfo}>
-            <p>펼쳐보기</p>
-            <OpenIcon />
+            <DetailUnfoldIc />
+            {/* <OpenIcon /> */}
           </BasicInfoOpenContainer>
         )}
       </BasicInfoHeaderContainer>
@@ -60,8 +59,16 @@ const OpenIcon = styled(OpenDetailInfoIcon)`
 `;
 
 const BasicInfoOpenContainer = styled.div`
-  display: flex;
-  margin: 0.9rem 0 0 23.8rem;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 37.5rem;
+  height: 3.6rem;
+
+  padding: 0 1.6rem;
+  margin-left: -1.65rem; */
+  /* margin: 0.9rem 0 0 23.8rem; */
 `;
 
 const HeaderTitle = styled.header`
@@ -70,8 +77,18 @@ const HeaderTitle = styled.header`
 `;
 
 const BasicInfoHeaderContainer = styled.div`
-  margin-top: 0.9rem;
-  padding-bottom: 0.9rem;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 37.5rem;
+  height: 3.6rem;
+
+  padding: 0 1.6rem;
+  margin-left: -1.65rem;
+
+  margin-top: 0.9rem;
+  /* padding-bottom: 0.9rem; */
+
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.GRAYSCALE400};
 `;

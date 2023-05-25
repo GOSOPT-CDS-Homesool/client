@@ -54,5 +54,5 @@ const Header = styled.header`
   margin-left: -1.65rem;
 
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.GRAYSCALE400};
-  ${({ theme }) => theme.fonts.head03}
+  ${({ theme }) => theme.fonts.bodyBold}
 `;
