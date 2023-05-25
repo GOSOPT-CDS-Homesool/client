@@ -1,6 +1,5 @@
-import React from "react";
-import { HomeIndicatorChromeIc } from "../../assets";
 import { styled } from "styled-components";
+import { HomeIndicatorChromeIc } from "../../assets";
 
 export default function ArrowFooter() {
   return (

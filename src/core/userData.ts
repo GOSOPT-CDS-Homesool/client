@@ -3,7 +3,7 @@ import { UserDataType } from "../type/userDataType";
 export const USER_DATA: UserDataType = {
   id: 1,
   nickName: "솝트짱",
-  rank: "브론즈",
+  userRank: "브론즈",
   point: 3000,
   coupon: 2,
   interest: 0,

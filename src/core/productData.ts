@@ -10,4 +10,8 @@ export const PRODUCT_DATA: ProductDataType = {
   detailImage: "느린마을",
   subscribe: false,
   twinkle: false,
+  tags: false,
+  salePrice: 0,
+  image: "",
+  stock: 0,
 };

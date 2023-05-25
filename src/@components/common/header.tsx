@@ -1,6 +1,5 @@
-import React from "react";
-import { HomeHeaderIc } from "../../assets";
 import { styled } from "styled-components";
+import { HomeHeaderIc } from "../../assets";
 
 export default function Header() {
   return (

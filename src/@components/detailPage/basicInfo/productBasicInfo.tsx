@@ -8,6 +8,7 @@ import GrayGap from "../../common/GrayGap";
 
 export default function ProductBasicInfo(props: DetailIdProps) {
   const { id } = props;
+  console.debug(id);
 
   const [open, setOpen] = useState(false);
 

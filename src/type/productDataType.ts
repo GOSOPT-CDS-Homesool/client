@@ -12,5 +12,5 @@ export interface ProductDataType {
   imageInfoImage?: string;
   stock: 0;
   subscribe: boolean;
-  twinckle: boolean;
+  twinkle: boolean;
 }
