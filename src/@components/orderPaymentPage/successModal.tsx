@@ -1,14 +1,29 @@
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 export default function SuccessModal() {
+  const navigate = useNavigate();
+
+  function moveToHome() {
+    navigate("/");
+  }
+
+  function moveToMy() {
+    navigate("/mypage");
+  }
+
   return (
     <>
       <ModalLayOut>
         <Modal>
           <Message>결제가 완료되었습니다!</Message>
           <ButtonWrapper>
-            <Button $isOrange={false}>홈으로 가기</Button>
-            <Button $isOrange={true}>주문정보 확인</Button>
+            <Button $isOrange={false} onClick={moveToHome}>
+              홈으로 가기
+            </Button>
+            <Button $isOrange={true} onClick={moveToMy}>
+              주문정보 확인
+            </Button>
           </ButtonWrapper>
         </Modal>
       </ModalLayOut>
@@ -68,7 +83,7 @@ const Message = styled.h1`
   align-items: center;
 
   width: 100%;
-  height: 12.5rem;
+  height: 12.1rem;
 
   ${({ theme }) => theme.fonts.head01}
 `;
