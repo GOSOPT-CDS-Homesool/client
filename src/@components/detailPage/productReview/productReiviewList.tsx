@@ -9,7 +9,7 @@ export default function ProductReiviewList() {
   const [detailReviews, setDetailReviews] = useState<ReviewDataType[]>([]);
 
   async function fetchDetailReview() {
-    const response = await getDetailReview(3);
+    const response = await getDetailReview(2);
     setDetailReviews(response);
   }
 

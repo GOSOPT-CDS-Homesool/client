@@ -3,7 +3,6 @@ import { styled } from "styled-components";
 import { getDetailAsk } from "../../api/detailAsk";
 import { DetailSeeAllIc } from "../../assets";
 import { DetailAskType } from "../../type/detailAsk";
-import GrayGap from "../common/GrayGap";
 import DetailAskBox from "./detailAskBox";
 
 export default function DetailAsk() {
@@ -26,7 +25,6 @@ export default function DetailAsk() {
 
   return (
     <>
-      <GrayGap />
       <Header>
         <h1>상품문의({length})</h1>
         <DetailSeeAllIc />
