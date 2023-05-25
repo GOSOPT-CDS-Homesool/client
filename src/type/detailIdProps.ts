@@ -1,3 +1,3 @@
 export interface DetailIdProps {
-  id: number;
+  id: string;
 }

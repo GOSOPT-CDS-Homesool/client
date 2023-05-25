@@ -13,14 +13,18 @@ export default function Detail() {
 
   return (
     <>
-      <ArrowFooter />
-      <Header />
-      <DetailOrderInfo id={id} />
-      <ProductInfo id={id} />
-      <ProductBasicInfo id={id} />
-      <ProductReiviewList id={id} />
-      <DetailAsk id={id} />
-      <PageFooter />
+      {id && (
+        <>
+          <ArrowFooter />
+          <Header />
+          <DetailOrderInfo id={id} />
+          <ProductInfo id={id} />
+          <ProductBasicInfo id={id} />
+          <ProductReiviewList id={id} />
+          <DetailAsk id={id} />
+          <PageFooter />
+        </>
+      )}
     </>
   );
 }
