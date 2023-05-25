@@ -1,3 +1,14 @@
+import {
+  DetailProductIc,
+  LikeIc,
+  ShareIc,
+  BackButtonIc,
+  OriginalHomeSoolIc,
+  OrangeLikeIc,
+  GrayLikeIc,
+} from "../../../assets";
+import { PRODUCT_DATA } from "../../../core/productData";
+import CalculateDiscount from "../../../utils/calculateDiscount";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
@@ -6,6 +17,7 @@ import { PRODUCT_DATA } from "../../../core/productData";
 import { DetailIdProps } from "../../../type/detailIdProps";
 import CalculateDiscount from "../../../utils/calculateDiscount";
 import ChoiceDelivery from "./choiceDelivery";
+import LikeButton from "./likeButton";
 import OrderChoice from "./orderChoice";
 
 export default function DetailOrderInfo(props: DetailIdProps) {
@@ -39,7 +51,7 @@ export default function DetailOrderInfo(props: DetailIdProps) {
         </DetailPriceContainer>
         <AddFuntionContainer>
           <ShareIc />
-          <LikeButton>{PRODUCT_DATA.like ? <OrangeLikeIc /> : <GrayLikeIc />}</LikeButton>
+          <LikeButtonIcon postId={1} />
         </AddFuntionContainer>
       </DetailContentsWrapper>
       <OrderChoice soldOut={false} discountedPrice={discountedPrice} />
@@ -48,7 +60,7 @@ export default function DetailOrderInfo(props: DetailIdProps) {
   );
 }
 
-const LikeButton = styled.button`
+const LikeButtonIcon = styled(LikeButton)`
   display: flex;
   justify-content: center;
   align-items: center;
