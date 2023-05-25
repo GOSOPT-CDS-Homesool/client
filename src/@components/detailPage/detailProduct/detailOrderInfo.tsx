@@ -48,7 +48,7 @@ const LikeButtonIcon = styled(LikeButton)`
 `;
 
 const AddFuntionContainer = styled.div`
-  margin: 5rem 0 0 14rem;
+  margin: 2rem 0 0 14rem;
   display: flex;
   align-items: center;
 `;

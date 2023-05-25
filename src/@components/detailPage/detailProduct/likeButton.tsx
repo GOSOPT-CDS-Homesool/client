@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { GrayLikeIc, OrangeLikeIc } from "../../../assets";
+import styled from "styled-components";
 
 interface LikeButtonProps {
   postId: number;
@@ -23,7 +24,14 @@ const LikeButton: React.FC<LikeButtonProps> = ({ postId }) => {
     }
   };
 
-  return <button onClick={handleLike}>{isLiked ? <OrangeLikeIc /> : <GrayLikeIc />}</button>;
+  return <LikeButtonIcon onClick={handleLike}>{isLiked ? <OrangeLikeIc /> : <GrayLikeIc />}</LikeButtonIcon>;
 };
 
 export default LikeButton;
+
+const LikeButtonIcon = styled.button`
+  transition: all 0.4s;
+  :active {
+    transform: scale(0.9);
+  }
+`;
