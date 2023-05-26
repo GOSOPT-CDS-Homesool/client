@@ -12,9 +12,10 @@ import Twinkle from "../@components/homePage/Twinkle";
 export default function Home() {
   return (
     <>
+      <TopButton />
       <Header />
       <Banner />
-      <TopButton />
+
       <ThisMonth />
       <Twinkle />
       <Subscribe />

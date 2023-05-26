@@ -1,5 +1,5 @@
-import { TopButtonIc } from "../../assets";
 import { styled } from "styled-components";
+import { TopButtonIc } from "../../assets";
 
 export default function TopButton() {
   function goToTop() {
@@ -9,15 +9,28 @@ export default function TopButton() {
     });
   }
   return (
-    <>
+    <TopButtonWrapper>
       <TopButtonIcon onClick={goToTop} />
-    </>
+    </TopButtonWrapper>
   );
 }
 
 const TopButtonIcon = styled(TopButtonIc)`
   position: fixed;
-  bottom: 18.4rem;
-  right: 21.8rem;
+
+  /* bottom: 12rem;
+  right: 21.8rem; */
+
   z-index: 6;
+`;
+
+const TopButtonWrapper = styled.section`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  position: fixed;
+  z-index: 10;
+  width: 33rem;
+  height: 52rem;
 `;
