@@ -1,8 +1,9 @@
-import { CommonFooterIc, FooterHomeActiveIc, FooterHomeIc, FooterMyActiveIc, FooterMyIc } from "../../assets";
-import { styled } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
+import { styled } from "styled-components";
+import { CommonFooterIc, FooterHomeActiveIc, FooterHomeIc, FooterMyActiveIc, FooterMyIc } from "../../assets";
 import { isHomePage } from "../../recoil/page";
+import TopButton from "../homePage/topButton";
 
 export default function CommonFooter() {
   const [isHome, setIsHome] = useRecoilState<boolean>(isHomePage);
@@ -20,6 +21,7 @@ export default function CommonFooter() {
 
   return (
     <>
+      <TopButton />
       <ButtonWrapper>
         <div onClick={activateHome}>{isHome ? <FooterHomeActiveIc /> : <FooterHomeIc />}</div>
         <div onClick={activateMy}>{isHome ? <FooterMyIc /> : <FooterMyActiveIc />}</div>

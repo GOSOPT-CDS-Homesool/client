@@ -16,7 +16,6 @@ export default function Detail() {
     <>
       {id && (
         <>
-          <TopButton />
           <ArrowFooter />
           <Header />
           <DetailOrderInfo id={id} />
@@ -25,6 +24,7 @@ export default function Detail() {
           <ProductReiviewList id={id} />
           <DetailAsk id={id} />
           <PageFooter />
+          <TopButton />
         </>
       )}
     </>
