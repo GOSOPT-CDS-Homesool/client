@@ -81,54 +81,220 @@
 
 <h2> 🛠 기술스택 </h2>
 
-```
-   
-```
+<img src="https://img.shields.io/badge/Typescript-3178C6?style=flat&logo=typescript&logoColor=white"/>
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=white"/>
+<img src="https://img.shields.io/badge/styled components-DB7093?style=flat-square&logo=styled-components&logoColor=white"/>
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=Netlify&logoColor=white">
+
 
 
 <h2> 💡 주요 라이브러리 </h2>
-
-```
-   
-```
+- React-Slick
 
 <br/>
 
 <h2>  📄 컨벤션 및 브랜치 전략 </h2>
-(노션 링크 또는 표로 작성)
+[컨벤션 바로보기](https://www.notion.so/seojisoosoo/16622eb8ff794922a349db1ce2509801)
 
-<a href="" />
-
-| 제목        | 내용                                                                             |
-| ----------- | -------------------------------------------------------------------------------- |
-|       |                                                |
-|       |                                                |
-|       |                                                |
-|       |                                                |
 
 <br/>
 
 <h2> 📁 폴더 구조 </h2>
 
 ```
-├── 📁 
-│  └── 📁 
-│	├── 
-│	├── 
-│	├── 
-│	└── 
-├── 📁
-│  ├── 📁
-│  │   └── 
-│  ├── 📁 
-│  │   └── 
-├── 📁 
-│  ├── 
-│  └── 
-├── 
-├── 
-├── 
-└── 
+📦src
+ ┣ 📂@components
+ ┃ ┣ 📂common
+ ┃ ┃ ┣ 📜GrayGap.tsx
+ ┃ ┃ ┣ 📜arrowFooter.tsx
+ ┃ ┃ ┣ 📜commonFooter.tsx
+ ┃ ┃ ┣ 📜header.tsx
+ ┃ ┃ ┣ 📜listBox.tsx
+ ┃ ┃ ┣ 📜pageFooter.tsx
+ ┃ ┃ ┣ 📜title.tsx
+ ┃ ┃ ┗ 📜top.tsx
+ ┃ ┣ 📂detailPage
+ ┃ ┃ ┣ 📂basicInfo
+ ┃ ┃ ┃ ┗ 📜productBasicInfo.tsx
+ ┃ ┃ ┣ 📂detailProduct
+ ┃ ┃ ┃ ┣ 📜choiceDelivery.tsx
+ ┃ ┃ ┃ ┣ 📜detailOrderInfo.tsx
+ ┃ ┃ ┃ ┣ 📜failBuyButton.tsx
+ ┃ ┃ ┃ ┣ 📜likeButton.tsx
+ ┃ ┃ ┃ ┣ 📜orderChoice.tsx
+ ┃ ┃ ┃ ┣ 📜orderContents.tsx
+ ┃ ┃ ┃ ┗ 📜successBuyButton.tsx
+ ┃ ┃ ┣ 📂productDetailInfo
+ ┃ ┃ ┃ ┗ 📜productInfo.tsx
+ ┃ ┃ ┣ 📂productReview
+ ┃ ┃ ┃ ┣ 📜productReiviewList.tsx
+ ┃ ┃ ┃ ┗ 📜productReview.tsx
+ ┃ ┃ ┣ 📜detailAsk.tsx
+ ┃ ┃ ┗ 📜detailAskBox.tsx
+ ┃ ┣ 📂homePage
+ ┃ ┃ ┣ 📂card
+ ┃ ┃ ┃ ┣ 📜like.tsx
+ ┃ ┃ ┃ ┣ 📜price.tsx
+ ┃ ┃ ┃ ┣ 📜soldOut.tsx
+ ┃ ┃ ┃ ┣ 📜stars.tsx
+ ┃ ┃ ┃ ┣ 📜stock.tsx
+ ┃ ┃ ┃ ┗ 📜tags.tsx
+ ┃ ┃ ┣ 📂carousel
+ ┃ ┃ ┃ ┣ 📜brandNewCard.tsx
+ ┃ ┃ ┃ ┣ 📜card.tsx
+ ┃ ┃ ┃ ┣ 📜cardList.tsx
+ ┃ ┃ ┃ ┣ 📜cardListHeader.tsx
+ ┃ ┃ ┃ ┣ 📜reviewCard.tsx
+ ┃ ┃ ┃ ┗ 📜reviewCardList.tsx
+ ┃ ┃ ┣ 📜Twinkle.tsx
+ ┃ ┃ ┣ 📜banner.tsx
+ ┃ ┃ ┣ 📜brandNew.tsx
+ ┃ ┃ ┣ 📜review.tsx
+ ┃ ┃ ┣ 📜subscribe.tsx
+ ┃ ┃ ┣ 📜thisMonth.tsx
+ ┃ ┃ ┗ 📜topButton.tsx
+ ┃ ┣ 📂myPage
+ ┃ ┃ ┣ 📜couponInfo.tsx
+ ┃ ┃ ┣ 📜couponInfoBox.tsx
+ ┃ ┃ ┣ 📜customerCenter.tsx
+ ┃ ┃ ┣ 📜myShopping.tsx
+ ┃ ┃ ┣ 📜totalOrder.tsx
+ ┃ ┃ ┣ 📜totalOrderList.tsx
+ ┃ ┃ ┗ 📜userProfile.tsx
+ ┃ ┗ 📂orderPaymentPage
+ ┃ ┃ ┣ 📂orderConfirmation
+ ┃ ┃ ┃ ┣ 📜orderProductInfo.tsx
+ ┃ ┃ ┃ ┣ 📜ordererInfo.tsx
+ ┃ ┃ ┃ ┣ 📜requestForDelivery.tsx
+ ┃ ┃ ┃ ┗ 📜shippingAddress.tsx
+ ┃ ┃ ┣ 📂paymentConfirmation
+ ┃ ┃ ┃ ┣ 📜 amountOfPayment.tsx
+ ┃ ┃ ┃ ┣ 📜 discountCalculation.tsx
+ ┃ ┃ ┃ ┗ 📜paymentMethod.tsx
+ ┃ ┃ ┣ 📜orderConfirmation.tsx
+ ┃ ┃ ┗ 📜successModal.tsx
+ ┣ 📂@pages
+ ┃ ┣ 📜detail.tsx
+ ┃ ┣ 📜home.tsx
+ ┃ ┣ 📜myPage.tsx
+ ┃ ┗ 📜orderPayment.tsx
+ ┣ 📂api
+ ┃ ┣ 📜.keep
+ ┃ ┣ 📜alcoholData.tsx
+ ┃ ┣ 📜allAlcohol.tsx
+ ┃ ┣ 📜allReview.tsx
+ ┃ ┣ 📜detailAsk.tsx
+ ┃ ┣ 📜detailReview.tsx
+ ┃ ┣ 📜likePost.tsx
+ ┃ ┣ 📜postPurchaseData.tsx
+ ┃ ┗ 📜userData.tsx
+ ┣ 📂assets
+ ┃ ┣ 📂icon
+ ┃ ┃ ┣ 📜.DS_Store
+ ┃ ┃ ┣ 📜Frame 256.svg
+ ┃ ┃ ┣ 📜Frame 257.svg
+ ┃ ┃ ┣ 📜Frame 258.svg
+ ┃ ┃ ┣ 📜Frame 259.svg
+ ┃ ┃ ┣ 📜LikeGray.svg
+ ┃ ┃ ┣ 📜LikeOrange.svg
+ ┃ ┃ ┣ 📜alertCircleIc.svg
+ ┃ ┃ ┣ 📜backButtonIc.svg
+ ┃ ┃ ┣ 📜checkIc.svg
+ ┃ ┃ ┣ 📜checkRadioIc.svg
+ ┃ ┃ ┣ 📜closeIcon.svg
+ ┃ ┃ ┣ 📜commonFooterIc.svg
+ ┃ ┃ ┣ 📜detailAskRectangleIc.svg
+ ┃ ┃ ┣ 📜detailEllipseIc.svg
+ ┃ ┃ ┣ 📜detailFoldIc.svg
+ ┃ ┃ ┣ 📜detailNoReviewIc.svg
+ ┃ ┃ ┣ 📜detailSeeAllIc.svg
+ ┃ ┃ ┣ 📜detailUnfoldIc.svg
+ ┃ ┃ ┣ 📜footerHomeActiveIc.svg
+ ┃ ┃ ┣ 📜footerHomeIc.svg
+ ┃ ┃ ┣ 📜footerIc.svg
+ ┃ ┃ ┣ 📜footerMyActiveIc.svg
+ ┃ ┃ ┣ 📜footerMyIc.svg
+ ┃ ┃ ┣ 📜homeHeaderIc.svg
+ ┃ ┃ ┣ 📜homeIndicatorChromeIc.svg
+ ┃ ┃ ┣ 📜homesool.svg
+ ┃ ┃ ┣ 📜likeIc.svg
+ ┃ ┃ ┣ 📜minusIconIc.svg
+ ┃ ┃ ┣ 📜moveToSilverBannerIc.svg
+ ┃ ┃ ┣ 📜myPageUpdateProfileIc.svg
+ ┃ ┃ ┣ 📜myPageUserProfileImgIc.svg
+ ┃ ┃ ┣ 📜nonCheckRadioIc.svg
+ ┃ ┃ ┣ 📜noneCheckIc.svg
+ ┃ ┃ ┣ 📜openIcon.svg
+ ┃ ┃ ┣ 📜originalHomeSoolIc.svg
+ ┃ ┃ ┣ 📜pagenationDotIc.svg
+ ┃ ┃ ┣ 📜pagenationSelectedDotIc.svg
+ ┃ ┃ ┣ 📜plusIconIc.svg
+ ┃ ┃ ┣ 📜right.svg
+ ┃ ┃ ┣ 📜shareIc.svg
+ ┃ ┃ ┣ 📜sideOpenIcon.svg
+ ┃ ┃ ┣ 📜sold_out.svg
+ ┃ ┃ ┣ 📜star1.svg
+ ┃ ┃ ┣ 📜star2.svg
+ ┃ ┃ ┣ 📜star3.svg
+ ┃ ┃ ┣ 📜star4.svg
+ ┃ ┃ ┣ 📜star5.svg
+ ┃ ┃ ┣ 📜tag_best.svg
+ ┃ ┃ ┣ 📜tag_new.svg
+ ┃ ┃ ┣ 📜tag_recommend.svg
+ ┃ ┃ ┣ 📜tag_soldout.svg
+ ┃ ┃ ┣ 📜timesale.svg
+ ┃ ┃ ┣ 📜topButtonIc.svg
+ ┃ ┃ ┗ 📜triangleOpenIc.svg
+ ┃ ┣ 📂image
+ ┃ ┃ ┣ 📜.DS_Store
+ ┃ ┃ ┣ 📜.keep
+ ┃ ┃ ┣ 📜closeBasicInfoImg.png
+ ┃ ┃ ┣ 📜homeAdsImage.png
+ ┃ ┃ ┣ 📜myPageAdsImage.png
+ ┃ ┃ ┣ 📜openBasicInfoImg.png
+ ┃ ┃ ┗ 📜top.png
+ ┃ ┣ 📜.DS_Store
+ ┃ ┣ 📜assets.d.ts
+ ┃ ┗ 📜index.ts
+ ┣ 📂core
+ ┃ ┣ 📜allReviewData.ts
+ ┃ ┣ 📜bannerData.ts
+ ┃ ┣ 📜myPage.ts
+ ┃ ┣ 📜productData.ts
+ ┃ ┣ 📜productDataDH.ts
+ ┃ ┣ 📜reviewData.ts
+ ┃ ┣ 📜shippingMessageData.ts
+ ┃ ┗ 📜userData.ts
+ ┣ 📂hooks
+ ┃ ┗ 📜.keep
+ ┣ 📂recoil
+ ┃ ┣ 📜.keep
+ ┃ ┗ 📜page.ts
+ ┣ 📂style
+ ┃ ┣ 📜globalStyle.ts
+ ┃ ┣ 📜style.d.ts
+ ┃ ┗ 📜theme.ts
+ ┣ 📂type
+ ┃ ┣ 📜allReviewDataType.ts
+ ┃ ┣ 📜detailAsk.ts
+ ┃ ┣ 📜detailIdProps.ts
+ ┃ ┣ 📜mypage.ts
+ ┃ ┣ 📜productDataType.ts
+ ┃ ┣ 📜productDataTypeDH.ts
+ ┃ ┣ 📜reviewDataType.ts
+ ┃ ┣ 📜shippingMessageType.ts
+ ┃ ┣ 📜tagsDataType.ts
+ ┃ ┗ 📜userDataType.ts
+ ┣ 📂utils
+ ┃ ┣ 📜.keep
+ ┃ ┗ 📜calculateDiscount.tsx
+ ┣ 📜.DS_Store
+ ┣ 📜App.tsx
+ ┣ 📜Router.tsx
+ ┣ 📜main.tsx
+ ┗ 📜vite-env.d.ts
 ```
 
 
