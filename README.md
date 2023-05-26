@@ -1,32 +1,40 @@
-### [솝트 합동세미나 웹 1조 클라이언트] 
+### [솝트 합동세미나 웹 1조 클라이언트]
+
 # 🥂홈술닷컴🥂
+
 > `Re-design` 프로젝트에 관한 소개입니다!
 
 <div align="center">
 
 <h2> 다양한 술을 안전하고 편하게 받아보실 수 있는 주류 플랫폼입니다! </h2>
 
-<img src=""  alt="서비스대표-이미지" />
+<img src="https://yt3.googleusercontent.com/ytc/AGIKgqNzXmTQiu5HDodjxfO-FjXXoJCmMjG6VUUpLcA=s900-c-k-c0x00ffffff-no-rj"  alt="서비스대표-이미지" />
 
 </div>
-
-<h2> (서비스)의 핵심 기능 </h2>
+<br>
+<h2> 🥂홈술🥂의 핵심 기능 </h2>
+<img src="https://github.com/GOSOPT-CDS-Homesool/client/assets/108226647/a2721cd2-7c87-49e5-866d-a0746dae67eb"  alt="서비스 이미지" />
+<br>
+<br>
 
 <h3> 1️⃣ 캐러셀 </h3>
-<img src=""  alt="기능1-대표이미지" />
+<img src="https://github.com/GOSOPT-CDS-Homesool/client/assets/108226647/1fce9e79-b5dc-42f8-b1ed-be55b5105734"  alt="기능1-대표이미지" />
+<img src="https://github.com/GOSOPT-CDS-Homesool/client/assets/108226647/1a0fddd4-03fd-4089-bb46-ba3f9ec10792"  alt="기능1-대표이미지" />
 <div ><strong>`Drag`를 이용한 캐러셀과 자동 Skip 캐러셀 두 가지 종류가 있어요!</strong> <br/>
     ✨ tag를 조건(품절여부, 좋아요, 추천, 신상품 등)에 따라 다르게 렌더링 했어요!<br/> ✨ 자동 배너는 `3초`에 한 번씩 넘어가도록 했어요! </div>
 
+<br>
+<br>
 
 <h3> 2️⃣ 조건부 렌더링 </h3>
-<img src=""  alt="기능1-대표이미지" />
+<img src="https://github.com/GOSOPT-CDS-Homesool/client/assets/108226647/f2cfd890-f7d5-46e6-8757-5e82492b8a70"  alt="기능1-대표이미지" />
 <div ><strong>모든 페이지 마다 조건에 따라 다르게 렌더링해요!</strong> 
  <br/>✨ [detailPage] 제품 상세페이지에서는 클릭, 품절여부에 따라 다른 구매버튼이 나와요! <br/> ✨ [orderPayment] 주문/결제 페이지에서는 배송 문구를 고를 수 있고 리스트를 클릭에 따라 바뀌도록 했어요! </div>
+<br>
+<br>
 
 <h3> 3️⃣ 데이터 연결 </h3>
-<img src=""  alt="기능1-대표이미지" />
 <div ><strong>제품, 유저 `{id}` 값에 따라 제품 상세, 마이페이지 , 주문 결제 페이지가 모두 같은 `id`값을 가져야해요!</strong><br/> ✨ {id} 값을 페이지 이동하면서 navigate {state}로 넘기거나, props로 받아서 이동했어요! </div>
-
 
 <h2> 💛Client💛 </h2>
 
@@ -41,7 +49,7 @@
         </td>
       <td style="min-width: 150px;">
             <a href="https://github.com/eastlaw80">
-               <img src="[![image](https://github.com/GOSOPT-CDS-Homesool/client/assets/108226647/f83cd3f9-0104-4d47-ade9-8ac3cfe0a9bf)](https://avatars.githubusercontent.com/u/98143826?v=4)
+               <img src="https://github.com/GOSOPT-CDS-Homesool/client/assets/108226647/e20efebb-8938-41db-9406-d6949055a3a3
 " width="200" alt="깃허브계정-프로필사진">
               <br />
               <b>  </b>
@@ -78,6 +86,8 @@
       </td>
     </tr>
 </table>
+<br>
+<br>
 
 <h2> 🛠 기술스택 </h2>
 
@@ -88,17 +98,20 @@
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=Netlify&logoColor=white">
 
-
+<br>
+<br>
 
 <h2> 💡 주요 라이브러리 </h2>
 - React-Slick
 
 <br/>
+<br>
 
 <h2>  📄 컨벤션 및 브랜치 전략 </h2>
 [컨벤션 바로보기](https://www.notion.so/seojisoosoo/16622eb8ff794922a349db1ce2509801)
 
-
+<br>
+<br>
 <br/>
 
 <h2> 📁 폴더 구조 </h2>
@@ -296,6 +309,5 @@
  ┣ 📜main.tsx
  ┗ 📜vite-env.d.ts
 ```
-
 
 <br/>
