@@ -77,3 +77,5 @@ export { ReactComponent as TimeSaleIc } from "./icon/timesale.svg";
 // export { ReactComponent as SoldOutTagIc, ReactComponent as SoldOutTagIcon } from "./icon/tag_soldout.svg";
 // export { ReactComponent as TimeSaleIc } from "./icon/timesale.svg";
 export { ReactComponent as TriangleOpenIcon } from "./icon/triangleOpenIc.svg";
+
+export { ReactComponent as TopButtonIc } from "./icon/topButtonIc.svg";

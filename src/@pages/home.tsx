@@ -6,13 +6,16 @@ import BrandNew from "../@components/homePage/brandNew";
 import Review from "../@components/homePage/review";
 import Subscribe from "../@components/homePage/subscribe";
 import ThisMonth from "../@components/homePage/thisMonth";
+import TopButton from "../@components/homePage/topButton";
 import Twinkle from "../@components/homePage/Twinkle";
 
 export default function Home() {
   return (
     <>
+      <TopButton />
       <Header />
       <Banner />
+
       <ThisMonth />
       <Twinkle />
       <Subscribe />

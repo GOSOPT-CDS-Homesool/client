@@ -7,6 +7,7 @@ import DetailAsk from "../@components/detailPage/detailAsk";
 import DetailOrderInfo from "../@components/detailPage/detailProduct/detailOrderInfo";
 import ProductInfo from "../@components/detailPage/productDetailInfo/productInfo";
 import ProductReiviewList from "../@components/detailPage/productReview/productReiviewList";
+import TopButton from "../@components/homePage/topButton";
 
 export default function Detail() {
   const { id } = useParams();
@@ -15,6 +16,7 @@ export default function Detail() {
     <>
       {id && (
         <>
+          <TopButton />
           <ArrowFooter />
           <Header />
           <DetailOrderInfo id={id} />
