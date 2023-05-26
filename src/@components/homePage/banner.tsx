@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BANNER_DATA } from "../../core/bannerData";
 import { styled } from "styled-components";
 import { PagenationDotIc, PagenationSelectedDotIc } from "../../assets";
+import TopButton from "./topButton";
 
 export default function Banner() {
   const [bannerId, setBannerId] = useState<number>(1);
@@ -26,6 +27,7 @@ export default function Banner() {
           </DotBox>
         ))}
       </DotWrapper>
+      <TopButton />
     </BannerWrapper>
   );
 }
