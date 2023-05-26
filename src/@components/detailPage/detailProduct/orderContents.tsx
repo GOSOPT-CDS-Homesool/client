@@ -88,7 +88,7 @@ const ExtendedPrice = styled.div`
 
 const SuccessOptionWrapper = styled.div`
   position: fixed;
-  bottom: 12rem;
+  bottom: 11.6rem;
   width: 37.5rem;
   margin-left: -1.6rem;
   background-color: ${({ theme }) => theme.colors.GRAYSCALE000};

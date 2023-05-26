@@ -20,5 +20,5 @@ export default function OrderChoice(props: ProductInfoProps) {
 
 const OrderChoiceWrapper = styled.section`
   position: fixed;
-  bottom: 12rem;
+  bottom: 11.6rem;
 `;

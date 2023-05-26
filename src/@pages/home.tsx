@@ -13,7 +13,6 @@ export default function Home() {
     <>
       <Header />
       <Banner />
-
       <ThisMonth />
       <Twinkle />
       <Subscribe />
