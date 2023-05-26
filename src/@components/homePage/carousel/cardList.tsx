@@ -72,7 +72,7 @@ export default function CardList(props: CardProps) {
       break;
     case "subscribe":
       allAlcohol?.forEach((item) => {
-        if (item.twinkle === true) {
+        if (item.subscribe === true) {
           filteredData.push(item);
         }
       });
